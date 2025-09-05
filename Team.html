@@ -1,0 +1,167 @@
+<!-- 🛠️ Section 7: Team / Leadership -->
+<section id="team" class="team-section">
+  <div class="team-header">
+    <h2>Our Leadership</h2>
+    <p>Guided by diverse voices, united by one vision.</p>
+  </div>
+
+  <div class="team-grid">
+    <!-- Member 1 -->
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="images/shivanta.jpg" alt="Shivanta Ronghang">
+      </div>
+      <h3>Shivanta Ronghang</h3>
+      <p class="role">Founder, Vision Architect</p>
+      <p class="quote">“Building Civilization 2.0 with justice, inclusivity, and innovation.”</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="mailto:shivanta@example.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="images/member2.jpg" alt="Global Coordinator">
+      </div>
+      <h3>Ayesha Rahman</h3>
+      <p class="role">Global Youth Coordinator</p>
+      <p class="quote">“Empowering young voices to shape tomorrow’s systems.”</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="images/member3.jpg" alt="Sustainability Lead">
+      </div>
+      <h3>Ravi Sharma</h3>
+      <p class="role">Sustainability Lead</p>
+      <p class="quote">“Green innovation is the foundation of Civilization 2.0.”</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- Member 4 -->
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="images/member4.jpg" alt="Community Leader">
+      </div>
+      <h3>Maria Gonzales</h3>
+      <p class="role">Community Leader</p>
+      <p class="quote">“True progress comes when every community rises together.”</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* 🛠️ Team Section */
+.team-section {
+  background: #0f172a;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.team-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.team-header p {
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  opacity: 0.8;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(106, 17, 203, 0.3);
+}
+
+.team-photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #2575fc;
+}
+
+.team-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.team-card .role {
+  font-size: 0.95rem;
+  color: #a5b4fc;
+  margin-bottom: 12px;
+}
+
+.team-card .quote {
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  color: #a5b4fc;
+  font-size: 1.2rem;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+</style>
+
+<script>
+// Fade-in effect on scroll
+const teamCards = document.querySelectorAll(".team-card");
+window.addEventListener("scroll", () => {
+  teamCards.forEach(card => {
+    const pos = card.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 60) {
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+    }
+  });
+});
+teamCards.forEach(card => {
+  card.style.opacity = "0";
+  card.style.transform = "translateY(40px)";
+});
+</script>
