@@ -4422,6 +4422,153 @@
 </body>
 </html>
 
+<!-- Programs & Initiatives Section -->
+<section class="programs" id="programs">
+  <div class="container">
+    <h2 class="section-title">🚀 Programs & Initiatives</h2>
+    <p class="section-subtitle">Building blocks of Civilization 2.0 in action.</p>
+
+    <!-- Filter Buttons -->
+    <div class="program-filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="education">Education</button>
+      <button class="filter-btn" data-category="energy">Energy</button>
+      <button class="filter-btn" data-category="tech">Tech</button>
+      <button class="filter-btn" data-category="governance">Governance</button>
+    </div>
+
+    <!-- Program Grid -->
+    <div class="program-grid">
+
+      <div class="program-card" data-category="education">
+        <div class="program-icon">📚</div>
+        <h3>Digital Literacy for All</h3>
+        <p>Empowering rural communities with free digital education resources.</p>
+      </div>
+
+      <div class="program-card" data-category="energy">
+        <div class="program-icon">☀️</div>
+        <h3>Renewable Energy Villages</h3>
+        <p>Solar & wind-powered villages for sustainable living.</p>
+      </div>
+
+      <div class="program-card" data-category="tech">
+        <div class="program-icon">🤖</div>
+        <h3>AI for Humanity</h3>
+        <p>Artificial Intelligence projects focused on solving social issues.</p>
+      </div>
+
+      <div class="program-card" data-category="governance">
+        <div class="program-icon">⚖️</div>
+        <h3>Ethical Governance Labs</h3>
+        <p>Creating frameworks for fair, transparent, and just systems.</p>
+      </div>
+
+      <div class="program-card" data-category="education">
+        <div class="program-icon">🌍</div>
+        <h3>Global Youth Collaboration</h3>
+        <p>Connecting students worldwide to solve global challenges.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+.programs {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+.programs .section-title {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #00e5ff;
+}
+.programs .section-subtitle {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #b2ebf2;
+}
+
+/* Filter Buttons */
+.program-filters {
+  margin-bottom: 40px;
+}
+.filter-btn {
+  background: transparent;
+  border: 2px solid #00e5ff;
+  color: #00e5ff;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: #00e5ff;
+  color: #0f2027;
+}
+
+/* Program Grid */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+.program-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0,229,255,0.4);
+  box-shadow: 0 6px 20px rgba(0,229,255,0.2);
+}
+.program-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,229,255,0.5);
+}
+.program-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.program-card h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #00e5ff;
+}
+.program-card p {
+  font-size: 0.95em;
+  color: #e0f7fa;
+}
+</style>
+
+<!-- JS Filter -->
+<script>
+const filterButtons = document.querySelectorAll('.filter-btn');
+const programCards = document.querySelectorAll('.program-card');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // remove active from all
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const category = button.dataset.category;
+
+    programCards.forEach(card => {
+      if (category === 'all' || card.dataset.category === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
