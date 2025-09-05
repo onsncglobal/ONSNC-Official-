@@ -1,0 +1,140 @@
+<!-- Civilization 2.0 Solutions Section -->
+<section class="solutions" id="solutions">
+  <div class="container">
+    <h2 class="section-title">🌍 Civilization 2.0: The Path to Renewal</h2>
+    <p class="section-subtitle">From crisis to solutions, here’s how we rebuild society.</p>
+
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="solution-front">
+          <i class="fas fa-balance-scale"></i>
+          <h3>Ethical Governance</h3>
+          <p>Transparent, accountable, and fair systems for all.</p>
+        </div>
+        <div class="solution-back">
+          <p>✔️ Solves corruption by ensuring digital transparency & citizen participation.</p>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-front">
+          <i class="fas fa-solar-panel"></i>
+          <h3>Renewable Energy</h3>
+          <p>Transitioning to clean, limitless power sources.</p>
+        </div>
+        <div class="solution-back">
+          <p>✔️ Replaces fossil fuels → reduces emissions & fights climate change.</p>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-front">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Universal Education</h3>
+          <p>Access to modern, scientific education for all.</p>
+        </div>
+        <div class="solution-back">
+          <p>✔️ Solves inequality → knowledge empowers every human equally.</p>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-front">
+          <i class="fas fa-robot"></i>
+          <h3>AI for Humanity</h3>
+          <p>Technology designed to uplift, not exploit.</p>
+        </div>
+        <div class="solution-back">
+          <p>✔️ Replaces exploitative systems → ensures automation benefits society.</p>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-front">
+          <i class="fas fa-handshake"></i>
+          <h3>Global Cooperation</h3>
+          <p>Nations united for peace and shared progress.</p>
+        </div>
+        <div class="solution-back">
+          <p>✔️ Solves wars → collective growth over conflict.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+.solutions {
+  background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
+  padding: 80px 20px;
+  text-align: center;
+}
+.solutions .section-title {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #00695c;
+}
+.solutions .section-subtitle {
+  font-size: 1.2em;
+  margin-bottom: 50px;
+  color: #004d40;
+}
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.solution-card {
+  background: transparent;
+  perspective: 1000px;
+}
+.solution-front, .solution-back {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.8s;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.solution-front {
+  border-top: 6px solid #00bfa5;
+}
+.solution-back {
+  transform: rotateY(180deg);
+  border-top: 6px solid #00695c;
+}
+.solution-card {
+  position: relative;
+  height: 220px;
+  cursor: pointer;
+}
+.solution-card:hover .solution-front {
+  transform: rotateY(180deg);
+}
+.solution-card:hover .solution-back {
+  transform: rotateY(360deg);
+}
+.solution-front i {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #009688;
+}
+</style>
+
+<!-- JS (optional scroll reveal) -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  ScrollReveal().reveal('.solution-card', {
+    delay: 200,
+    duration: 1000,
+    distance: '40px',
+    origin: 'bottom',
+    interval: 150
+  });
+</script>
