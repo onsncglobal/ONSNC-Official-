@@ -1392,6 +1392,1268 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONSNC | Building Civilization 2.0</title>
+    <meta name="description" content="Global movement for conscious innovation, ethical governance, and unified human progress">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            background-color: #0f172a;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .features-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .features-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .features-subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(129, 140, 248, 0.15);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.8s ease-out both;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:nth-child(1) { animation-delay: 0.3s; }
+        .feature-card:nth-child(2) { animation-delay: 0.5s; }
+        .feature-card:nth-child(3) { animation-delay: 0.7s; }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.3), rgba(167, 139, 250, 0.1));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(15, 23, 42, 0.9);
+            border-color: rgba(129, 140, 248, 0.3);
+            box-shadow: 0 20px 40px rgba(129, 140, 248, 0.15);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+        
+        .feature-description {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(129, 140, 248, 0.15);
+            border-radius: 20px;
+            padding: 60px 40px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        /* Floating elements for sections */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(129, 140, 248, 0.08), rgba(167, 139, 250, 0.05));
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .features-section .float-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .features-section .float-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+        
+        .cta-section .float-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.7;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .feature-card {
+                padding: 30px 20px;
+            }
+            
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+            }
+            
+            .cta-content {
+                padding: 40px 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .features-section, .cta-section {
+                padding: 60px 0;
+            }
+            
+            .features-header {
+                margin-bottom: 50px;
+            }
+            
+            .feature-title {
+                font-size: 1.3rem;
+            }
+            
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Features Section -->
+    <section class="features-section" id="initiatives">
+        <div class="floating-elements">
+            <div class="float-element"></div>
+            <div class="float-element"></div>
+        </div>
+        
+        <div class="features-container">
+            <div class="features-header">
+                <h2 class="features-title">Our Core Initiatives</h2>
+                <p class="features-subtitle">Driving transformative change through focused global efforts</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Global Governance Innovation</h3>
+                    <p class="feature-description">Developing ethical frameworks for next-generation societal structures and transnational cooperation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Conscious Technology</h3>
+                    <p class="feature-description">Advancing AI and technology that enhances human potential while preserving ethical boundaries.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Energy Transformation</h3>
+                    <p class="feature-description">Pioneering sustainable energy systems for a post-scarcity civilization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="floating-elements">
+            <div class="float-element"></div>
+        </div>
+        
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Join the Global Transformation</h2>
+                <p class="cta-description">Become part of the movement building Civilization 2.0. Your skills, passion and vision are needed to co-create our collective future.</p>
+                <a href="#join" class="cta-button">
+                    <i class="fas fa-arrow-right"></i>
+                    Get Involved Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animation for feature cards on scroll
+        const featureCards = document.querySelectorAll('.feature-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        featureCards.forEach(card => {
+            card.style.animationPlayState = 'paused';
+            observer.observe(card);
+        });
+        
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const floatElements = document.querySelectorAll('.float-element');
+            
+            floatElements.forEach((element, index) => {
+                const speed = 0.1 + (index * 0.05);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * speed}deg)`;
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONSNC Mission</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .mission-section {
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .mission-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .mission-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .mission-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .mission-subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .mission-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(129, 140, 248, 0.15);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.8s ease-out both;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-card:nth-child(1) { animation-delay: 0.3s; }
+        .mission-card:nth-child(2) { animation-delay: 0.5s; }
+        .mission-card:nth-child(3) { animation-delay: 0.7s; }
+        .mission-card:nth-child(4) { animation-delay: 0.9s; }
+        .mission-card:nth-child(5) { animation-delay: 1.1s; }
+        .mission-card:nth-child(6) { animation-delay: 1.3s; }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.3), rgba(167, 139, 250, 0.1));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+            background: rgba(15, 23, 42, 0.9);
+            border-color: rgba(129, 140, 248, 0.3);
+            box-shadow: 0 20px 40px rgba(129, 140, 248, 0.15);
+        }
+        
+        .mission-card:hover::before {
+            opacity: 1;
+        }
+        
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+        
+        .mission-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+        
+        .card-category {
+            font-size: 0.9rem;
+            color: #818cf8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+        
+        .card-description {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .card-link {
+            color: #818cf8;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .card-link:hover {
+            color: #a78bfa;
+            gap: 12px;
+        }
+        
+        /* Floating elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(129, 140, 248, 0.08), rgba(167, 139, 250, 0.05));
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .float-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .float-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+        
+        .float-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.7;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mission-cards {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .mission-card {
+                padding: 30px 20px;
+            }
+            
+            .card-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .mission-section {
+                padding: 60px 15px;
+            }
+            
+            .mission-header {
+                margin-bottom: 50px;
+            }
+            
+            .card-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mission Section -->
+    <section class="mission-section" id="mission">
+        <div class="floating-elements">
+            <div class="float-element"></div>
+            <div class="float-element"></div>
+            <div class="float-element"></div>
+        </div>
+        
+        <div class="mission-container">
+            <div class="mission-header">
+                <h2 class="mission-title">Our Mission: Transforming Global Challenges</h2>
+                <p class="mission-subtitle">
+                    ONSNC addresses humanity's most pressing challenges through innovative frameworks 
+                    that unite technology, ethics, and human potential for sustainable progress.
+                </p>
+            </div>
+            
+            <div class="mission-cards">
+                <!-- Card 1 -->
+                <div class="mission-card">
+                    <div class="card-icon">🏛️</div>
+                    <h3 class="card-category">Democratic Innovation</h3>
+                    <h4 class="card-title">Hybrid Governance Systems</h4>
+                    <p class="card-description">
+                        Designing next-generation democratic frameworks that combine human wisdom with 
+                        technological efficiency, ensuring transparent, participatory governance for the digital age.
+                    </p>
+                    <a href="#governance" class="card-link">
+                        Explore Framework <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="mission-card">
+                    <div class="card-icon">🤖</div>
+                    <h3 class="card-category">Ethical Technology</h3>
+                    <h4 class="card-title">Conscious AI Development</h4>
+                    <p class="card-description">
+                        Leading the development of artificial intelligence systems that serve humanity's highest 
+                        values, ensuring AI advancement aligns with ethical principles and human flourishing.
+                    </p>
+                    <a href="#ai-ethics" class="card-link">
+                        View Research <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="mission-card">
+                    <div class="card-icon">🌱</div>
+                    <h3 class="card-category">Sustainable Progress</h3>
+                    <h4 class="card-title">Planetary Stewardship</h4>
+                    <p class="card-description">
+                        Creating regenerative systems that balance human advancement with ecological health, 
+                        ensuring our civilization thrives within planetary boundaries.
+                    </p>
+                    <a href="#sustainability" class="card-link">
+                        Join Initiative <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="mission-card">
+                    <div class="card-icon">🤝</div>
+                    <h3 class="card-category">Global Unity</h3>
+                    <h4 class="card-title">Universal Human Rights</h4>
+                    <p class="card-description">
+                        Building bridges across cultures, nations, and belief systems to establish 
+                        universal principles of human dignity, equality, and shared prosperity.
+                    </p>
+                    <a href="#unity" class="card-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="mission-card">
+                    <div class="card-icon">🎓</div>
+                    <h3 class="card-category">Educational Innovation</h3>
+                    <h4 class="card-title">Consciousness Development</h4>
+                    <p class="card-description">
+                        Revolutionizing education to develop not just knowledge and skills, but wisdom, 
+                        empathy, and the consciousness needed to navigate Civilization 2.0.
+                    </p>
+                    <a href="#education" class="card-link">
+                        Explore Programs <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="mission-card">
+                    <div class="card-icon">💡</div>
+                    <h3 class="card-category">Innovation Catalyst</h3>
+                    <h4 class="card-title">Future Technologies</h4>
+                    <p class="card-description">
+                        Accelerating breakthrough innovations in biotechnology, space exploration, 
+                        and consciousness research that will define humanity's next evolutionary phase.
+                    </p>
+                    <a href="#innovation" class="card-link">
+                        View Projects <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animation for mission cards on scroll
+        const missionCards = document.querySelectorAll('.mission-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        missionCards.forEach(card => {
+            card.style.animationPlayState = 'paused';
+            observer.observe(card);
+        });
+        
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const floatElements = document.querySelectorAll('.float-element');
+            
+            floatElements.forEach((element, index) => {
+                const speed = 0.1 + (index * 0.05);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * speed}deg)`;
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONSNC Beliefs & Mission</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .beliefs-section {
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .beliefs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .beliefs-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .beliefs-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .beliefs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .belief-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(129, 140, 248, 0.15);
+            border-radius: 16px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.8s ease-out both;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .belief-card:nth-child(1) { animation-delay: 0.3s; }
+        .belief-card:nth-child(2) { animation-delay: 0.5s; }
+        .belief-card:nth-child(3) { animation-delay: 0.7s; }
+        .belief-card:nth-child(4) { animation-delay: 0.9s; }
+        .belief-card:nth-child(5) { animation-delay: 1.1s; }
+        
+        .belief-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.3), rgba(167, 139, 250, 0.1));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .belief-card:hover {
+            transform: translateY(-10px);
+            background: rgba(15, 23, 42, 0.9);
+            border-color: rgba(129, 140, 248, 0.3);
+            box-shadow: 0 20px 40px rgba(129, 140, 248, 0.15);
+        }
+        
+        .belief-card:hover::before {
+            opacity: 1;
+        }
+        
+        .belief-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .belief-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+        
+        .belief-statement {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .belief-statement strong {
+            color: #818cf8;
+        }
+        
+        .belief-mission {
+            color: #a78bfa;
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding-top: 15px;
+            border-top: 1px solid rgba(129, 140, 248, 0.2);
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quote-text {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .quote-text::before,
+        .quote-text::after {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            line-height: 1;
+        }
+        
+        .quote-text::before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .quote-text::after {
+            bottom: -60px;
+            right: 0;
+        }
+        
+        .quote-author {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-style: normal;
+        }
+        
+        /* Floating elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(129, 140, 248, 0.08), rgba(167, 139, 250, 0.05));
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .beliefs-section .float-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .beliefs-section .float-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+        
+        .quote-section .float-element {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .quote-section .float-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.7;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .beliefs-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .belief-card {
+                padding: 30px 20px;
+            }
+            
+            .quote-text {
+                padding: 0 10px;
+            }
+            
+            .quote-text::before,
+            .quote-text::after {
+                font-size: 3rem;
+            }
+            
+            .quote-text::before {
+                top: -10px;
+            }
+            
+            .quote-text::after {
+                bottom: -40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .beliefs-section, .quote-section {
+                padding: 60px 15px;
+            }
+            
+            .beliefs-header {
+                margin-bottom: 50px;
+            }
+            
+            .belief-card-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Beliefs Section -->
+    <section class="beliefs-section" id="beliefs">
+        <div class="floating-elements">
+            <div class="float-element"></div>
+            <div class="float-element"></div>
+        </div>
+        
+        <div class="beliefs-container">
+            <div class="beliefs-header">
+                <h2 class="beliefs-title">💫 Our Beliefs & Mission</h2>
+            </div>
+            
+            <div class="beliefs-grid">
+                <!-- Belief 1 -->
+                <div class="belief-card">
+                    <span class="belief-icon">🌍</span>
+                    <h3 class="belief-card-title">1. Human Unity</h3>
+                    <p class="belief-statement">
+                        <strong>We believe</strong> humanity is one family, beyond caste, religion, race, and borders — united in diversity.
+                    </p>
+                    <p class="belief-mission">
+                        Our mission: To unite people through equality, justice, and shared progress.
+                    </p>
+                </div>
+                
+                <!-- Belief 2 -->
+                <div class="belief-card">
+                    <span class="belief-icon">🔬</span>
+                    <h3 class="belief-card-title">2. Scientific Progress with Ethics</h3>
+                    <p class="belief-statement">
+                        <strong>We believe</strong> science and technology must serve humanity with integrity and compassion.
+                    </p>
+                    <p class="belief-mission">
+                        Our mission: To drive innovation responsibly through AI, research, and future technologies.
+                    </p>
+                </div>
+                
+                <!-- Belief 3 -->
+                <div class="belief-card">
+                    <span class="belief-icon">⚖️</span>
+                    <h3 class="belief-card-title">3. Freedom, Fairness & Participation</h3>
+                    <p class="belief-statement">
+                        <strong>We believe</strong> true democracy means liberty, fairness, and active participation for all.
+                    </p>
+                    <p class="belief-mission">
+                        Our mission: To build a hybrid democratic system where people and technology work together.
+                    </p>
+                </div>
+                
+                <!-- Belief 4 -->
+                <div class="belief-card">
+                    <span class="belief-icon">🌱</span>
+                    <h3 class="belief-card-title">4. Sustainability & Balance</h3>
+                    <p class="belief-statement">
+                        <strong>We believe</strong> humanity and nature must grow in harmony.
+                    </p>
+                    <p class="belief-mission">
+                        Our mission: To create a sustainable future through green living and conscious innovation.
+                    </p>
+                </div>
+                
+                <!-- Belief 5 -->
+                <div class="belief-card">
+                    <span class="belief-icon">✨</span>
+                    <h3 class="belief-card-title">5. Simplicity, Truth & Conscious Living</h3>
+                    <p class="belief-statement">
+                        <strong>We believe</strong> our greatest strength lies in simplicity, authenticity, and mindful living.
+                    </p>
+                    <p class="belief-mission">
+                        Our mission: To shape Civilization 2.0 — inclusive, ethical, and innovative.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="floating-elements">
+            <div class="float-element"></div>
+        </div>
+        
+        <div class="quote-container">
+            <blockquote class="quote-text">
+                "ONSNC unites knowledge, compassion, and innovation to forge a civilization without boundaries — 
+                empowering every human and shaping a future of justice, harmony, and shared progress."
+            </blockquote>
+            <cite class="quote-author">— ONSNC Founding Principle</cite>
+        </div>
+    </section>
+
+    <script>
+        // Animation for belief cards on scroll
+        const beliefCards = document.querySelectorAll('.belief-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        beliefCards.forEach(card => {
+            card.style.animationPlayState = 'paused';
+            observer.observe(card);
+        });
+        
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const floatElements = document.querySelectorAll('.float-element');
+            
+            floatElements.forEach((element, index) => {
+                const speed = 0.1 + (index * 0.05);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * speed}deg)`;
+            });
+        });
+    </script>
+</body>
+</html>
 
   
   
