@@ -1,13 +1,1397 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title> ONSNC OFFICIAL </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONSNC | Building Civilization 2.0</title>
+    <meta name="description" content="Global movement for conscious innovation, ethical governance, and unified human progress">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+            background-color: #0f172a;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 8px;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        /* Header Styles */
+        .header-top {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 6px 0;
+            font-size: 13px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-links {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .header-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .header-links a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .main-header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+        }
+        
+        .logo-symbol {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-symbol::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, rgba(255,255,255,0.3), transparent);
+            animation: rotate 4s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .logo-symbol span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-symbol:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(99, 102, 241, 0.4);
+        }
+        
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #f1f5f9;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+        
+        .logo-text p {
+            font-size: 10px;
+            color: #818cf8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            margin: 0;
+        }
+        
+        .nav-menu a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 0;
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a:hover {
+            color: #818cf8;
+        }
+        
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-align: center;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-secondary {
+            color: #818cf8;
+            border: 2px solid #818cf8;
+            background: rgba(129, 140, 248, 0.05);
+        }
+        
+        .btn-secondary:hover {
+            background: #818cf8;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 16px;
+            border-radius: 12px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 75%, #475569 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(129, 140, 248, 0.1) 0%, transparent 70%);
+            opacity: 0.8;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.02) 75%),
+                linear-gradient(-45deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.02) 75%);
+            background-size: 40px 40px;
+            animation: pattern-move 20s linear infinite;
+        }
+        
+        @keyframes pattern-move {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 40px 40px, -40px 40px; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            animation: heroFadeIn 1.2s ease-out;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            animation: badgePulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes badgePulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+        }
+        
+        .hero-badge:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 24px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #ffffff, #e2e8f0, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleSlide 1s ease-out 0.3s both;
+        }
+        
+        @keyframes titleSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            line-height: 1.7;
+            font-weight: 400;
+            animation: descSlide 1s ease-out 0.6s both;
+        }
+        
+        @keyframes descSlide {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+            animation: buttonsShow 1s ease-out 0.9s both;
+        }
+        
+        @keyframes buttonsShow {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-buttons .btn {
+            min-width: 180px;
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #818cf8;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Floating Elements */
+        .floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            top: 50%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        .particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            top: 70%;
+            right: 30%;
+            animation-delay: 6s;
+        }
+        
+        .particle:nth-child(5) {
+            width: 4px;
+            height: 4px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px); 
+                opacity: 0.1;
+            }
+            25% { 
+                transform: translateY(-20px) translateX(10px); 
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translateY(-10px) translateX(-15px); 
+                opacity: 0.2;
+            }
+            75% { 
+                transform: translateY(-25px) translateX(5px); 
+                opacity: 0.4;
+            }
+        }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            animation: bounce 2s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .scroll-indicator span {
+            display: block;
+            width: 2px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 8px auto;
+            border-radius: 2px;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* Vision Section */
+        .vision-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 75%, #475569 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .vision-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .vision-floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .vision-float-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(129, 140, 248, 0.08), rgba(167, 139, 250, 0.05));
+            animation: vision-float 15s ease-in-out infinite;
+        }
+        
+        .vision-float-circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .vision-float-circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+        
+        .vision-float-circle:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes vision-float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.7;
+            }
+        }
+        
+        .vision-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .vision-subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #818cf8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .vision-main-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+        
+        .vision-description {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+         .vision-statement {
+            background: rgba(129, 140, 248, 0.05);
+            border: 1px solid rgba(129, 140, 248, 0.15);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideInLeft 1s ease-out 0.3s both;
+        }
+        
+        .vision-statement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #818cf8, transparent);
+            animation: vision-shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes vision-shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .vision-text {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .principle-card {
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(129, 140, 248, 0.15);
+            border-radius: 16px;
+            padding: 40px 30px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            animation: fadeInUp 0.8s ease-out both;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .principle-card:nth-child(1) { animation-delay: 0.5s; }
+        .principle-card:nth-child(2) { animation-delay: 0.7s; }
+        .principle-card:nth-child(3) { animation-delay: 0.9s; }
+        
+        .principle-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, transparent, rgba(129, 140, 248, 0.2), transparent);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-10px);
+            background: rgba(15, 23, 42, 0.7);
+            border-color: rgba(129, 140, 248, 0.3);
+            box-shadow: 0 20px 40px rgba(129, 140, 248, 0.1);
+        }
+        
+        .principle-card:hover::after {
+            opacity: 1;
+        }
+        
+        .principle-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #818cf8;
+            margin-bottom: 15px;
+        }
+        
+        .principle-text {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .pillars-section {
+            margin-top: 60px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 1.1s both;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .pillar {
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.08), rgba(167, 139, 250, 0.04));
+            border: 1px solid rgba(129, 140, 248, 0.15);
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s ease;
+            animation: scaleIn 0.6s ease-out both;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+        
+        .pillar:nth-child(1) { animation-delay: 1.3s; }
+        .pillar:nth-child(2) { animation-delay: 1.5s; }
+        .pillar:nth-child(3) { animation-delay: 1.7s; }
+        .pillar:nth-child(4) { animation-delay: 1.9s; }
+        
+        .pillar:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.12), rgba(167, 139, 250, 0.08));
+            border-color: rgba(129, 140, 248, 0.3);
+            box-shadow: 0 15px 30px rgba(129, 140, 248, 0.1);
+        }
+        
+        .pillar-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 15px;
+        }
+        
+        .pillar-text {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 24px;
+            }
+            
+            .nav-buttons .btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                padding: 4px 0;
+                font-size: 12px;
+            }
+            
+            .header-top-content {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .header-links {
+                gap: 16px;
+                justify-content: center;
+            }
+            
+            .nav-content {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+                order: 3;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 100px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 100px);
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 60px;
+                gap: 32px;
+                transition: left 0.3s ease;
+                box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu a {
+                font-size: 18px;
+                padding: 12px 0;
+            }
+            
+            .nav-buttons {
+                order: 2;
+                gap: 8px;
+            }
+            
+            .nav-buttons .btn {
+                padding: 8px 16px;
+                font-size: 12px;
+                min-width: auto;
+            }
+            
+            .logo-text h1 {
+                font-size: 24px;
+            }
+            
+            .logo-symbol {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .hero {
+                padding: 60px 0;
+                min-height: calc(100vh - 140px);
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .hero-badge {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+            
+            .scroll-indicator {
+                display: none;
+            }
+            
+            .stats {
+                gap: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .principle-card,
+            .pillar {
+                padding: 30px 20px;
+            }
+            
+            .vision-statement {
+                padding: 40px 25px;
+            }
+            
+            .vision-text {
+                font-size: 1.2rem;
+            }
+        }
+      @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .logo-text h1 {
+                font-size: 20px;
+            }
+            
+            .logo-symbol {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+            
+            .nav-buttons .btn {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+            
+            .hero-badge {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>
-    ONSNC CIVILIZATION 2.0
-  </h1>
+    <!-- Header Top Bar -->
+    <header class="header-top">
+        <div class="container">
+            <div class="header-top-content">
+                <div class="header-links">
+                    <a href="#global-network">🌐 Global Network</a>
+                    <a href="#research">📊 Research Portal</a>
+                    <a href="#academy">🎓 ONSNC Academy</a>
+                </div>
+                <div class="header-links">
+                    <a href="#contact">📧 Contact</a>
+                    <a href="#news">📰 News Centre</a>
+                    <a href="#languages">🌍 EN | ES | FR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="nav-content">
+                <div class="logo">
+                    <div class="logo-symbol">
+                        <span>Ω</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ONSNC</h1>
+                        <p>Civilization 2.0</p>
+                    </div>
+                </div>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#initiatives">Initiatives</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#network">Network</a></li>
+                    <li><a href="#academy">Academy</a></li>
+                </ul>
+
+                <div class="nav-buttons">
+                    <a href="#join" class="btn btn-secondary">Join Movement</a>
+                    <a href="#support" class="btn btn-primary">Support ONSNC</a>
+                </div>
+
+                <div class="mobile-menu-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" role="banner" aria-label="Welcome to the Future of Civilization 2.0">
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-rocket"></i>
+                <span>Building the future together</span>
+            </div>
+            
+            <h1>Welcome to the Future of Civilization 2.0</h1>
+            <p class="subtitle">A Global Movement for Human Progress — Through Knowledge, Compassion, Conscious Innovation, and Ethical Governance</p>
+
+            <p>
+                Together, we can unite knowledge, compassion, and innovation to forge a borderless civilization — empowering every person to shape a future of justice, harmony, and shared progress.
+            </p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="memberCount">0</span>
+                    <span class="stat-label">Global Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="countryCount">0</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="projectCount">0</span>
+                    <span class="stat-label">Active Projects</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#join" class="btn btn-primary btn-large">
+                    <i class="fas fa-arrow-right"></i>
+                    Join the Movement
+                </a>
+                <a href="#manifesto" class="btn btn-secondary btn-large">
+                    <i class="fas fa-book-open"></i>
+                    Read Our Manifesto
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" onclick="scrollToContent()">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+  <!-- Vision Section -->
+    <section class="vision-section" id="vision">
+        <div class="vision-floating-elements">
+            <div class="vision-float-circle"></div>
+            <div class="vision-float-circle"></div>
+            <div class="vision-float-circle"></div>
+        </div>
+        
+        <div class="vision-container">
+            <div class="vision-header">
+                <div class="vision-subtitle">Our Vision for the Future</div>
+                <h1 class="vision-main-title">Discover Our Vision</h1>
+                <p class="vision-description">Guiding principles and aspirations that drive us toward a better tomorrow</p>
+            </div>
+            
+            <div class="vision-statement">
+                <p class="vision-text">
+                    To shape Civilization 2.0 — a borderless, inclusive society where human potential flourishes through knowledge, compassion, and conscious innovation, building a future of justice, harmony, and collective progress.
+                </p>
+            </div>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <h3 class="principle-title">Borderless Society</h3>
+                    <p class="principle-text">Creating a world without artificial barriers where people can collaborate and innovate without constraints.</p>
+                </div>
+                
+                <div class="principle-card">
+                    <h3 class="principle-title">Compassionate Innovation</h3>
+                    <p class="principle-text">Technology and progress driven by empathy and a genuine desire to improve the human condition.</p>
+                </div>
+                
+                <div class="principle-card">
+                    <h3 class="principle-title">Collective Progress</h3>
+                    <p class="principle-text">Advancing together as a global community, ensuring no one is left behind in our journey forward.</p>
+                </div>
+            </div>
+            
+            <div class="pillars-section">
+                <h2 class="section-title">Foundation Pillars</h2>
+                
+                <div class="pillars-grid" role="list" aria-label="Vision pillars">
+                    <div class="pillar" role="listitem">
+                        <h3 class="pillar-title">Knowledge</h3>
+                        <p class="pillar-text">Open science, education, and truthful information as universal public goods.</p>
+                    </div>
+                    
+                    <div class="pillar" role="listitem">
+                        <h3 class="pillar-title">Compassion</h3>
+                        <p class="pillar-text">Dignity, inclusion, and care at the center of policy, design, and services.</p>
+                    </div>
+                    
+                    <div class="pillar" role="listitem">
+                        <h3 class="pillar-title">Innovation</h3>
+                        <p class="pillar-text">Conscious, ethical technology that expands human potential and safeguards life.</p>
+                    </div>
+                    
+                    <div class="pillar" role="listitem">
+                        <h3 class="pillar-title">Justice</h3>
+                        <p class="pillar-text">Equitable rights, access, and accountability across cultures and generations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking on nav links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Smooth scroll for scroll indicator
+        function scrollToContent() {
+            const visionSection = document.getElementById('vision');
+            if (visionSection) {
+                visionSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('.main-header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Animated counter for stats
+        function animateCounter(el, target, duration) {
+            let startTime = null;
+            const startValue = 0;
+            
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                const currentValue = Math.floor(progress * (target - startValue) + startValue);
+                el.textContent = currentValue.toLocaleString();
+                
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    el.textContent = target.toLocaleString();
+                }
+            }
+            
+            window.requestAnimationFrame(step);
+        }
+        
+        // Start counters when in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(document.getElementById('memberCount'), 25000, 2000);
+                    animateCounter(document.getElementById('countryCount'), 164, 2000);
+                    animateCounter(document.getElementById('projectCount'), 120, 2000);
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(document.querySelector('.hero'));
+
+        // Parallax effect for hero content
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            const particles = document.querySelectorAll('.particle');
+            
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+            
+            particles.forEach((particle, index) => {
+                if (scrolled < window.innerHeight) {
+                    const speed = 0.1 + (index * 0.05);
+                    particle.style.transform = `translateY(${scrolled * speed}px)`;
+                }
+            });
+        });
+
+    // Enhanced button hover effects
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Performance optimization - Throttle scroll events
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Enhanced scroll handling with throttling
+        const throttledScrollHandler = throttle(function() {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            const particles = document.querySelectorAll('.particle');
+            
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+            
+            particles.forEach((particle, index) => {
+                if (scrolled < window.innerHeight) {
+                    const speed = 0.1 + (index * 0.05);
+                    particle.style.transform = `translateY(${scrolled * speed}px)`;
+                }
+            });
+        }, 16);
+
+        window.addEventListener('scroll', throttledScrollHandler);
+    </script>
 </body>
 </html>
+
+
+  
+  
