@@ -5847,6 +5847,157 @@ filterButtons.forEach(button => {
 </body>
 </html>
 
+
+<!-- ================= Futuristic Interactive About Section ================= -->
+<section id="about-section" style="font-family:'Poppins',sans-serif; position:relative; background:#0d1117; padding:120px 20px; color:#fff; overflow:hidden;">
+
+  <!-- Parallax Background Layer -->
+  <div class="parallax-bg" style="position:absolute; top:0; left:0; width:100%; height:100%; background:url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'); background-size:cover; opacity:0.05; z-index:0;"></div>
+
+  <div class="container" style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:50px; justify-content:center; align-items:flex-start; position:relative; z-index:1;">
+
+    <!-- About ONSNC Card -->
+    <div class="profile-card interactive-card animate-card">
+      <div class="card-media">
+        <!-- Lottie / Video on hover -->
+        <div class="media-overlay">
+          <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_tutvdkg0.json" background="transparent" speed="1" loop autoplay style="width:200px; height:200px;"></lottie-player>
+        </div>
+        <img src="https://via.placeholder.com/300x300.png?text=ONSNC+Logo" alt="ONSNC Logo" class="card-image">
+      </div>
+      <div class="card-content">
+        <h3>About ONSNC</h3>
+        <p>ONSNC Global drives innovation and social impact across India through community projects, technology, and sustainable initiatives.</p>
+        <div class="card-stats">
+          <div class="stat"><span class="count" data-target="5">0</span> Projects</div>
+          <div class="stat"><span class="count" data-target="5000">0</span> People Impacted</div>
+        </div>
+        <a href="onsnc.html" class="btn-card">Learn More</a>
+      </div>
+    </div>
+
+    <!-- About Founder Card -->
+    <div class="profile-card interactive-card animate-card">
+      <div class="card-media">
+        <div class="media-overlay">
+          <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_9i5r2nlc.json" background="transparent" speed="1" loop autoplay style="width:200px; height:200px;"></lottie-player>
+        </div>
+        <img src="https://via.placeholder.com/300x300.png?text=Founder+Photo" alt="Founder Photo" class="card-image">
+      </div>
+      <div class="card-content">
+        <h3>About Founder</h3>
+        <p>Shivanta Ronghang is the visionary founder of ONSNC Global, leading impactful projects for inclusive growth and social empowerment.</p>
+        <div class="card-stats">
+          <div class="stat"><span class="count" data-target="5">0</span> Projects</div>
+          <div class="stat"><span class="count" data-target="1">0</span> NGO Brances </div>
+        </div>
+        <a href="founder.html" class="btn-card">Full Details</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CSS ================= -->
+<style>
+  .container { display:flex; flex-wrap:wrap; gap:50px; justify-content:space-between; }
+
+  /* Profile Card */
+  .profile-card {
+    background: linear-gradient(145deg, #1f2229, #0d1117);
+    border-radius:25px;
+    overflow:hidden;
+    flex:1 1 500px;
+    max-width:500px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+    transition: transform 0.5s, box-shadow 0.5s, border 0.3s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+  }
+  .profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow:0 30px 60px rgba(255,111,97,0.7);
+    border:2px solid #ff6f61;
+  }
+
+  /* Card Media */
+  .card-media { position:relative; width:200px; height:200px; border-radius:50%; overflow:hidden; margin-bottom:20px; }
+  .card-image { width:100%; height:100%; border-radius:50%; object-fit:cover; transition: transform 0.5s; }
+  .profile-card:hover .card-image { transform: scale(1.08) rotate(3deg); }
+  .media-overlay { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+
+  /* Card Content */
+  .card-content h3 { color:#ff6f61; margin:10px 0 15px 0; font-size:1.8rem; }
+  .card-content p { color:#ddd; font-size:1rem; line-height:1.6; margin-bottom:15px; }
+  .btn-card { text-decoration:none; padding:12px 30px; border-radius:50px; background:#ff6f61; color:#fff; font-weight:600; transition:0.3s; display:inline-block; margin-top:10px; }
+  .btn-card:hover { transform: translateY(-3px) scale(1.05); box-shadow:0 10px 25px rgba(255,111,97,0.5); }
+
+  /* Stats */
+  .card-stats { display:flex; justify-content:center; gap:15px; margin-bottom:15px; }
+  .stat { font-weight:600; font-size:1rem; color:#fff; }
+
+  /* Parallax background */
+  .parallax-bg { background-attachment: fixed; }
+
+  /* Scroll animation */
+  .animate-card { opacity:0; transform: translateY(30px); transition: all 0.8s ease-out; }
+  .animate-card.visible { opacity:1; transform:translateY(0); }
+
+  /* Responsive */
+  @media(max-width:1024px){ .container{flex-direction:column;align-items:center;} }
+</style>
+
+<!-- ================= JS ================= -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script>
+  // Scroll-trigger animation
+  const cards = document.querySelectorAll('.animate-card');
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, {threshold:0.3});
+  cards.forEach(card=>observer.observe(card));
+
+  // Counter Animation
+  const counters = document.querySelectorAll('.count');
+  counters.forEach(counter=>{
+    const updateCount = ()=>{
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const speed = 200;
+      const increment = target/speed;
+      if(count<target){ counter.innerText=Math.ceil(count+increment); setTimeout(updateCount,15);}
+      else { counter.innerText=target; }
+    };
+    const observerCounter = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ updateCount(); observerCounter.unobserve(counter); }
+      });
+    }, {threshold:0.5});
+    observerCounter.observe(counter);
+  });
+
+  // Parallax effect on scroll
+  window.addEventListener('scroll',()=>{ document.querySelector('.parallax-bg').style.transform=`translateY(${window.scrollY*0.2}px)`; });
+
+  // Image slideshow inside card (optional fallback)
+  document.querySelectorAll('.profile-card .card-image').forEach(img=>{
+    let slides = [img];
+    let current=0;
+    setInterval(()=>{
+      slides[current].classList.remove('active');
+      current = (current+1)%slides.length;
+      slides[current].classList.add('active');
+    },3500);
+  });
+</script>
+
+
   <!DOCTYPE html>
 <html lang="en">
 <head>
