@@ -114,4 +114,73 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Civilization Overview Section JavaScript
+
+// Smooth scroll functionality for internal links
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for anchor links within the page
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Card animation on scroll
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe cards for animation
+    document.querySelectorAll('.overview-card').forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+    });
+    
+    // Parallax effect for floating elements
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const floatElements = document.querySelectorAll('.float-element');
+        
+        floatElements.forEach((element, index) => {
+            const speed = 0.1 + (index * 0.05);
+            element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * speed}deg)`;
+        });
+    });
+    
+    // Enhanced card hover effects
+    document.querySelectorAll('.overview-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
+
+
 
