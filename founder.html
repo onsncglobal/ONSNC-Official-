@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Shivanta Ronghang – Founder & Visionary of ONSNC Global. Learn about his mission, pilot project, and vision for inclusive development.">
+  <title>About Founder – Shivanta Ronghang | ONSNC Global</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #212529;
+      background-color: #F9FAFB;
+    }
+    
+    /* Header Styles */
+    .header-top {
+      background: #003366;
+      color: white;
+      padding: 6px 0;
+      font-size: 13px;
+    }
+    
+    .header-top-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .header-links {
+      display: flex;
+      gap: 24px;
+    }
+    
+    .header-links a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    
+    .header-links a:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .main-header {
+      background: #003366;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+    }
+    
+    .logo-symbol {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #0072CE, #198754);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0, 114, 206, 0.3);
+    }
+    
+    .logo-text h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0;
+      letter-spacing: -1px;
+    }
+    
+    .logo-text p {
+      font-size: 10px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      margin: 0;
+    }
+    
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 0;
+      position: relative;
+      transition: all 0.3s ease;
+      font-size: 15px;
+    }
+    
+    .nav-menu a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #FF8C42;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-menu a:hover {
+      color: #FF8C42;
+    }
+    
+    .nav-menu a:hover::before {
+      width: 100%;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background: #198754;
+      color: white;
+      box-shadow: 0 4px 10px rgba(25, 135, 84, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(25, 135, 84, 0.4);
+      background: #157347;
+    }
+    
+    .btn-secondary {
+      color: #0072CE;
+      border: 2px solid #0072CE;
+      background: rgba(0, 114, 206, 0.05);
+    }
+    
+    .btn-secondary:hover {
+      background: #0072CE;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    /* Founder Page Content */
+    .founder-hero {
+      background: linear-gradient(135deg, #003366 0%, #0055a5 100%);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .founder-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .founder-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+    
+    .founder-hero p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .founder-main {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    
+    .founder-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 50px;
+      align-items: start;
+    }
+    
+    .founder-profile {
+      text-align: center;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .founder-photo {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 25px;
+      border: 5px solid #f0f8ff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .founder-contact {
+      margin-top: 25px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #495057;
+    }
+    
+    .contact-item i {
+      color: #0072CE;
+      width: 20px;
+    }
+    
+    .founder-details {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .section {
+      margin-bottom: 40px;
+    }
+    
+    .section h2 {
+      color: #003366;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f8ff;
+    }
+    
+    .section p {
+      margin-bottom: 15px;
+      color: #495057;
+      line-height: 1.7;
+    }
+    
+    .timeline {
+      margin-top: 25px;
+    }
+    
+    .timeline-item {
+      margin-bottom: 25px;
+      padding-left: 25px;
+      border-left: 3px solid #0072CE;
+      position: relative;
+    }
+    
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 0;
+      width: 13px;
+      height: 13px;
+      background: #0072CE;
+      border-radius: 50%;
+    }
+    
+    .timeline-item h4 {
+      color: #003366;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    
+    .timeline-item p {
+      margin: 0;
+    }
+    
+    .milestones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    
+    .milestone {
+      background: #f0f8ff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .milestone:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 114, 206, 0.1);
+    }
+    
+    .milestone-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0072CE;
+      margin-bottom: 10px;
+    }
+    
+    .milestone-text {
+      color: #495057;
+      font-weight: 500;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #003366;
+      color: white;
+      padding: 60px 0 30px;
+    }
+    
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #FF8C42;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-copyright {
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-tagline {
+      color: rgba(255, 255, 255, 0.8);
+      font-style: italic;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .nav-menu {
+        gap: 24px;
+      }
+      
+      .nav-buttons .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .founder-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .founder-profile {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-top {
+        padding: 4px 0;
+        font-size: 12px;
+      }
+      
+      .header-top-content {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .header-links {
+        gap: 16px;
+        justify-content: center;
+      }
+      
+      .nav-content {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: #003366;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 60px;
+        gap: 32px;
+        transition: left 0.3s ease;
+        box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .nav-menu a {
+        font-size: 18px;
+        padding: 12px 0;
+      }
+      
+      .nav-buttons {
+        order: 2;
+        gap: 8px;
+      }
+      
+      .nav-buttons .btn {
+        padding: 8px 16px;
+        font-size: 12px;
+        min-width: auto;
+      }
+      
+      .logo-text h1 {
+        font-size: 24px;
+      }
+      
+      .logo-symbol {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+      
+      .founder-hero {
+        padding: 60px 0;
+      }
+      
+      .founder-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .founder-details {
+        padding: 30px 20px;
+      }
+      
+      .action-buttons {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .founder-main {
+        margin: 40px auto;
+      }
+      
+      .founder-photo {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .founder-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .founder-hero p {
+        font-size: 1.1rem;
+      }
+      
+      .section h2 {
+        font-size: 1.5rem;
+      }
+      
+      .milestones {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Top Bar -->
+  <header class="header-top">
+  </header>
+
+  <!-- Main Navigation -->
+  <header class="main-header">
+    <div class="nav-content">
+      <div class="logo">
+        <div class="logo-symbol">
+          <span>Ω</span>
+        </div>
+        <div class="logo-text">
+          <h1>ONSNC</h1>
+          <p>Civilization 2.0</p>
+        </div>
+      </div>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#initiatives">Initiatives</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#academy">Academy</a></li>
+        <li><a href="founder.html" style="color: #FF8C42;">Founder</a></li>
+      </ul>
+
+      <div class="nav-buttons">
+        <a href="#join" class="btn btn-secondary">Join Movement</a>
+        <a href="#support" class="btn btn-primary">Support ONSNC</a>
+      </div>
+
+      <div class="mobile-menu-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Founder Hero Section -->
+  <section class="founder-hero">
+    <div class="founder-hero-content">
+      <h1>Shivanta Ronghang</h1>
+      <p>Founder & Visionary of ONSNC Global</p>
+    </div>
+  </section>
+
+  <!-- Founder Main Content -->
+  <main class="founder-main">
+    <div class="founder-content">
+      <!-- Founder Profile Sidebar -->
+      <div class="founder-profile">
+        <img src="https://via.placeholder.com/250x250.png?text=Shivanta+Ronghang" alt="Shivanta Ronghang" class="founder-photo">
+        <h2>Shivanta Ronghang</h2>
+        <p>Founder & Visionary Leader</p>
+        
+        <div class="founder-contact">
+          <h3>Connect</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>shivanta@onsnc.org</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-globe"></i>
+              <span>www.onsnc.org</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Based in India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder Details -->
+      <div class="founder-details">
+        <div class="section">
+          <h2>About the Founder</h2>
+          <p>Shivanta Ronghang leads ONSNC Global with a vision of inclusive growth, integrating technology, education, and social initiatives for sustainable community development. He is committed to creating opportunities for local communities while building a foundation for post-scarcity civilization.</p>
+          <p>With a background in social innovation and technology, Shivanta has dedicated his career to bridging the gap between cutting-edge advancements and grassroots implementation. His work focuses on creating systems that empower communities while preserving cultural heritage and ecological balance.</p>
+        </div>
+
+        <div class="section">
+          <h2>Vision & Mission</h2>
+          <p>Shivanta's vision for ONSNC Global is to create a world where technology serves humanity, not replaces it. He believes in the power of conscious innovation to solve pressing global challenges while maintaining ethical boundaries and human dignity at the core.</p>
+          <p>The mission is to build bridges between traditional knowledge systems and modern technology, creating hybrid solutions that are both innovative and culturally relevant. This approach ensures that progress benefits all segments of society, not just the privileged few.</p>
+        </div>
+
+        <div class="section">
+          <h2>Pilot Project</h2>
+          <p>The first pilot project focuses on improving access to education and community resources in rural areas. It serves as a model for future initiatives and reflects the foundation's commitment to impactful, localized development.</p>
+          <p>This project integrates digital literacy programs with sustainable agriculture practices, creating a holistic approach to community development that addresses both immediate needs and long-term resilience.</p>
+          
+          <div class="milestones">
+            <div class="milestone">
+              <div class="milestone-number">5+</div>
+              <div class="milestone-text">Communities Impacted</div>
+            </div>
+            <div class="milestone">
+              <div class="milestone-number">500+</div>
+              <div class="milestone-text">People Reached</div>
+            </div>
+            <div class="milestone">
+              <div class="milestone-number">3</div>
+              <div class="milestone-text">Partner Organizations</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Timeline & Milestones</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h4>2025 - Foundation</h4>
+              <p>Founded ONSNC Global with a vision for Civilization 2.0</p>
+            </div>
+            <div class="timeline-item">
+              <h4>2025 - Pilot Launch</h4>
+              <p>Launched first pilot community project focusing on education and resources</p>
+            </div>
+            <div class="timeline-item">
+              <h4>2026-2030 - Expansion</h4>
+              <p>Expanded groundwork for future initiatives and built strategic partnerships</p>
+            </div>
+            <div class="timeline-item">
+              <h4>Future Vision</h4>
+              <p>Scaling successful models and developing new frameworks for global impact</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <a href="#contact-founder" class="btn btn-primary">
+            <i class="fas fa-envelope"></i>
+            Contact Founder
+          </a>
+          <a href="#pilot-project" class="btn btn-secondary">
+            <i class="fas fa-project-diagram"></i>
+            View Project Details
+          </a>
+          <a href="index.html" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i>
+            Back to Homepage
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    
+      
+      <div class="footer-bottom">
+        <p style="font-weight: 600; margin-bottom: 5px;">Concept & Authorship: <span style="font-weight: 500;">Shivanta Ronghang</span></p>
+  <p style="margin: 0;">Founder, <strong>ONSNC</strong> — Open Network for Sustainable, Natural & Conscious Civilization</p>
+  <p style="margin-top: 8px; font-size: 14px; color: #555;">© 2025 ONSNC. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+    }
+
+    // Close mobile menu when clicking on nav links
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>
