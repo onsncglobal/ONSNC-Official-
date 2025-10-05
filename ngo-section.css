@@ -1,24 +1,13 @@
-/* ================= NGO Section Styles ================= */
+/* NGO Section Styles */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f8f9fa;
-}
-
-#ngo-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.ngo-section {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
   padding: 100px 20px;
   position: relative;
   overflow: hidden;
 }
 
-#ngo-section::before {
+.ngo-section::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -30,7 +19,7 @@ body {
   z-index: 0;
 }
 
-#ngo-section::after {
+.ngo-section::after {
   content: '';
   position: absolute;
   bottom: -30%;
@@ -42,20 +31,20 @@ body {
   z-index: 0;
 }
 
-.container {
+.ngo-section .container {
   max-width: 1200px;
   margin: auto;
   position: relative;
   z-index: 1;
 }
 
-.section-header {
+.ngo-section .section-header {
   text-align: center;
   margin-bottom: 60px;
   color: #fff;
 }
 
-.section-badge {
+.ngo-section .section-badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -69,14 +58,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.section-header h2 {
+.ngo-section .section-header h2 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.2;
 }
 
-.section-header p {
+.ngo-section .section-header p {
   font-size: 1.15rem;
   max-width: 700px;
   margin: 0 auto;
@@ -84,14 +73,14 @@ body {
   line-height: 1.7;
 }
 
-.cards-grid {
+.ngo-section .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 35px;
   margin-bottom: 50px;
 }
 
-.card {
+.ngo-card {
   background: #fff;
   padding: 40px 30px;
   border-radius: 20px;
@@ -103,36 +92,36 @@ body {
   transform: translateY(30px);
 }
 
-.card.animate {
+.ngo-card.animate {
   opacity: 1;
   transform: translateY(0);
 }
 
-.card::before {
+.ngo-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, var(--accent-blue), var(--secondary-green));
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 
-.card:hover::before {
+.ngo-card:hover::before {
   transform: scaleX(1);
 }
 
-.card:hover {
+.ngo-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
-.card-icon {
+.ngo-card-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--accent-blue), var(--secondary-green));
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -142,47 +131,48 @@ body {
   transition: all 0.3s ease;
 }
 
-.card:hover .card-icon {
+.ngo-card:hover .ngo-card-icon {
   transform: scale(1.1) rotate(5deg);
 }
 
-.card h3 {
+.ngo-card h3 {
   font-size: 1.5rem;
-  color: #222;
+  color: var(--primary-blue);
   margin-bottom: 15px;
   font-weight: 600;
 }
 
-.card p {
-  color: #666;
+.ngo-card p {
+  color: var(--text-light);
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 20px;
 }
 
-.card-link {
-  color: #667eea;
+.ngo-card-link {
+  color: var(--accent-blue);
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: gap 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.card-link:hover {
+.ngo-card-link:hover {
   gap: 12px;
+  color: var(--primary-blue);
 }
 
-.btn-container {
+.ngo-btn-container {
   text-align: center;
   margin-top: 50px;
 }
 
-.btn-read {
+.ngo-btn-read {
   display: inline-block;
   background: #fff;
-  color: #667eea;
+  color: var(--accent-blue);
   padding: 18px 45px;
   border-radius: 50px;
   text-decoration: none;
@@ -194,7 +184,7 @@ body {
   overflow: hidden;
 }
 
-.btn-read::before {
+.ngo-btn-read::before {
   content: '';
   position: absolute;
   top: 0;
@@ -205,16 +195,17 @@ body {
   transition: left 0.5s ease;
 }
 
-.btn-read:hover::before {
+.ngo-btn-read:hover::before {
   left: 100%;
 }
 
-.btn-read:hover {
+.ngo-btn-read:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  color: var(--primary-blue);
 }
 
-.stats-section {
+.ngo-stats-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
@@ -223,7 +214,7 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.stat-item {
+.ngo-stat-item {
   text-align: center;
   color: #fff;
   opacity: 0;
@@ -231,42 +222,84 @@ body {
   transition: all 0.6s ease;
 }
 
-.stat-item.animate {
+.ngo-stat-item.animate {
   opacity: 1;
   transform: translateY(0);
 }
 
-.stat-number {
+.ngo-stat-number {
   font-size: 3.5rem;
   font-weight: 400;
   margin-bottom: 10px;
   display: block;
 }
 
-.stat-label {
+.ngo-stat-label {
   font-size: 1rem;
   opacity: 0.9;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .section-header h2 {
-    font-size: 2.2rem;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  #ngo-section {
-    padding: 60px 20px;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
+/* Animation Keyframes */
+@keyframes ngo-ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
 }
 
+@keyframes ngo-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .ngo-section .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ngo-section .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .ngo-section .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ngo-section {
+    padding: 60px 20px;
+  }
+
+  .ngo-stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .ngo-card {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ngo-section .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .ngo-stats-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .ngo-btn-read {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+  }
