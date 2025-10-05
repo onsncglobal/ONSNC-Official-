@@ -1,4 +1,4 @@
-// Homepage specific JavaScript with advanced features
+but// Homepage specific JavaScript with advanced features
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize homepage-specific features after common.js
     setTimeout(initializeHomepageFeatures, 100);
@@ -24,7 +24,7 @@ function initializeHomepageFeatures() {
         initializeAdvancedTimeline(timelineItems);
     }
 
-    // Animated statistics counter
+    // Animated statistics counter//
     const statElements = document.querySelectorAll('.stat-number');
     if (statElements.length > 0) {
         initializeAnimatedCounters(statElements);
@@ -368,3 +368,37 @@ const homepageStyles = `
 
 document.head.insertAdjacentHTML('beforeend', homepageStyles);
 
+<script>
+// Simple category filtering functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const categoryButtons = document.querySelectorAll('.category-btn');
+  const goalCards = document.querySelectorAll('.goal-card');
+  
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons
+      categoryButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+      categoryButtons.forEach(btn => btn.classList.add('bg-white', 'text-gray-700'));
+      
+      // Add active class to clicked button
+      this.classList.remove('bg-white', 'text-gray-700');
+      this.classList.add('active', 'bg-blue-600', 'text-white');
+      
+      const category = this.textContent.trim().toLowerCase().replace(' ', '-');
+      
+      // Show/hide cards based on category
+      goalCards.forEach(card => {
+        if (category === 'all-goals') {
+          card.style.display = 'block';
+        } else {
+          if (card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+});
+</script>
