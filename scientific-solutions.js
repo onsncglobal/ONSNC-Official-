@@ -1,117 +1,152 @@
-// Solutions Page Specific JavaScript
+// Scientific & Practical Solutions Page Specific JavaScript
+
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Add animation to solution cards when they come into view
-  const solutionObserverOptions = {
-    threshold: 0.1,
+  // Mobile menu toggle functionality
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+    });
+  }
+
+  // Initialize animations
+  initAnimations();
+});
+
+// Animation initialization
+function initAnimations() {
+  // Solution cards animation
+  const solutionsObserverOptions = {
+    threshold: 0.2,
     rootMargin: '0px 0px -50px 0px'
   };
-  
-  const solutionObserver = new IntersectionObserver(function(entries) {
+
+  const solutionsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
+        solutionsObserver.unobserve(entry.target);
       }
     });
-  }, solutionObserverOptions);
-  
+  }, solutionsObserverOptions);
+
   // Observe solution cards for animation
-  document.querySelectorAll('.solution-card').forEach(card => {
+  document.querySelectorAll('.solution-card').forEach((card, index) => {
     card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    solutionObserver.observe(card);
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    solutionsObserver.observe(card);
   });
-  
-  // Add staggered animation to methodology steps
-  const methodologyObserver = new IntersectionObserver(function(entries) {
+
+  // Methodology steps animation
+  const methodologyObserverOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const methodologyObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const steps = document.querySelectorAll('.methodology-step');
-        steps.forEach((step, index) => {
-          setTimeout(() => {
-            step.style.opacity = '1';
-            step.style.transform = 'translateX(0)';
-          }, index * 200);
-        });
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateX(0)';
+        methodologyObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
-  
-  const methodologySection = document.querySelector('.methodology');
-  if (methodologySection) {
-    methodologyObserver.observe(methodologySection);
-    
-    // Set initial state for animation
-    document.querySelectorAll('.methodology-step').forEach(step => {
-      step.style.opacity = '0';
-      step.style.transform = 'translateX(-20px)';
-      step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-  }
-  
-  // Add interactive features to solution cards
-  document.querySelectorAll('.solution-card').forEach(card => {
-    // Add click effect
-    card.addEventListener('click', function(e) {
-      if (!e.target.closest('.solution-link')) {
-        this.style.transform = 'translateY(-5px) scale(1.02)';
-        setTimeout(() => {
-          this.style.transform = 'translateY(-10px)';
-        }, 150);
-      }
-    });
-    
-    // Add focus state for accessibility
-    card.addEventListener('focus', function() {
-      this.style.boxShadow = '0 10px 25px rgba(0, 114, 206, 0.2)';
-    });
-    
-    card.addEventListener('blur', function() {
-      this.style.boxShadow = 'var(--card-shadow)';
-    });
+  }, methodologyObserverOptions);
+
+  // Observe methodology steps for animation
+  document.querySelectorAll('.methodology-step').forEach((step, index) => {
+    step.style.opacity = '0';
+    step.style.transform = 'translateX(-30px)';
+    step.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+    methodologyObserver.observe(step);
   });
-  
-  // Add smooth scrolling for solution links
-  document.querySelectorAll('.solution-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      
-      // In a real implementation, this would navigate to detailed solution pages
-      // For demo purposes, we'll show an alert
-      const solutionName = this.closest('.solution-card').querySelector('h3').textContent;
-      alert(`This would navigate to the detailed implementation page for: ${solutionName}`);
-    });
-  });
-  
-  // Add statistics counter animation
-  const statElements = document.querySelectorAll('.stat-number');
-  const heroStatsSection = document.querySelector('.hero-stats');
-  
-  const statsObserver = new IntersectionObserver(function(entries) {
+
+  // Case studies animation
+  const caseObserverOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const caseObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        statElements.forEach(stat => {
-          const target = parseInt(stat.textContent);
-          let current = 0;
-          const increment = target / 50;
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
-          }, 30);
-        });
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        caseObserver.unobserve(entry.target);
+      }
+    });
+  }, caseObserverOptions);
+
+  // Observe case studies for animation
+  document.querySelectorAll('.case-study').forEach((caseStudy, index) => {
+    caseStudy.style.opacity = '0';
+    caseStudy.style.transform = 'translateY(30px)';
+    caseStudy.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+    caseObserver.observe(caseStudy);
+  });
+
+  // Hero stats counter animation
+  const statsObserverOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
         statsObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
-  
-  if (heroStatsSection) {
-    statsObserver.observe(heroStatsSection);
+  }, statsObserverOptions);
+
+  // Observe stats section
+  const statsSection = document.querySelector('.hero-stats');
+  if (statsSection) {
+    statsObserver.observe(statsSection);
   }
-});
+
+  // Page load animation for hero
+  const heroSection = document.querySelector('.solutions-hero');
+  if (heroSection) {
+    heroSection.style.opacity = '0';
+    heroSection.style.transform = 'translateY(30px)';
+    heroSection.style.transition = 'opacity 1s ease, transform 1s ease';
+    
+    setTimeout(() => {
+      heroSection.style.opacity = '1';
+      heroSection.style.transform = 'translateY(0)';
+    }, 300);
+  }
+}
+
+// Counter animation function
+function animateCounters() {
+  const counters = document.querySelectorAll('.stat-number');
+  
+  counters.forEach(counter => {
+    const target = parseInt(counter.textContent);
+    let count = 0;
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60fps
+    
+    const updateCount = () => {
+      count += increment;
+      if (count < target) {
+        counter.textContent = Math.floor(count);
+        requestAnimationFrame(updateCount);
+      } else {
+        counter.textContent = target;
+      }
+    };
+    
+    updateCount();
+  });
+}
 
