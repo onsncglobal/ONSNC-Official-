@@ -1,0 +1,737 @@
+/* ONSNC 35 Goals Page Styles */
+
+/* Base & Typography */
+:root {
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Pillar Colors */
+  --equity-primary: #8b5cf6;
+  --equity-light: #ede9fe;
+  --equity-dark: #6d28d9;
+  
+  --nature-primary: #10b981;
+  --nature-light: #d1fae5;
+  --nature-dark: #047857;
+  
+  --education-primary: #3b82f6;
+  --education-light: #dbeafe;
+  --education-dark: #1e40af;
+  
+  --technology-primary: #06b6d4;
+  --technology-light: #cffafe;
+  --technology-dark: #0e7490;
+  
+  --economy-primary: #f59e0b;
+  --economy-light: #fef3c7;
+  --economy-dark: #d97706;
+  
+  --consciousness-primary: #ec4899;
+  --consciousness-light: #fce7f3;
+  --consciousness-dark: #db2777;
+  
+  --civ3-primary: #7c3aed;
+  --civ3-light: #ede9fe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--white);
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.onsnc-goals-header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.back-link {
+  color: var(--gray-600);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--gray-900);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 8px 0 4px;
+}
+
+.page-subtitle {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+}
+
+.quick-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  color: var(--gray-600);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: var(--education-light);
+  color: var(--education-dark);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  color: var(--gray-600);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin-top: 8px;
+}
+
+/* Pillars Section */
+.pillars-section {
+  padding: 80px 0;
+  background-color: var(--gray-50);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.badge-civ2 {
+  background-color: var(--education-light);
+  color: var(--education-dark);
+}
+
+.badge-civ3 {
+  background-color: var(--civ3-light);
+  color: var(--civ3-primary);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: var(--gray-600);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.pillar-card {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.pillar-equity {
+  border-color: var(--equity-light);
+}
+
+.pillar-equity:hover {
+  border-color: var(--equity-primary);
+}
+
+.pillar-nature {
+  border-color: var(--nature-light);
+}
+
+.pillar-nature:hover {
+  border-color: var(--nature-primary);
+}
+
+.pillar-education {
+  border-color: var(--education-light);
+}
+
+.pillar-education:hover {
+  border-color: var(--education-primary);
+}
+
+.pillar-technology {
+  border-color: var(--technology-light);
+}
+
+.pillar-technology:hover {
+  border-color: var(--technology-primary);
+}
+
+.pillar-economy {
+  border-color: var(--economy-light);
+}
+
+.pillar-economy:hover {
+  border-color: var(--economy-primary);
+}
+
+.pillar-consciousness {
+  border-color: var(--consciousness-light);
+}
+
+.pillar-consciousness:hover {
+  border-color: var(--consciousness-primary);
+}
+
+.pillar-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.pillar-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+}
+
+.pillar-desc {
+  color: var(--gray-600);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.pillar-count {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Civilization 2.0 Section */
+.civ2-section {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.pillar-section {
+  margin-bottom: 64px;
+}
+
+.pillar-header {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--gray-200);
+}
+
+.pillar-section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+/* Goals Grid */
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Goal Cards */
+.goal-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border-left: 4px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.goal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  opacity: 0.05;
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+}
+
+.goal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Goal Card Color Variants */
+.goal-equity {
+  border-left-color: var(--equity-primary);
+}
+
+.goal-equity::before {
+  background-color: var(--equity-primary);
+}
+
+.goal-equity .goal-link {
+  color: var(--equity-primary);
+}
+
+.goal-equity .goal-link:hover {
+  background-color: var(--equity-light);
+}
+
+.goal-nature {
+  border-left-color: var(--nature-primary);
+}
+
+.goal-nature::before {
+  background-color: var(--nature-primary);
+}
+
+.goal-nature .goal-link {
+  color: var(--nature-primary);
+}
+
+.goal-nature .goal-link:hover {
+  background-color: var(--nature-light);
+}
+
+.goal-education {
+  border-left-color: var(--education-primary);
+}
+
+.goal-education::before {
+  background-color: var(--education-primary);
+}
+
+.goal-education .goal-link {
+  color: var(--education-primary);
+}
+
+.goal-education .goal-link:hover {
+  background-color: var(--education-light);
+}
+
+.goal-technology {
+  border-left-color: var(--technology-primary);
+}
+
+.goal-technology::before {
+  background-color: var(--technology-primary);
+}
+
+.goal-technology .goal-link {
+  color: var(--technology-primary);
+}
+
+.goal-technology .goal-link:hover {
+  background-color: var(--technology-light);
+}
+
+.goal-economy {
+  border-left-color: var(--economy-primary);
+}
+
+.goal-economy::before {
+  background-color: var(--economy-primary);
+}
+
+.goal-economy .goal-link {
+  color: var(--economy-primary);
+}
+
+.goal-economy .goal-link:hover {
+  background-color: var(--economy-light);
+}
+
+.goal-consciousness {
+  border-left-color: var(--consciousness-primary);
+}
+
+.goal-consciousness::before {
+  background-color: var(--consciousness-primary);
+}
+
+.goal-consciousness .goal-link {
+  color: var(--consciousness-primary);
+}
+
+.goal-consciousness .goal-link:hover {
+  background-color: var(--consciousness-light);
+}
+
+.goal-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gray-300);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.goal-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.goal-description {
+  color: var(--gray-600);
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.goal-link {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+/* Civilization 3.0 Section */
+.civ3-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--civ3-light) 100%);
+}
+
+.civ3-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.civ3-card {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid var(--civ3-light);
+  text-align: center;
+}
+
+.civ3-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.2);
+  border-color: var(--civ3-primary);
+}
+
+.civ3-number {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--civ3-primary), #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.civ3-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.civ3-description {
+  color: var(--gray-600);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.civ3-link {
+  display: inline-block;
+  color: var(--civ3-primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  background-color: var(--civ3-light);
+}
+
+.civ3-link:hover {
+  background-color: var(--civ3-primary);
+  color: var(--white);
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 80px 0;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 16px;
+}
+
+.cta-description {
+  font-size: 1.1rem;
+  color: var(--gray-600);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-cta {
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--education-primary), var(--technology-primary));
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--civ3-primary), var(--consciousness-primary));
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+}
+
+/* Footer */
+.onsnc-footer {
+  background-color: var(--gray-900);
+  color: var(--gray-300);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .hero-stats {
+    gap: 32px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .goals-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .civ3-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-nav {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cta-title {
+    font-size: 2rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.goal-card,
+.pillar-card,
+.civ3-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
