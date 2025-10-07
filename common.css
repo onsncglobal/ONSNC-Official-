@@ -1,3 +1,49 @@
+`css
+/* =========================
+   Global Variables
+   ========================= */
+:root {
+  --primary-blue: #003366;
+  --accent-blue: #0072CE;
+  --secondary-green: #00bf72;
+  --text-dark: #212529;
+  --text-light: #6c757d;
+  --white: #ffffff;
+  --card-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  --transition: all 0.3s ease;
+}
+
+/* =========================
+   Section Base Styles
+   ========================= */
+.section {
+  padding: 80px 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--primary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
 * {
     margin: 0;
     padding: 0;
