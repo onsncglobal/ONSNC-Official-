@@ -2,8 +2,8 @@
 
 /* Hero Section */
 .inclusive-hero {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #008793 100%);
-  color: white;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+  color: #0f172a;
   text-align: center;
   padding: 120px 20px 80px;
   position: relative;
@@ -264,12 +264,11 @@
   gap: 30px;
   margin-top: 40px;
 }
-
 .case-study {
-  background: var(--white);
+  background: #f8fafc; /* light gray-white */
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
 }
