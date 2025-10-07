@@ -1,27 +1,31 @@
 /* =========================
    Implementation Pathways Hero Section
    ========================= */
+
+/* =========================
+   Hero Section
+   ========================= */
 .implementation-hero {
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-  color: #1e293b;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+  color: var(--text-dark);
   text-align: center;
   padding: 120px 20px 80px;
   position: relative;
   overflow: hidden;
-  border-bottom: 2px solid #cbd5e1;
 }
 
 .implementation-hero::before {
-  content: "";
+  content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(37,99,235,0.08), transparent 70%);
-  z-index: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+  background-size: cover;
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -30,7 +34,7 @@
   font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #2563eb, #1e40af);
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -38,10 +42,10 @@
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #334155;
-  opacity: 0.95;
+  color: var(--text-dark);
+  opacity: 0.9;
   max-width: 700px;
-  margin: 0 auto 30px;
+  margin: 0 auto 40px;
   line-height: 1.6;
 }
 
@@ -49,8 +53,8 @@
   display: flex;
   justify-content: center;
   gap: 50px;
-  margin-top: 40px;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .hero-stat {
@@ -66,80 +70,26 @@
 
 .stat-label {
   font-size: 0.9rem;
-  color: var(--text-light);
-}
-
-/* Hero Section */
-.implementation-hero {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #00746e 100%);
-  color: white;
-  text-align: center;
-  padding: 120px 20px 80px;
-  position: relative;
-  overflow: hidden;
-}
-
-.implementation-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
-  background-size: cover;
-}
-
-.hero-content h1 {
-  font-size: 3.2rem;
-  margin-bottom: 20px;
-  font-weight: 800;
-  position: relative;
-}
-
-.hero-content p {
-  font-size: 1.3rem;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  opacity: 0.9;
-  position: relative;
-}
-
-.hero-stats {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 50px;
-}
-
-.hero-stat {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
+  color: var(--text-dark);
   opacity: 0.8;
 }
 
-/* Framework Overview */
+/* =========================
+   Framework Overview
+   ========================= */
 .framework-overview {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  align-items: center;
-  margin-top: 40px;
+  align-items: start;
+  margin-top: 60px;
 }
 
 .framework-text p {
   margin-bottom: 20px;
   font-size: 1.1rem;
   color: var(--text-dark);
+  line-height: 1.6;
 }
 
 .framework-features {
@@ -151,65 +101,99 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .feature i {
   color: var(--secondary-green);
+  font-size: 1.2rem;
 }
 
-/* Pathway Timeline Visual */
+/* =========================
+   Timeline Visual
+   ========================= */
 .framework-visual {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .pathway-timeline {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
   max-width: 300px;
 }
 
 .timeline-phase {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 10px;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: var(--lite-gray);
   transition: var(--transition);
   position: relative;
 }
 
 .timeline-phase.current {
   background: linear-gradient(135deg, var(--accent-blue), var(--secondary-green));
-  color: white;
+  color: var(--white);
   transform: scale(1.05);
-}
-
-.timeline-phase.current::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid var(--accent-blue);
 }
 
 .phase-marker {
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   min-width: 80px;
 }
 
 .phase-label {
   font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 1024px) {
+  .framework-overview {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .pathway-timeline {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .implementation-hero {
+    padding: 100px 20px 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-stats {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 /* Pathways Grid */
