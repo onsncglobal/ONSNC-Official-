@@ -168,15 +168,7 @@
   }
 }
 
-/* Hero Section */
-.implementation-hero {
-  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
-  color: var(--primary-blue);
-  text-align: center;
-  padding: 120px 20px 80px;
-  position: relative;
-  overflow: hidden;
-}
+
 
 .implementation-hero::before {
   content: '';
