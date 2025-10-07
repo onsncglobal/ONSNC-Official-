@@ -1,68 +1,157 @@
- /* ================= ONSNC Foundation Projects Section Styles ================= */
-#ngo-civ2-section {
-    background-color: #ffffff;
-    padding: 80px 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ONSNC Foundation Projects Section Styles - Conflict Free */
+#onsnc-projects * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.ngo-civ2-container {
+#onsnc-projects {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.onsnc-projects-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.onsnc-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Section Header with Sky Blue Background */
-.ngo-civ2-header {
+/* Section Header with Highlight */
+.onsnc-section-header {
     text-align: center;
     margin-bottom: 60px;
-    background-color: #f0f8ff; /* Light Sky Blue */
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.08);
 }
 
-.ngo-civ2-badge {
+.onsnc-section-badge {
     display: inline-block;
-    background-color: #e1f0ff;
-    color: #0066cc;
-    padding: 8px 16px;
+    background-color: #0066cc;
+    color: white;
+    padding: 8px 20px;
     border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 20px;
-    border: 1px solid #b3d9ff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.ngo-civ2-header h2 {
-    font-size: 36px;
+.onsnc-section-title {
+    font-size: 42px;
     color: #1a365d;
     margin-bottom: 20px;
-    line-height: 1.3;
+    line-height: 1.2;
     font-weight: 700;
 }
 
-.ngo-civ2-header p {
+.onsnc-section-description {
     font-size: 18px;
     color: #4a5568;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
 }
 
-/* Cards Grid */
-.ngo-civ2-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
+/* Project Cards */
+.onsnc-project-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
 }
 
-.ngo-civ2-card {
+.onsnc-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.onsnc-card-header {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.onsnc-card-icon {
+    font-size: 36px;
+    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: #f0f8ff;
+}
+
+.onsnc-about-card .onsnc-card-icon {
+    background-color: #e6f7ff;
+    color: #0066cc;
+}
+
+.onsnc-civilization-card .onsnc-card-icon {
+    background-color: #f0e6ff;
+    color: #6f42c1;
+}
+
+.onsnc-implementation-card .onsnc-card-icon {
+    background-color: #fff2e6;
+    color: #fd7e14;
+}
+
+.onsnc-join-card .onsnc-card-icon {
+    background-color: #e6fff2;
+    color: #28a745;
+}
+
+.onsnc-collaboration-card .onsnc-card-icon {
+    background-color: #e6f9ff;
+    color: #17a2b8;
+}
+
+.onsnc-card-title {
+    font-size: 28px;
+    color: #1a365d;
+    font-weight: 700;
+}
+
+.onsnc-card-content {
+    padding: 30px;
+}
+
+.onsnc-card-text {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* Sector Grid */
+.onsnc-sector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.onsnc-sector-card {
     background-color: #f8fafc;
     border-radius: 12px;
-    padding: 30px;
+    padding: 25px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
     border: 1px solid #e2e8f0;
     display: flex;
     flex-direction: column;
@@ -71,8 +160,7 @@
     overflow: hidden;
 }
 
-/* Card Border Colors */
-.ngo-civ2-card::before {
+.onsnc-sector-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -81,175 +169,270 @@
     height: 4px;
 }
 
-.card-blue::before {
+.onsnc-sector-card[data-sector="education"]::before {
     background-color: #0066cc; /* Blue */
 }
 
-.card-green::before {
+.onsnc-sector-card[data-sector="economy"]::before {
     background-color: #28a745; /* Green */
 }
 
-.card-purple::before {
+.onsnc-sector-card[data-sector="governance"]::before {
     background-color: #6f42c1; /* Purple */
 }
 
-.card-olive::before {
-    background-color: #808000; /* Olive */
+.onsnc-sector-card[data-sector="science"]::before {
+    background-color: #fd7e14; /* Orange */
 }
 
-.card-skyblue::before {
-    background-color: #87ceeb; /* Sky Blue */
+.onsnc-sector-card[data-sector="environment"]::before {
+    background-color: #20c997; /* Teal */
 }
 
-.ngo-civ2-card:hover {
+.onsnc-sector-card[data-sector="health"]::before {
+    background-color: #e83e8c; /* Pink */
+}
+
+.onsnc-sector-card[data-sector="food"]::before {
+    background-color: #ffc107; /* Yellow */
+}
+
+.onsnc-sector-card[data-sector="sports"]::before {
+    background-color: #dc3545; /* Red */
+}
+
+.onsnc-sector-card[data-sector="social"]::before {
+    background-color: #6610f2; /* Indigo */
+}
+
+.onsnc-sector-card[data-sector="law"]::before {
+    background-color: #6c757d; /* Gray */
+}
+
+.onsnc-sector-card[data-sector="infrastructure"]::before {
+    background-color: #17a2b8; /* Cyan */
+}
+
+.onsnc-sector-card[data-sector="innovation"]::before {
+    background-color: #20c997; /* Teal */
+}
+
+.onsnc-sector-card[data-sector="communication"]::before {
+    background-color: #007bff; /* Blue */
+}
+
+.onsnc-sector-card[data-sector="spiritual"]::before {
+    background-color: #6f42c1; /* Purple */
+}
+
+.onsnc-sector-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     background-color: #ffffff;
 }
 
-.ngo-civ2-card-icon {
-    font-size: 40px;
-    margin-bottom: 20px;
+.onsnc-sector-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
 }
 
-.ngo-civ2-card h3 {
-    font-size: 22px;
+.onsnc-sector-title {
+    font-size: 20px;
     color: #1a365d;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-weight: 600;
 }
 
-.ngo-civ2-card p {
+.onsnc-sector-description {
     color: #4a5568;
     line-height: 1.6;
     margin-bottom: 20px;
     flex-grow: 1;
 }
 
-.ngo-civ2-card-link {
-    color: #0066cc;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.2s ease;
-    align-self: flex-start;
-}
-
-.ngo-civ2-card-link:hover {
-    color: #004499;
-    transform: translateX(5px);
-}
-
-/* Stats Section */
-.ngo-civ2-stats {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
-    padding: 30px;
-    background-color: #f8fafc;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-}
-
-.ngo-civ2-stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    flex: 1;
-    min-width: 150px;
-}
-
-.ngo-civ2-stat-icon {
-    font-size: 36px;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.ngo-civ2-stat-label {
-    font-weight: 600;
-    color: #4a5568;
-    font-size: 16px;
-}
-
-/* CTA Buttons */
-.ngo-civ2-btns {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.ngo-civ2-btn {
-    padding: 14px 28px;
+/* Blue Highlighted Button */
+.onsnc-btn-explore {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    text-align: center;
     display: inline-block;
-    border: 2px solid;
+    border: 2px solid #0066cc;
+    text-align: center;
+    width: 100%;
 }
 
-.ngo-btn {
-    background-color: #0066cc;
-    color: white;
-    border-color: #0066cc;
-}
-
-.civ2-btn {
-    background-color: #6f42c1; /* Purple */
-    color: white;
-    border-color: #6f42c1;
-}
-
-.ngo-civ2-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.ngo-btn:hover {
+.onsnc-btn-explore:hover {
     background-color: #004499;
-    border-color: #004499;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
 }
 
-.civ2-btn:hover {
-    background-color: #5a2d91; /* Darker Purple */
-    border-color: #5a2d91;
+/* Implementation Pathways */
+.onsnc-pathways {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.onsnc-pathway-item {
+    display: flex;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.onsnc-pathway-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.onsnc-pathway-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0066cc;
+    margin-right: 20px;
+    min-width: 50px;
+}
+
+.onsnc-pathway-title {
+    font-size: 20px;
+    color: #1a365d;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.onsnc-pathway-description {
+    color: #4a5568;
+    margin-bottom: 0;
+}
+
+/* Join Options */
+.onsnc-join-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.onsnc-join-option {
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.onsnc-join-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.onsnc-join-title {
+    font-size: 20px;
+    color: #1a365d;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.onsnc-join-description {
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.onsnc-btn-join {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid #28a745;
+}
+
+.onsnc-btn-join:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
+}
+
+/* Collaboration Stats */
+.onsnc-collaboration-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.onsnc-stat {
+    text-align: center;
+    padding: 25px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.onsnc-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.onsnc-stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #0066cc;
+    margin-bottom: 8px;
+}
+
+.onsnc-stat-label {
+    font-size: 16px;
+    color: #4a5568;
+    font-weight: 600;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .ngo-civ2-header h2 {
-        font-size: 28px;
+    .onsnc-section-title {
+        font-size: 32px;
     }
     
-    .ngo-civ2-header p {
+    .onsnc-section-description {
         font-size: 16px;
     }
     
-    .ngo-civ2-grid {
+    .onsnc-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .onsnc-card-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .onsnc-sector-grid {
         grid-template-columns: 1fr;
     }
     
-    .ngo-civ2-stats {
-        flex-direction: column;
-        gap: 20px;
+    .onsnc-pathways, .onsnc-join-options, .onsnc-collaboration-stats {
+        grid-template-columns: 1fr;
     }
     
-    .ngo-civ2-btns {
+    .onsnc-pathway-item {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
     
-    .ngo-civ2-btn {
-        width: 100%;
-        max-width: 300px;
+    .onsnc-pathway-number {
+        margin-right: 0;
+        margin-bottom: 15px;
     }
 }
-
-
-
-
