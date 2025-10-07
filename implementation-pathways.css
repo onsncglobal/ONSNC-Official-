@@ -170,6 +170,75 @@
 
 /* Hero Section */
 .implementation-hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+  color: var(--primary-blue);
+  text-align: center;
+  padding: 120px 20px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.implementation-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+  background-size: cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-green);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Hero Section */
+.implementation-hero {
   background: linear-gradient(135deg, var(--primary-blue) 0%, #00746e 100%);
   color: white;
   text-align: center;
