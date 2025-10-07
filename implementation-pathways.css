@@ -1,32 +1,27 @@
-/* Implementation Pathways Page Styles */
-
 /* =========================
-   Implementation Pathways Section
+   Implementation Pathways Hero Section
    ========================= */
-/* Hero Section */
 .implementation-hero {
-  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
-  color: Black;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: #1e293b;
   text-align: center;
   padding: 120px 20px 80px;
   position: relative;
   overflow: hidden;
+  border-bottom: 2px solid #cbd5e1;
 }
-.implementation-hero {
-  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%) !important;
-}
+
 .implementation-hero::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
-  background-size: cover;
-  z-index: 1;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(37,99,235,0.08), transparent 70%);
+  z-index: 0;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -35,7 +30,7 @@
   font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #0f172a, #2563eb); /* dark navy → blue */
+  background: linear-gradient(135deg, #2563eb, #1e40af);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -43,8 +38,8 @@
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #334155; /* calm blue-gray text */
-  opacity: 0.9;
+  color: #334155;
+  opacity: 0.95;
   max-width: 700px;
   margin: 0 auto 30px;
   line-height: 1.6;
