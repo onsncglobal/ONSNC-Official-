@@ -1325,6 +1325,25 @@ section {
   }
 }
 
+@media (max-width: 768px) {
+  .menu-toggle-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-menu {
+    right: -20px;
+    min-width: 220px;
+  }
+
+  .btn-donate {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+}
+
+
 /* ===== Additional Utility Classes ===== */
 .text-center {
   text-align: center;
