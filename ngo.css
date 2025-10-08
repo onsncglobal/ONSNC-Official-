@@ -181,6 +181,37 @@ body {
 .nav-menu li a.active {
   color: var(--primary-blue);
 }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu li a:hover {
+  color: green;
+}
+
+/ Show menu when active /
+.nav-dropdown.active .dropdown-menu {
+  display: block;
+}
+`
 
 .hamburger {
   display: none;
