@@ -74,128 +74,27 @@ body {
   padding: 15px 0;
 }
 
+/* ===== Navigation Container ===== */
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo a {
+/* ===== Desktop Navigation ===== */
+.desktop-nav {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  text-decoration: none;
-  transition: var(--transition);
+  gap: 20px;
 }
 
-.logo-icon {
-  font-size: 2rem;
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.logo-text {
-  background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 800;
-}
-
-.logo a:hover .logo-text {
-  background: linear-gradient(135deg, #004499 0%, #0066cc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Donate Button */
-.btn-donate {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 30px;
-  background: #28a745;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-  margin-left: 20px;
-}
-
-.btn-donate:hover {
-  background: #218838;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 35px;
-  align-items: center;
-}
-
-.nav-menu li a {
-  color: var(--text-dark);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
-  position: relative;
-  padding: 5px 0;
-}
-
-.nav-menu li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary-blue);
-  transition: width 0.3s ease;
-}
-
-.nav-menu li a:hover::after,
-.nav-menu li a.active::after {
-  width: 100%;
-}
-
-.nav-menu li a:hover,
-.nav-menu li a.active {
-  color: var(--primary-blue);
-}
-
-.dropdown-menu {
+.mobile-nav {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  align-items: center;
+  gap: 15px;
 }
 
-/* ===== Dropdown Menu Styles ===== */
+/* ===== Dropdown Menu ===== */
 .nav-dropdown {
   position: relative;
 }
@@ -270,47 +169,111 @@ body {
   padding-left: 30px;
 }
 
-.dropdown-menu li a::after {
+/* ===== Mobile Menu ===== */
+.mobile-menu {
   display: none;
+  list-style: none;
+  background: white;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
-/* Hide old nav-menu */
-.nav-menu {
-  display: none;
-}
-.dropdown-menu li {
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  text-decoration: none;
-  color: #333;
-}
-
-.dropdown-menu li a:hover {
-  color: green;
-}
-
-/ Show menu when active /
-.nav-dropdown.active .dropdown-menu {
+.mobile-menu.active {
   display: block;
-}
-`
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
+  max-height: 500px;
+  border-top: 1px solid #eee;
 }
 
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: var(--text-dark);
-  border-radius: 3px;
+.mobile-menu li {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.mobile-menu li a {
+  display: block;
+  padding: 15px 20px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
   transition: var(--transition);
 }
+
+.mobile-menu li a:hover {
+  background: var(--light-blue);
+  color: var(--primary-blue);
+  padding-left: 30px;
+}
+
+/* ===== Donate Buttons ===== */
+.btn-donate-mobile {
+  display: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .btn-donate-mobile {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: #28a745;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: var(--transition);
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    border-radius: 3px;
+    transition: var(--transition);
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+}
+
+
 
 /* ===== Hero Section (Professional Sky Blue) ===== */
 #ngo-hero {
@@ -1088,81 +1051,59 @@ section {
 }
 
 /* ===== Newsletter Section in Footer ===== */
+/* ===== Newsletter Section in Footer ===== */
 .newsletter-col {
   background: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 15px;
+  min-width: 100%; /* NEW: Full width on desktop */
 }
 
-.newsletter-col h4 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: var(--white);
+/* For Desktop - Make Newsletter Full Width */
+@media (min-width: 769px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .newsletter-col {
+    grid-column: 1 / -1; /* Spans all columns */
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 40px 50px;
+  }
+
+  .newsletter-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 15px;
+    align-items: end;
+  }
+
+  .newsletter-input {
+    width: 100%;
+  }
+
+  .btn-subscribe {
+    padding: 16px 40px;
+    white-space: nowrap;
+  }
 }
 
-.newsletter-col p {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
-  font-size: 0.95rem;
+/* Mobile Newsletter */
+@media (max-width: 768px) {
+  .newsletter-col {
+    padding: 25px 20px;
+    margin-top: 20px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.newsletter-input {
-  width: 100%;
-  padding: 14px 18px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  font-size: 1rem;
-  transition: var(--transition);
-}
-
-.newsletter-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.newsletter-input:focus {
-  outline: none;
-  border-color: var(--primary-purple);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.btn-subscribe {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 35px;
-  background: var(--primary-purple);
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1.05rem;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
-}
-
-.btn-subscribe:hover {
-  background: var(--dark-purple);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.5);
-}
-
-.btn-subscribe i {
-  transition: transform 0.3s ease;
-}
-
-.btn-subscribe:hover i {
-  transform: translateX(5px);
-}
 
 /* ===== Animations ===== */
 @keyframes fadeInUp {
