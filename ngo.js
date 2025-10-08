@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const navMenu = document.getElementById('nav-menu');
   const header = document.getElementById('header');
   const navLinks = document.querySelectorAll('.nav-menu a');
+  <script>
+  // Wait until page loads
+  document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.getElementById("menuToggle");
+    const navDropdown = document.querySelector(".nav-dropdown");
+
+    menuToggle.addEventListener("click", function() {
+      navDropdown.classList.toggle("active");
+    });
+  });
+
 
   // Toggle mobile menu
   if (hamburger) {
