@@ -1,0 +1,103 @@
+/* Header */
+header {
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+nav.primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  gap: 12px;
+}
+
+.site-title a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+/* Donate Button */
+.btn-donate {
+  background: green;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.btn-donate:hover {
+  background: darkgreen;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background: rgba(0,0,0,.05);
+}
+
+/* Toggle */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,.15);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+    position: absolute;
+    right: 16px;
+    left: 16px;
+    top: 100%;
+    background: var(--bg);
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    align-items: flex-start;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  .menu.open {
+    display: flex;
+    max-height: 500px;
+    opacity: 1;
+  }
+  .nav-toggle {
+    display: inline-block;
+  }
+}
