@@ -8,64 +8,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="ngo.css">
+  <link rel="stylesheet" href="ngo-header.css">
 </head>
 <body>
 
   <!-- ================= Navigation Header ================= -->
+  
   <header id="header">
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
+  <div class="container">
+    <nav id="nav" class="primary" role="navigation" aria-label="Primary">
+      
+      <!-- Logo -->
+      <div class="site-title">
         <a href="index.html">
-          <span class="logo-icon">🌍</span>
+          <img src="assets/logo.png" alt="ONSNC Foundation Logo" class="logo-img">
           <span class="logo-text">ONSNC Foundation</span>
         </a>
       </div>
-      
-      <!-- Desktop Menu -->
-      <div class="desktop-nav">
-        <a href="#donate" class="btn-donate">Donate Now</a>
-        <div class="nav-dropdown">
-          <button class="menu-toggle-btn" id="menuToggle">
-            <span>Menu</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <ul class="dropdown-menu" id="dropdownMenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#our-work">Our Work</a></li>
-            <li><a href="#campaigns">Campaigns</a></li>
-            <li><a href="#get-involved">Get Involved</a></li>
-            <li><a href="#media">Media Centre</a></li>
-            <li><a href="#resources">Resource Center</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
+
+      <!-- Donate Button (center) -->
+      <a href="#donate" class="btn-donate">Donate Now</a>
+
+      <!-- Menu Links -->
+      <div id="menu" class="menu">
+        <a href="index.html">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#our-work">Our Work</a>
+        <a href="#campaigns">Campaigns</a>
+        <a href="#get-involved">Get Involved</a>
+        <a href="#media">Media Centre</a>
+        <a href="#resources">Resource Center</a>
+        <a href="contact.html">Contact Us</a>
       </div>
 
-      <!-- Mobile Menu Toggle -->
-      <div class="mobile-nav">
-        <a href="#donate" class="btn-donate-mobile">Donate Now</a>
-        <button class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Mobile Menu Dropdown -->
-    <ul class="mobile-menu" id="mobileMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#our-work">Our Work</a></li>
-      <li><a href="#campaigns">Campaigns</a></li>
-      <li><a href="#get-involved">Get Involved</a></li>
-      <li><a href="#media">Media Centre</a></li>
-      <li><a href="#resources">Resource Center</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </nav>
+  </div>
 </header>
   
 
@@ -539,5 +520,6 @@
   </footer>
 
   <script src="ngo.js"></script>
+  <script src="ngo-header.js"></script>
 </body>
 </html>
