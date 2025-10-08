@@ -27,7 +27,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ===== Dropdown Menu Toggle =====
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const isClickInsideNav = navMenu.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+    
+    if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  });
+
+// ===== Dropdown Menu Toggle =====
 const menuToggle = document.getElementById('menuToggle');
 const dropdownMenu = document.getElementById('dropdownMenu');
 
@@ -56,17 +68,6 @@ if (menuToggle && dropdownMenu) {
   });
 }
   
-
-  // Close menu when clicking outside
-  document.addEventListener('click', function(event) {
-    const isClickInsideNav = navMenu.contains(event.target);
-    const isClickOnHamburger = hamburger.contains(event.target);
-    
-    if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-    }
-  });
 
   // ===== Sticky Header on Scroll =====
   window.addEventListener('scroll', function() {
