@@ -115,4 +115,33 @@ nav.primary {
     display: inline-block;
   }
 }
+/* Menu hidden by default */
+.menu {
+  display: none;
+  flex-direction: column; /* mobile default */
+  gap: 12px;
+}
+
+/* When open */
+.menu.open {
+  display: flex;
+}
+
+/* Toggle always visible */
+.nav-toggle {
+  display: inline-block;
+}
+
+/* Desktop override */
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    flex-direction: row;   /* horizontal layout */
+    align-items: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+}
+
 
