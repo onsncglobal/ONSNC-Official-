@@ -1871,5 +1871,11 @@ textarea.form-control {
   }
 }
 
+/* Show menu when active */
+.nav-dropdown.active .dropdown-menu {
+  display: block;
+}
+
+
 /* ===== End of CSS File ===== */
 
