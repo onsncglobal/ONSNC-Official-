@@ -1,6 +1,6 @@
 /* Header */
 header {
-  background: var(--bg);
+  background: var(--bg, #fff);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -12,13 +12,6 @@ nav.primary {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
-  gap: 12px;
-}
-
-nav.primary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 20px;
 }
 
@@ -26,7 +19,7 @@ nav.primary {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--ink);
+  color: var(--ink, #222);
   font-weight: 800;
   text-decoration: none;
 }
@@ -59,7 +52,7 @@ nav.primary {
 }
 
 .menu a {
-  color: var(--ink);
+  color: var(--ink, #222);
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 8px;
@@ -79,19 +72,23 @@ nav.primary {
   cursor: pointer;
 }
 
+/* Desktop vs Mobile visibility */
+.desktop-only { display: inline-block; }
+.mobile-only { display: none; }
+
 /* Mobile */
 @media (max-width: 900px) {
   .menu {
     display: none;
     position: absolute;
-    right: 16px;
-    left: 16px;
     top: 100%;
-    background: var(--bg);
+    left: 16px;
+    right: 16px;
+    background: var(--bg, #fff);
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 12px;
     padding: 12px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
     flex-direction: column;
     align-items: flex-start;
     transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -104,46 +101,18 @@ nav.primary {
     max-height: 500px;
     opacity: 1;
   }
-  .nav-toggle {
-    display: inline-block;
-  }
-}
 
-@media (max-width: 900px) {
-  .menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 16px;
-    right: 16px;
-    background: var(--bg);
-    border: 1px solid rgba(0,0,0,.1);
-    border-radius: 12px;
-    padding: 12px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .menu.open {
-    display: flex;
-  }
-
-  /* Donate button mobile view */
   .btn-donate {
     width: 100%;
     text-align: center;
     margin-top: 10px;
   }
 
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+
   .nav-toggle {
     display: inline-block;
   }
-}
-
-.desktop-only { display: inline-block; }
-.mobile-only { display: none; }
-
-@media (max-width: 900px) {
-  .desktop-only { display: none; }
-  .mobile-only { display: block; }
 }
 
