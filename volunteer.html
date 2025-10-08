@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as Volunteer – ONSNC Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="volunteer.css">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="volunteer-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Join Our <span class="highlight">Volunteer Network</span></h1>
+                <p class="hero-subtitle">Become part of a <strong>mission-driven community</strong> creating positive social impact through innovation, compassion, and teamwork.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">250+</span>
+                        <span class="stat-label">Active Volunteers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Cities Reached</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Lives Impacted</span>
+                    </div>
+                </div>
+                <a href="#join-form" class="cta-btn primary">Join as Volunteer</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOLUNTEER BENEFITS -->
+    <section class="volunteer-benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Join <span class="highlight">ONSNC Volunteer</span> Network?</h2>
+                <p>As a volunteer, you become part of a mission-driven community transforming rural education, environment, digital literacy, and health awareness.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <h3>Ground-Level Impact</h3>
+                    <p>Participate in real community initiatives like rural education camps, environmental cleanups, and youth awareness programs that create <strong>tangible change</strong>.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <h3>Skill Contribution</h3>
+                    <p>Use your knowledge in teaching, art, technology, or research to help communities grow sustainably while <strong>developing your own abilities</strong>.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎓</div>
+                    <h3>Certification & Recognition</h3>
+                    <p>Receive official volunteer certificates, appreciation letters, and <strong>long-term recognition</strong> for your valuable contributions to society.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOLUNTEER FORM -->
+    <section id="join-form" class="volunteer-form">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Join Our <span class="highlight">Volunteer Team</span></h2>
+                    <p>Please fill out this form to become part of the ONSNC Foundation volunteer community. Our team will contact you within 48 hours.</p>
+                </div>
+                
+                <!-- REPLACE THIS ACTION URL WITH YOUR GOOGLE FORM URL -->
+                <form id="volunteerForm" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse" method="POST" target="hidden_iframe">
+                    <div class="form-grid">
+                        <!-- REPLACE entry.XXXX WITH YOUR ACTUAL GOOGLE FORM FIELD IDs -->
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="entry.123456789" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="entry.987654321" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="entry.555555555" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">City / District <span class="required">*</span></label>
+                            <input type="text" id="city" name="entry.444444444" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="profession">Profession / Current Role</label>
+                            <input type="text" id="profession" name="entry.333333333" placeholder="Student, Teacher, Engineer, etc.">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="interest">Area of Interest <span class="required">*</span></label>
+                            <select id="interest" name="entry.222222222" required>
+                                <option value="">Select your preferred area</option>
+                                <option value="Education & Teaching">Education & Teaching</option>
+                                <option value="Environment & Sustainability">Environment & Sustainability</option>
+                                <option value="Healthcare Awareness">Healthcare Awareness</option>
+                                <option value="Digital Literacy & Technology">Digital Literacy & Technology</option>
+                                <option value="Social Media & Outreach">Social Media & Outreach</option>
+                                <option value="Research & Documentation">Research & Documentation</option>
+                                <option value="Event Management">Event Management</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="skills">Skills & Expertise</label>
+                            <textarea id="skills" name="entry.111111111" rows="3" placeholder="Teaching, Content Writing, Social Media, Graphic Design, etc."></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="availability">Availability <span class="required">*</span></label>
+                            <select id="availability" name="entry.666666666" required>
+                                <option value="">Select your availability</option>
+                                <option value="Weekends">Weekends</option>
+                                <option value="Weekdays (Evenings)">Weekdays (Evenings)</option>
+                                <option value="Flexible">Flexible</option>
+                                <option value="Remote Only">Remote Only</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Why do you want to volunteer with ONSNC Foundation? <span class="required">*</span></label>
+                            <textarea id="message" name="entry.777777777" rows="4" required placeholder="Share your motivation and what you hope to contribute..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Submit Application</span>
+                            <span class="btn-loading" style="display: none;">Processing...</span>
+                        </button>
+                        <p class="form-note">We respect your privacy. Your information will never be shared with third parties.</p>
+                    </div>
+                    
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+                
+                <!-- Hidden iframe for form submission -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script src="volunteer.js"></script>
+</body>
+</html>
