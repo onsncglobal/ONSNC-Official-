@@ -82,23 +82,60 @@
                         <!-- REPLACE entry.XXXX WITH YOUR ACTUAL GOOGLE FORM FIELD IDs -->
                         <div class="form-group">
                             <label for="name">Full Name <span class="required">*</span></label>
-                            <input type="text" id="name" name="https://docs.google.com/forms/d/e/1FAIpQLSctO0T_yzDsC3D_AF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform?usp=header" required>
+                            <input type="text" id="name" name="entry.1426316155" required>
                         </div>
+
+                        <!-- Father Name -->
+                           <label>Father Name *</label>
+                           <input type="text" name="entry.1691885715" required>
+
+                           <!-- Mother Name -->
+                           <label>Mother Name *</label>
+                          <input type="text" name="entry.1896872962" required>
                         
                         <div class="form-group">
                             <label for="email">Email Address <span class="required">*</span></label>
-                            <input type="email" id="email" name="https://docs.google.com/forms/d/e/1FAIpQLSctO0T_yzDsC3D_AF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform?usp=header" required>
+                            <input type="email" id="email" name="entry.576323556" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone">Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="https://docs.google.com/forms/d/e/1FAIpQLSctO0T_yzDsC3D_AF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform?usp=header" required>
+                            <input type="tel" id="phone" name="entry.484611145" required>
                         </div>
+
+                        <!-- Date of Birth -->
+                        <label>Date of Birth *</label><br>
+                        <input type="number" name="entry.1990836771_day" placeholder="DD" min="1" max="31" required>
+                        <input type="number" name="entry.1990836771_month" placeholder="MM" min="1" max="12" required>
+                        <input type="number" name="entry.1990836771_year" placeholder="YYYY" required>
+
+                        <!-- Gender -->
+                          <label>Gender *</label>
+                          <select name="entry.941579779" required>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                          <option value="Prefer not to say">Prefer not to say</option>
+                          <option value="Other">Other</option>
+                          </select>
                         
                         <div class="form-group">
                             <label for="city">City / District <span class="required">*</span></label>
-                            <input type="text" id="city" name="https://docs.google.com/forms/d/e/1FAIpQLSctO0T_yzDsC3D_AF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform?usp=header" required>
+                            <input type="text" id="city" name="entry.1963070475" required>
                         </div>
+
+                        <!-- State -->
+                         <label>State / Region *</label>
+                         <input type="text" name="entry.208441001" required>
+
+                        <!-- Preferred Volunteering Location -->
+                          <label>Preferred Volunteering Location *</label>
+                          <select name="entry.1197546101" required>
+                          <option value="Urban Area">Urban Area</option>
+                          <option value="Semi Urban">Semi Urban</option>
+                          <option value="Rural Area">Rural Area</option>
+                          <option value="Remote Area">Remote Area</option>
+                          <option value="Other">Other</option>
+                          </select>
                         
                         <div class="form-group full-width">
                             <label for="profession">Profession / Current Role</label>
@@ -107,7 +144,7 @@
                         
                         <div class="form-group full-width">
                             <label for="interest">Area of Interest <span class="required">*</span></label>
-                            <select id="interest" name="https://docs.google.com/forms/d/e/1FAIpQLSctO0T_yzDsC3D_AF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform?usp=header" required>
+                            <select id="interest" name="entry.32628209" required>
                                 <option value="">Select your preferred area</option>
                                 <option value="Education & Teaching">Education & Teaching</option>
                                 <option value="Environment & Sustainability">Environment & Sustainability</option>
@@ -122,12 +159,12 @@
                         
                         <div class="form-group full-width">
                             <label for="skills">Skills & Expertise</label>
-                            <textarea id="skills" name="https://docs.google.com/forms/d/e/1FAIpQLSctO0T_yzDsC3D_AF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform?usp=header" rows="3" placeholder="Teaching, Content Writing, Social Media, Graphic Design, etc."></textarea>
+                            <textarea id="skills" name="entry.1481529873" rows="3" placeholder="Teaching, Content Writing, Social Media, Graphic Design, etc."></textarea>
                         </div>
                         
                         <div class="form-group full-width">
                             <label for="availability">Availability <span class="required">*</span></label>
-                            <select id="availability" name="https://docs.google.com/forms/d/e/1FAIpQLSctO0T_yzDsC3D_AF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform?usp=header" required>
+                            <select id="availability" name="entry.1791817228" required>
                                 <option value="">Select your availability</option>
                                 <option value="Weekends">Weekends</option>
                                 <option value="Weekdays (Evenings)">Weekdays (Evenings)</option>
@@ -135,12 +172,32 @@
                                 <option value="Remote Only">Remote Only</option>
                             </select>
                         </div>
+
+                        <!-- Duration -->
+                         <label>Expected Duration of Volunteering *</label>
+                         <select name="entry.772219727" required>
+                         <option value="1–3 months">1–3 months</option>
+                         <option value="3–6 months">3–6 months</option>
+                         <option value="6–12 months">6–12 months</option>
+                         <option value="Long-term / ongoing">Long-term / ongoing</option>
+                         <option value="Other">Other</option>
+                          </select>
+
+                        <!-- Resume Upload (⚠️ Not embeddable) -->
+                        <p><strong>Resume / Portfolio Upload *</strong><br>
+                        ⚠️ File upload cannot be embedded. Please 
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSctO0TyzDsC3DAF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform" target="_blank">click here</a> to upload your resume securely.</p>
                         
                         <div class="form-group full-width">
                             <label for="message">Why do you want to volunteer with ONSNC Foundation? <span class="required">*</span></label>
-                            <textarea id="message" name="https://docs.google.com/forms/d/e/1FAIpQLSctO0T_yzDsC3D_AF1hcYWKdVBgF81lUlVK1VGtBcXN5GJ9dw/viewform?usp=header" rows="4" required placeholder="Share your motivation and what you hope to contribute..."></textarea>
+                            <textarea id="message" name="entry.104468343" rows="4" required placeholder="Share your motivation and what you hope to contribute..."></textarea>
                         </div>
                     </div>
+
+                      <!-- Additional Comments -->
+                       <label>Additional Comments / Questions *</label>
+                       <textarea name="entry.69025151" required></textarea>
+
                     
                     <div class="form-footer">
                         <button type="submit" class="submit-btn">
