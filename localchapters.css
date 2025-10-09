@@ -1,42 +1,88 @@
-body {
-  font-family: Arial, sans-serif;
-  background:#f5f7fa;
-  margin:0; padding:0;
-}
-.container {
-  max-width:700px;
-  margin:50px auto;
-  background:#fff;
-  padding:30px;
-  border-radius:10px;
-  box-shadow:0 0 15px rgba(0,0,0,0.1);
-}
-h1,h2 { text-align:center; }
-.progress-container {
-  background:#e0e0e0;
-  border-radius:20px;
-  height:10px;
-  margin:20px 0;
-}
-.progress-bar {
-  height:10px;
-  width:0;
-  background:#4caf50;
-  border-radius:20px;
-  transition: width 0.3s;
-}
-.step-indicator {
-  text-align:right;
-  margin-bottom:20px;
-  font-weight:bold;
-}
-.form-step { display:none; }
-.form-step.active { display:block; }
-label { display:block; margin:10px 0 5px; }
-input, select { width:100%; padding:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px; }
-button { padding:10px 20px; border:none; border-radius:5px; background:#4caf50; color:#fff; cursor:pointer; }
-button:hover { background:#45a049; }
-.step-btns { display:flex; justify-content:space-between; }
-.thankyou-message { display:none; text-align:center; padding:20px; }
+/* ========== LOCAL CHAPTERS PAGE BODY SECTION ========== */
 
+/* HERO SECTION */
+.local-hero {
+  background: linear-gradient(120deg, #002a6e, #0066ff);
+  color: white;
+  text-align: center;
+  padding: 120px 10%;
+}
+.local-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.local-hero p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+.btn-primary {
+  background: #00bfff;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: #007acc;
+}
 
+/* ABOUT SECTION */
+.about-local {
+  padding: 80px 10%;
+  background: #fff;
+  text-align: center;
+}
+.about-local h2 {
+  font-size: 2rem;
+  color: #002a6e;
+}
+.about-local p {
+  max-width: 800px;
+  margin: 10px auto 40px;
+  line-height: 1.7;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.benefit {
+  background: #f0f5ff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+.benefit h3 {
+  color: #0066ff;
+}
+
+/* JOIN SECTION */
+.join-section {
+  background: #eaf2ff;
+  padding: 80px 10%;
+  text-align: center;
+}
+.join-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 700px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.join-box ol {
+  text-align: left;
+  max-width: 500px;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .local-hero h1 {
+    font-size: 2.2rem;
+  }
+}
