@@ -4,86 +4,171 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONSNC Local Chapters</title>
+  <link rel="stylesheet" href="ngo-header.css">
+  <link rel="stylesheet" href="ngo-footer.css">
   <link rel="stylesheet" href="localchapters.css">
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>🌍 Join ONSNC Local Chapters</h1>
-    <p>Help establish and manage local implementation chapters in your region for grassroots community engagement.</p>
-  </header>
 
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-    <span id="progressPercent">0%</span>
-  </div>
-
-  <!-- Step 1: Survey -->
-  <section class="step-section" id="step1">
-    <h2>Step 1: Skills & Interests</h2>
-    <form id="surveyForm">
-      <label>Preferred Areas of Work:</label><br>
-      <input type="checkbox" name="area" value="Education"> Education<br>
-      <input type="checkbox" name="area" value="Health"> Health<br>
-      <input type="checkbox" name="area" value="Technology"> Technology<br>
-      <input type="checkbox" name="area" value="Environment"> Environment<br><br>
-
-      <div id="techQuestion" style="display:none;">
-        <label>Programming Languages Known:</label><br>
-        <input type="text" name="languages" placeholder="e.g., Python, Java"><br><br>
+    
+  <header id="header">
+  <div class="container">
+    <nav id="nav" class="primary" role="navigation" aria-label="Primary">
+      
+      <!-- Logo -->
+      <div class="site-title">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="ONSNC Foundation Logo" class="logo-img">
+          <span class="logo-text">ONSNC Foundation</span>
+        </a>
       </div>
 
-      <button type="button" class="btn-next" onclick="nextStep(1)">Next →</button>
-    </form>
-  </section>
+      <!-- Donate Button (center) -->
+      <a href="#donate" class="btn-donate">Donate Now</a>
 
-  <!-- Step 2: Volunteer Info -->
-  <section class="step-section" id="step2">
-    <h2>Step 2: Volunteer Information</h2>
-    <form id="volunteerForm">
-      <label>Name:</label><br>
-      <input type="text" name="name" required><br><br>
-      <label>Email:</label><br>
-      <input type="email" name="email" required><br><br>
-      <label>Contact Number:</label><br>
-      <input type="tel" name="contact" required><br><br>
-      <label>Location:</label><br>
-      <input type="text" name="location" required><br><br>
-      <button type="button" class="btn-next" onclick="nextStep(2)">Next →</button>
-    </form>
-  </section>
+      <!-- Menu Links -->
+      <div id="menu" class="menu">
+        <a href="index.html">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#our-work">Our Work</a>
+        <a href="#campaigns">Campaigns</a>
+        <a href="#get-involved">Get Involved</a>
+        <a href="#media">Media Centre</a>
+        <a href="#resources">Resource Center</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
 
-  <!-- Step 3: Chapter Proposal -->
-  <section class="step-section" id="step3">
-    <h2>Step 3: Chapter Proposal</h2>
-    <form id="proposalForm">
-      <label>Chapter Name / City:</label><br>
-      <input type="text" name="chapterName" required><br><br>
-      <label>Number of Initial Volunteers:</label><br>
-      <input type="number" name="volunteers" required><br><br>
-      <label>Chapter Goals / Short Description:</label><br>
-      <textarea name="goals" rows="4" required></textarea><br><br>
-      <label>Upload Proposal Document (optional, max 10MB):</label><br>
-      <input type="file" name="proposal" accept=".pdf,.doc,.docx"><br><br>
-      <button type="button" class="btn-next" onclick="nextStep(3)">Next →</button>
-    </form>
-  </section>
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </nav>
+  </div>
+</header>
+  
+  <div class="container">
+    <h1>Join ONSNC Local Chapters</h1>
+    <p>Help establish and manage local chapters in your region. Volunteer, submit your proposal, and contribute to grassroots community initiatives.</p>
+    
+    <!-- Step Tracker -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="step-indicator" id="step-indicator">Step 1 of 3</div>
 
-  <!-- Step 4: Resume Upload -->
-  <section class="step-section" id="step4">
-    <h2>Step 4: Upload Resume / Portfolio</h2>
-    <form id="resumeForm" enctype="multipart/form-data">
-      <input type="file" name="resume" accept=".pdf,.doc,.docx" required><br><br>
-      <button type="submit" class="btn-submit">Submit ✅</button>
-    </form>
-  </section>
+    <!-- Form Steps -->
+    <form id="chapterForm">
+      
+      <!-- Step 1: Mini Survey -->
+      <div class="form-step active" id="step-1">
+        <h2>Step 1: Quick Survey</h2>
+        <label>Which areas are you interested in?*</label>
+        <select name="interest" id="interest" required>
+          <option value="">Select...</option>
+          <option value="education">Education</option>
+          <option value="health">Health</option>
+          <option value="environment">Environment</option>
+          <option value="community">Community Development</option>
+        </select>
+        <button type="button" class="next-btn">Next</button>
+      </div>
 
-  <!-- Step 5: Thank You -->
-  <section class="step-section" id="thankyou">
-    <h2>🎉 Thank You!</h2>
-    <p>Your local chapter application has been submitted successfully. Our team will contact you soon.</p>
-  </section>
-</div>
-<script src="localchapters.js"></script>
+      <!-- Step 2: Volunteer Info + Resume -->
+      <div class="form-step" id="step-2">
+        <h2>Step 2: Volunteer Information</h2>
+        <label>Name*</label>
+        <input type="text" name="name" required>
+        <label>Email*</label>
+        <input type="email" name="email" required>
+        <label>Location*</label>
+        <input type="text" name="location" required>
+        <label>Resume / Proposal (PDF, DOCX, max 10MB)*</label>
+        <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx" required>
+        <div class="step-btns">
+          <button type="button" class="prev-btn">Previous</button>
+          <button type="button" class="next-btn">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Confirmation -->
+      <div class="form-step" id="step-3">
+        <h2>Step 3: Submit</h2>
+        <p>Review your information and submit your volunteer request.</p>
+        <div class="step-btns">
+          <button type="button" class="prev-btn">Previous</button>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </div>
+
+      <!-- Thank You Message -->
+      <div class="thankyou-message" id="thankyou-message">
+        <h2>Thank You!</h2>
+        <p>Your submission has been received. We will contact you at <strong>onsnc.global@gmail.com</strong>.</p>
+      </div>
+
+    </form>
+  </div>
+
+  
+    <!-- ================= Footer ================= -->
+  <footer id="footer">
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>🌍 ONSNC Foundation</h3>
+          <p>Building sustainable communities through innovation, research, and collaborative action.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#our-work">Our Work</a></li>
+            <li><a href="#campaigns">Campaigns</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#media">Media Centre</a></li>
+            <li><a href="#resources">Resource Center</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h4>Subscribe to Our Newsletter</h4>
+          <p>Stay updated with our latest news and initiatives</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="text" name="name" placeholder="Name" required class="newsletter-input">
+            <input type="email" name="email" placeholder="Enter Your Email" required class="newsletter-input">
+            <button type="submit" class="btn-subscribe">
+              <span>Subscribe</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ONSNC Foundation. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="ngo-header.js"></script>
+  <script src="ngo-footer.js"></script>
+  <script src="localchapters.js"></script>
 </body>
 </html>
