@@ -1,16 +1,42 @@
-body { font-family: Arial,sans-serif; margin:0; padding:0; background:#f9fafc; color:#0d1b2a; }
-.container { max-width:900px; margin:0 auto; padding:40px 20px; }
-header{text-align:center;margin-bottom:30px;}
-header h1{font-size:2.5rem;color:#007bff;margin-bottom:10px;}
-header p{font-size:1.1rem;color:#444;}
-.progress-container{position:relative;background:#e0e0e0;border-radius:10px;height:20px;margin-bottom:30px;}
-.progress-bar{background:linear-gradient(135deg,#007bff,#0056b3);height:100%;width:0;border-radius:10px;transition:0.4s;}
-#progressPercent{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-weight:bold;color:#fff;}
-.step-section{display:none;margin-bottom:30px;}
-.step-section.active{display:block;}
-input[type="text"],input[type="email"],input[type="tel"],input[type="number"],input[type="file"],textarea{width:100%;padding:10px;margin-top:5px;border-radius:6px;border:1px solid #ccc;box-sizing:border-box;}
-textarea{resize:vertical;}
-label{font-weight:bold;}
-button.btn-next,button.btn-submit{padding:12px 25px;background:linear-gradient(135deg,#007bff,#0056b3);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:bold;transition:0.3s;}
-button.btn-next:hover,button.btn-submit:hover{background:linear-gradient(135deg,#0056b3,#003d80);transform:translateY(-2px);}
-@media(max-width:768px){#progressPercent{font-size:0.8rem;}}
+body {
+  font-family: Arial, sans-serif;
+  background:#f5f7fa;
+  margin:0; padding:0;
+}
+.container {
+  max-width:700px;
+  margin:50px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+h1,h2 { text-align:center; }
+.progress-container {
+  background:#e0e0e0;
+  border-radius:20px;
+  height:10px;
+  margin:20px 0;
+}
+.progress-bar {
+  height:10px;
+  width:0;
+  background:#4caf50;
+  border-radius:20px;
+  transition: width 0.3s;
+}
+.step-indicator {
+  text-align:right;
+  margin-bottom:20px;
+  font-weight:bold;
+}
+.form-step { display:none; }
+.form-step.active { display:block; }
+label { display:block; margin:10px 0 5px; }
+input, select { width:100%; padding:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px; }
+button { padding:10px 20px; border:none; border-radius:5px; background:#4caf50; color:#fff; cursor:pointer; }
+button:hover { background:#45a049; }
+.step-btns { display:flex; justify-content:space-between; }
+.thankyou-message { display:none; text-align:center; padding:20px; }
+
+
