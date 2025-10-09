@@ -1,45 +1,69 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-  const totalSteps = 5;
-  showStep(1);
+const form = document.getElementById('chapterForm');
+const steps = document.querySelectorAll('.form-step');
+const progressBar = document.getElementById('progress-bar');
+const stepIndicator = document.getElementById('step-indicator');
+const thankyouMessage = document.getElementById('thankyou-message');
 
-  document.querySelectorAll('input[name="area"]').forEach(el=>{
-    el.addEventListener('change', ()=>{
-      document.getElementById('techQuestion').style.display = document.querySelector('input[name="area"][value="Technology"]').checked ? 'block' : 'none';
-    });
-  });
+let currentStep = 0;
 
-  window.nextStep = function(current){
-    if(current===1 && document.querySelectorAll('#surveyForm input[name="area"]:checked').length===0){ alert('Select at least one area.'); return; }
-    if(current===2 && !document.getElementById('volunteerForm').checkValidity()){ alert('Fill all volunteer info.'); return; }
-    if(current===3 && !document.getElementById('proposalForm').checkValidity()){ alert('Fill all proposal fields.'); return; }
-    showStep(current+1);
-  }
+function showStep(step){
+  steps.forEach((s,i)=>s.classList.toggle('active', i===step));
+  const progressPercent = ((step)/ (steps.length-1)) * 100;
+  progressBar.style.width = progressPercent + '%';
+  stepIndicator.textContent = `Step ${step+1} of ${steps.length-1}`;
+}
 
-  function showStep(step){
-    document.querySelectorAll('.step-section').forEach(s=>s.classList.remove('active'));
-    if(step<=4) document.getElementById('step'+step).classList.add('active');
-    else document.getElementById('thankyou').classList.add('active');
-    const percent = Math.round((step/totalSteps)*100);
-    document.getElementById('progressBar').style.width=percent+'%';
-    document.getElementById('progressPercent').innerText=percent+'%';
-  }
-
-  const resumeForm = document.getElementById('resumeForm');
-  resumeForm.addEventListener('submit', async function(e){
-    e.preventDefault();
-    const fileInput = resumeForm.querySelector('input[name="resume"]');
-    if(fileInput.files.length===0){ alert('Upload resume.'); return; }
-    const formData = new FormData();
-    formData.append('resume', fileInput.files[0]);
-    formData.append('name', document.querySelector('input[name="name"]').value);
-    formData.append('email', document.querySelector('input[name="email"]').value);
-    formData.append('location', document.querySelector('input[name="location"]').value);
-
-    try{
-      const response = await fetch('https://<YOUR_FIREBASE_FUNCTION_URL>/uploadVolunteer',{method:'POST',body:formData});
-      const result = await response.json();
-      console.log(result);
-      showStep(5);
-    }catch(err){ alert('Upload failed'); console.error(err); }
+document.querySelectorAll('.next-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    if(validateStep(currentStep)){
+      currentStep++;
+      showStep(currentStep);
+    }
   });
 });
+
+document.querySelectorAll('.prev-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    currentStep--;
+    showStep(currentStep);
+  });
+});
+
+function validateStep(step){
+  const inputs = steps[step].querySelectorAll('input, select');
+  for(let input of inputs){
+    if(!input.checkValidity()){
+      input.reportValidity();
+      return false;
+    }
+  }
+  return true;
+}
+
+// Form Submit
+form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const formData = new FormData(form);
+  
+  try{
+    const response = await fetch('https://<YOUR_BACKEND_DOMAIN>/send-email', {  // Replace with your backend URL
+      method:'POST',
+      body: formData
+    });
+    if(response.ok){
+      steps.forEach(s=>s.style.display='none');
+      thankyouMessage.style.display='block';
+      progressBar.style.width='100%';
+      stepIndicator.textContent='Completed';
+    }else{
+      alert('Submission failed. Please try again.');
+    }
+  }catch(err){
+    console.error(err);
+    alert('Submission failed. Please try again.');
+  }
+});
+
+showStep(currentStep);
+
+
