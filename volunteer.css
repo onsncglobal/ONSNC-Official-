@@ -336,6 +336,53 @@ textarea {
     display: block;
 }
 
+.thank-you-message {
+  text-align: center;
+  background: #f9fafc;
+  padding: 40px 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 40px auto;
+  border: 1px solid #e0e6f0;
+}
+
+.thank-you-message h3 {
+  color: #007bff;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.thank-you-message p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.btn-upload {
+  display: inline-block;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-upload:hover {
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  transform: translateY(-2px);
+}
+
+.thank-you-message .note {
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+
 /* RESPONSIVE STYLES */
 @media (max-width: 992px) {
     .hero-content h1 {
