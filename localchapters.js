@@ -66,4 +66,26 @@ form.addEventListener('submit', async (e)=>{
 
 showStep(currentStep);
 
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ Local Chapters page initialized for ONSNC Foundation");
+});
+
+function showSuccessPopup() {
+  const popup = document.getElementById("successPopup");
+  popup.classList.add("active");
+
+  // Auto redirect after 4 seconds
+  setTimeout(() => {
+    window.location.href = "thank-you.html";
+  }, 4000);
+}
+
+// Example: After successful Google Form or Email submission
+document.getElementById("chapterForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // your submission logic (e.g., email or form link)
+  // on success:
+  showSuccessPopup();
+});
 
