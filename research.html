@@ -3,73 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join Research Team | ONSNC</title>
+<title>Research & Development | ONSNC</title>
 <link rel="stylesheet" href="research.css">
 </head>
 <body>
 
-  <!-- 🌐 HERO SECTION -->
-  <header class="research-hero">
-    <div class="hero-content">
-      <h1>Research & Development</h1>
-      <p>Collaborate with us on research projects, data analysis, and developing innovative solutions for community challenges.</p>
-      <a href="#apply" class="btn-primary">Join Research Team →</a>
+<!-- HERO SECTION -->
+<section class="local-hero">
+  <h1>Research & Development Team</h1>
+  <p>Collaborate with us on research projects, data analysis, and innovative solutions for community challenges.</p>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-local">
+  <h2>Why Join the R&D Team?</h2>
+  <div class="benefits-grid">
+    <div class="benefit">
+      <h3>Impactful Projects</h3>
+      <p>Work on initiatives that shape the future of our communities and the planet.</p>
     </div>
-  </header>
-
-  <!-- 🔬 ABOUT SECTION -->
-  <section class="research-about">
-    <h2>Our Research Mission</h2>
-    <p>ONSNC Foundation’s R&D division focuses on integrating scientific innovation with social development. We bridge grassroots data with futuristic research to design evidence-based, scalable models for societal transformation.</p>
-
-    <div class="research-pillars">
-      <div class="pillar">
-        <h3>🧠 Scientific Research</h3>
-        <p>Promoting scientific thinking, data-driven solutions, and innovation in community systems.</p>
-      </div>
-      <div class="pillar">
-        <h3>🌍 Sustainable Development</h3>
-        <p>Aligning local innovations with Civilization 2.0 for an equitable and eco-conscious world.</p>
-      </div>
-      <div class="pillar">
-        <h3>🤝 Collaborative Innovation</h3>
-        <p>Connecting experts, students, and innovators to co-create impactful research outcomes.</p>
-      </div>
+    <div class="benefit">
+      <h3>Skill Development</h3>
+      <p>Enhance your research, analytical, and technical skills while contributing to real-world solutions.</p>
     </div>
-  </section>
-
-  <!-- 📊 PROJECT SHOWCASE -->
-  <section class="research-projects">
-    <h2>Ongoing Research Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Universal Life Certificate</h3>
-        <p>Creating a digital ecosystem for lifelong education and skills recognition.</p>
-      </div>
-      <div class="project-card">
-        <h3>Village Data Intelligence</h3>
-        <p>Data mapping of rural communities for AI-based sustainable models.</p>
-      </div>
-      <div class="project-card">
-        <h3>Health & Nutrition Research</h3>
-        <p>Community health data analysis for better wellness solutions.</p>
-      </div>
+    <div class="benefit">
+      <h3>Global Collaboration</h3>
+      <p>Work alongside experts, innovators, and volunteers across regions.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 📩 JOIN SECTION WITH GOOGLE FORM -->
-  <section id="apply" class="research-join">
-    <h2>Join Our Research Team</h2>
-    <p>Fill the form below to apply for research collaboration or internship opportunities.</p>
-    
-    <div class="form-container">
-      <!-- 🔗 Replace this iframe link with your actual Google Form embed URL -->
-      <iframe src="https://forms.gle/bFqjouexL9oArGzk7"
-              width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<!-- GOOGLE FORM SECTION -->
+<section class="join-section">
+  <h2>Apply Now</h2>
+  <p>Fill the form below. After submission, send your resume to <strong>onsnc.global@gmail.com</strong>.</p>
+  
+  <div class="form-container">
+    <iframe src="https://forms.gle/gG9W5WstsSn9xwiV9" width="100%" height="1000" frameborder="0">Loading…</iframe>
+  </div>
+</section>
+
+<!-- SUBMISSION POPUP -->
+<div id="successPopup" class="popup-overlay">
+  <div class="popup-box">
+    <div class="checkmark">
+      <div class="checkmark-circle"></div>
+      <div class="checkmark-stem"></div>
+      <div class="checkmark-kick"></div>
     </div>
-  </section>
-
+    <h2>Thank You!</h2>
+    <p>Your application has been successfully submitted.<br>
+       Please email your resume to <strong>onsnc.global@gmail.com</strong> for review.</p>
+    <button id="closePopup" class="btn-primary">Close</button>
+  </div>
+</div>
 
 <script src="research.js"></script>
 </body>
 </html>
+
