@@ -1,0 +1,80 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9fafc;
+  color: #0d1b2a;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 { font-size: 2.2rem; color: #007bff; margin-bottom: 10px; }
+header p { font-size: 1rem; color: #444; }
+
+.step-tracker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.step {
+  flex: 1;
+  padding: 10px;
+  background: #e0e0e0;
+  color: #444;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.step:last-child { margin-right: 0; }
+
+.step.active { background: #007bff; color: #fff; }
+
+.step-section { display: none; margin-bottom: 30px; }
+
+.step-section.active { display: block; }
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+label { font-weight: bold; }
+
+button.btn-next, button.btn-submit {
+  padding: 12px 25px;
+  background: linear-gradient(135deg,#007bff,#0056b3);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+button.btn-next:hover, button.btn-submit:hover {
+  background: linear-gradient(135deg,#0056b3,#003d80);
+  transform: translateY(-2px);
+}
+
+@media(max-width:768px){
+  .step-tracker { flex-direction: column; }
+  .step { margin-bottom: 10px; }
+  .step:last-child { margin-bottom: 0; }
+}
+

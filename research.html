@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Research Team | ONSNC</title>
+<link rel="stylesheet" href="research.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>🔬 Join ONSNC Research & Development Team</h1>
+    <p>Collaborate with us on meaningful research projects, data analysis, and innovative solutions to tackle community challenges.</p>
+  </header>
+
+  <!-- Step Tracker -->
+  <div class="step-tracker">
+    <div class="step active">1. Survey</div>
+    <div class="step">2. Volunteer Form</div>
+    <div class="step">3. Resume Upload</div>
+  </div>
+
+  <!-- Step 1: Mini Survey -->
+  <section class="step-section" id="step1">
+    <h2>Step 1: Skills & Interests</h2>
+    <form id="surveyForm">
+      <label>Research Areas:</label><br>
+      <input type="checkbox" name="area" value="Data Analysis"> Data Analysis<br>
+      <input type="checkbox" name="area" value="Field Research"> Field Research<br>
+      <input type="checkbox" name="area" value="Innovation Projects"> Innovation Projects<br><br>
+
+      <label>Tools / Skills:</label><br>
+      <input type="checkbox" name="skill" value="Excel"> Excel<br>
+      <input type="checkbox" name="skill" value="Python"> Python<br>
+      <input type="checkbox" name="skill" value="GIS"> GIS<br><br>
+
+      <button type="button" class="btn-next" onclick="nextStep(1)">Next →</button>
+    </form>
+  </section>
+
+  <!-- Step 2: Volunteer Form -->
+  <section class="step-section" id="step2">
+    <h2>Step 2: Volunteer Information</h2>
+    <form id="volunteerForm">
+      <label>Name:</label><br>
+      <input type="text" name="name" required><br><br>
+
+      <label>Email:</label><br>
+      <input type="email" name="email" required><br><br>
+
+      <label>Contact Number:</label><br>
+      <input type="tel" name="contact" required><br><br>
+
+      <label>Location:</label><br>
+      <input type="text" name="location" required><br><br>
+
+      <button type="button" class="btn-next" onclick="nextStep(2)">Next →</button>
+    </form>
+  </section>
+
+  <!-- Step 3: Resume Upload -->
+  <section class="step-section" id="step3">
+    <h2>Step 3: Upload Resume / Portfolio</h2>
+    <form id="resumeForm" enctype="multipart/form-data">
+      <input type="file" name="resume" accept=".pdf,.doc,.docx" required><br><br>
+      <button type="submit" class="btn-submit">Submit ✅</button>
+    </form>
+  </section>
+
+  <!-- Thank You Message -->
+  <section class="step-section" id="thankyou">
+    <h2>🎉 Thank You!</h2>
+    <p>Your application has been submitted successfully. Our team will contact you soon.</p>
+  </section>
+</div>
+
+<script src="research.js"></script>
+</body>
+</html>
