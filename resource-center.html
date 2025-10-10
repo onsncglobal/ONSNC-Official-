@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resource Center | ONSNC Foundation</title>
+<link rel="stylesheet" href="resource-center.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+
+<header class="rc-hero">
+  <h1>Resource Center Submission</h1>
+  <p>Submit your research papers, guides, or videos to enrich our Resource Center.</p>
+</header>
+
+<section class="rc-stepper">
+  <div class="step" id="step1">
+    <h2>Step 1: Resource Details</h2>
+    <label>Resource Type:</label>
+    <select id="resourceType" required>
+      <option value="">Select type</option>
+      <option value="research">Research Paper</option>
+      <option value="guide">Guide</option>
+      <option value="video">Video</option>
+    </select>
+    <label>Title:</label>
+    <input type="text" id="title" placeholder="Resource Title" required>
+    <label>Author / Contributor:</label>
+    <input type="text" id="author" placeholder="Name(s)" required>
+    <button class="btn-next">Next →</button>
+  </div>
+
+  <div class="step" id="step2">
+    <h2>Step 2: Upload File</h2>
+    <p>Upload PDF or DOC (max 10 MB)</p>
+    <input type="file" id="fileInput" accept=".pdf,.doc,.docx" required>
+    <button class="btn-prev">← Previous</button>
+    <button class="btn-next">Next →</button>
+  </div>
+
+  <div class="step" id="step3">
+    <h2>Step 3: Confirm & Submit</h2>
+    <p>Click submit to send your resource to ONSNC Foundation.</p>
+    <button class="btn-prev">← Previous</button>
+    <button id="submitBtn">Submit</button>
+    <p>Or submit via Google Form: <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank">Click Here</a></p>
+  </div>
+
+  <div class="stepper-bar">
+    <div class="progress"></div>
+  </div>
+</section>
+
+<!-- Submission Success Popup -->
+<div id="successPopup" class="popup-overlay">
+  <div class="popup-box">
+    <h2>Submission Successful!</h2>
+    <p>Your resource has been received. Thank you for contributing!</p>
+  </div>
+</div>
+
+<footer class="rc-footer">
+  <p>ONSNC Foundation | Contact: onsnc.global@gmail.com</p>
+</footer>
+
+<script src="resource-center.js"></script>
+</body>
+</html>

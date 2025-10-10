@@ -1,0 +1,66 @@
+/* MEDIA CENTER SECTION */
+.media-center {
+  background: #f5f7ff;
+  padding: 80px 10%;
+  text-align: center;
+}
+.media-center h2 {
+  font-size: 2.5rem;
+  color: #002a6e;
+  margin-bottom: 15px;
+}
+.media-center p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #444;
+}
+.mc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.mc-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+.mc-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.mc-card h3 {
+  color: #0066ff;
+  margin-bottom: 10px;
+}
+.mc-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+.mc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+.btn-primary {
+  background: #00bfff;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: #007acc;
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+  .media-center h2{ font-size:2rem; }
+  .mc-grid{ gap:20px; }
+}
+

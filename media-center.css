@@ -1,0 +1,26 @@
+body { font-family:'Poppins',sans-serif; margin:0; background:#f9f9fb; color:#111; }
+.mc-hero { background:linear-gradient(120deg,#240046,#9d4edd); color:white; text-align:center; padding:100px 20px; }
+.mc-hero h1{ font-size:2.8rem; margin-bottom:10px; }
+.mc-hero p{ font-size:1.1rem; opacity:0.9; max-width:700px; margin:0 auto 20px; }
+.btn-primary { background:#5a189a; color:white; padding:12px 30px; border-radius:50px; text-decoration:none; font-weight:600; transition:0.3s; }
+.btn-primary:hover { background:#7b2cbf; }
+
+.mc-categories { padding:60px 10%; text-align:center; }
+.category-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:30px; }
+.category-card { background:white; padding:25px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; }
+.category-card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
+
+.mc-submission { max-width:600px; margin:50px auto; background:white; padding:30px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+.step { display:none; }
+.step.active { display:block; }
+.step h3 { margin-bottom:15px; color:#240046; }
+.step input, .step select { width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; margin-bottom:15px; }
+.btn-next, .btn-prev, #mcSubmitBtn { margin:10px 5px 0; padding:10px 25px; border:none; border-radius:50px; background:linear-gradient(135deg,#5a189a,#7b2cbf); color:white; cursor:pointer; font-weight:600; transition:0.3s; }
+.btn-next:hover, .btn-prev:hover, #mcSubmitBtn:hover { background:linear-gradient(135deg,#7b2cbf,#9d4edd); }
+
+.stepper-bar { width:100%; background:#eee; height:8px; border-radius:4px; margin-top:20px; }
+.progress { width:0%; height:100%; background:#7b2cbf; border-radius:4px; transition:0.3s; }
+
+.popup-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; }
+.popup-box { background:white; max-width:400px; margin:15% auto; padding:30px; border-radius:15px; text-align:center; }
+

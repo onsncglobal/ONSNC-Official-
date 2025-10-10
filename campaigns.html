@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaigns | ONSNC Foundation</title>
+  <link rel="stylesheet" href="campaigns.css">
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Our Campaigns – Drive Change with Us</h1>
+  <p>Participate in ONSNC Foundation campaigns and create meaningful community impact.</p>
+</header>
+
+<!-- CAMPAIGN GRID -->
+<section class="campaign-grid">
+  <div class="campaign-card" data-campaign="Clean Water Initiative">
+    <img src="campaign1.jpg" alt="Clean Water Initiative">
+    <h2>Clean Water Initiative</h2>
+    <p>Providing safe drinking water to rural communities in Assam.</p>
+    <button class="btn-cta open-modal">Join</button>
+  </div>
+
+  <div class="campaign-card" data-campaign="Tree Plantation Drive">
+    <img src="campaign2.jpg" alt="Tree Plantation Drive">
+    <h2>Tree Plantation Drive</h2>
+    <p>Planted 5000+ trees to restore local forests and promote biodiversity.</p>
+    <button class="btn-cta open-modal">Join</button>
+  </div>
+
+  <div class="campaign-card" data-campaign="Skill Development Program">
+    <img src="campaign3.jpg" alt="Skill Development Program">
+    <h2>Skill Development Program</h2>
+    <p>Upcoming training sessions for youth in digital skills and entrepreneurship.</p>
+    <button class="btn-cta open-modal">Join</button>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="campaignModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle"></h2>
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+      <div id="progressBar"></div>
+    </div>
+
+    <form id="campaignForm">
+      <!-- Step 1: Survey -->
+      <div class="step step-1">
+        <p>What skills or interests do you want to contribute?</p>
+        <label><input type="checkbox" name="skill" value="Design"> Design</label><br>
+        <label><input type="checkbox" name="skill" value="Technology"> Technology</label><br>
+        <label><input type="checkbox" name="skill" value="Marketing"> Marketing</label><br>
+        <label><input type="checkbox" name="skill" value="Legal"> Legal</label><br>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Step 2: Personal Info -->
+      <div class="step step-2">
+        <label>Name:<input type="text" name="name" required></label><br>
+        <label>Email:<input type="email" name="email" required></label><br>
+        <label>Location:<input type="text" name="location" required></label><br>
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Step 3: Email / Google Form -->
+      <div class="step step-3">
+        <p>Click the button below to open your email client and submit your participation. Attach your resume/proposal if any.</p>
+        <button type="button" id="emailSubmit" class="btn-cta">Send via Email</button>
+
+        <p style="margin:15px 0; font-weight:500;">Or submit via Google Form if you cannot use email:</p>
+        <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn-cta">Submit via Google Form</a>
+
+        <button type="button" class="prev-btn">Previous</button>
+      </div>
+
+      <!-- Step 4: Thank You -->
+      <div class="step step-4">
+        <h3>Thank You!</h3>
+        <p>Your participation info is ready. Please send the email to finalize your submission.</p>
+        <button type="button" class="close-btn">Close</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>ONSNC Foundation | Contact: onsnc.global@gmail.com</p>
+</footer>
+
+<script src="campaigns.js"></script>
+</body>
+</html>

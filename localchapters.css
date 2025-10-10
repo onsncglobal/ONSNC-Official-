@@ -1,0 +1,138 @@
+/* Import shared font and reset from common.css */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: #111;
+  background: #f9fbff;
+}
+
+/* NAVBAR (consistent with homepage) */
+.onsnc-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #0a0e2a;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.onsnc-navbar .logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.onsnc-navbar .logo span {
+  color: #00bfff;
+}
+.onsnc-navbar nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+.onsnc-navbar nav a:hover,
+.onsnc-navbar nav a.active {
+  color: #00bfff;
+}
+
+/* HERO SECTION */
+.local-hero {
+  background: linear-gradient(120deg, #002a6e, #0066ff);
+  color: white;
+  text-align: center;
+  padding: 120px 10%;
+}
+.local-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.local-hero p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+.btn-primary {
+  background: #00bfff;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: #007acc;
+}
+
+/* ABOUT SECTION */
+.about-local {
+  padding: 80px 10%;
+  background: #fff;
+  text-align: center;
+}
+.about-local h2 {
+  font-size: 2rem;
+  color: #002a6e;
+}
+.about-local p {
+  max-width: 800px;
+  margin: 10px auto 40px;
+  line-height: 1.7;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.benefit {
+  background: #f0f5ff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+.benefit h3 {
+  color: #0066ff;
+}
+
+/* JOIN SECTION */
+.join-section {
+  background: #eaf2ff;
+  padding: 80px 10%;
+  text-align: center;
+}
+.join-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 700px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.join-box ol {
+  text-align: left;
+  max-width: 500px;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.onsnc-footer {
+  background: #0a0e2a;
+  color: #ccc;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 0.9rem;
+}
+.onsnc-footer small {
+  color: #00bfff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .local-hero h1 { font-size: 2.2rem; }
+  .onsnc-navbar { flex-direction: column; text-align: center; }
+  .onsnc-navbar nav { margin-top: 10px; }
+}
+

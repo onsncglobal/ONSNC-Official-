@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Center | ONSNC Foundation</title>
+<link rel="stylesheet" href="media-center.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+
+<header class="mc-hero">
+  <h1>ONSNC Media Center</h1>
+  <p>Explore news, articles, videos, and publications from our foundation.</p>
+  <a href="#submissionForm" class="btn-primary">Submit Media</a>
+</header>
+
+<section class="mc-categories">
+  <h2>Media Categories</h2>
+  <div class="category-grid">
+    <div class="category-card">
+      <h3>News & Updates</h3>
+      <p>Latest announcements and press releases.</p>
+    </div>
+    <div class="category-card">
+      <h3>Articles & Research</h3>
+      <p>Research papers and insightful articles.</p>
+    </div>
+    <div class="category-card">
+      <h3>Videos & Multimedia</h3>
+      <p>Watch our events, talks, and interviews.</p>
+    </div>
+    <div class="category-card">
+      <h3>Downloadable Resources</h3>
+      <p>PDFs, guides, and brochures for reference.</p>
+    </div>
+  </div>
+</section>
+
+<section id="submissionForm" class="mc-submission">
+  <h2>Submit Your Media</h2>
+  <div class="step" id="mcStep1">
+    <h3>Step 1: Media Type</h3>
+    <select id="mediaType" required>
+      <option value="">Select Type</option>
+      <option value="news">News</option>
+      <option value="article">Article / Research</option>
+      <option value="video">Video</option>
+      <option value="resource">Resource</option>
+    </select>
+    <button class="btn-next">Next →</button>
+  </div>
+
+  <div class="step" id="mcStep2">
+    <h3>Step 2: Media Details</h3>
+    <input type="text" id="mcTitle" placeholder="Title" required>
+    <input type="text" id="mcAuthor" placeholder="Author / Contributor" required>
+    <input type="date" id="mcDate" required>
+    <button class="btn-prev">← Previous</button>
+    <button class="btn-next">Next →</button>
+  </div>
+
+  <div class="step" id="mcStep3">
+    <h3>Step 3: Upload / Submit</h3>
+    <input type="file" id="mcFile" accept=".pdf,.doc,.docx,.mp4,.jpg,.png">
+    <p>Or provide link to video/resource</p>
+    <input type="url" id="mcLink" placeholder="Resource Link">
+    <button class="btn-prev">← Previous</button>
+    <button id="mcSubmitBtn">Submit</button>
+    <p>Fallback: <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank">Submit via Google Form</a></p>
+  </div>
+
+  <div class="stepper-bar">
+    <div class="progress"></div>
+  </div>
+</section>
+
+<div id="mcSuccessPopup" class="popup-overlay">
+  <div class="popup-box">
+    <h2>Submission Successful!</h2>
+    <p>Your media has been received. Thank you!</p>
+  </div>
+</div>
+
+<footer class="mc-footer">
+  <p>ONSNC Foundation | Contact: onsnc.global@gmail.com</p>
+</footer>
+
+<script src="media-center.js"></script>
+</body>
+</html>

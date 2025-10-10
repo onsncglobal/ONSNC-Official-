@@ -1,0 +1,20 @@
+body { font-family:'Poppins',sans-serif; margin:0; background:#f9f9fb; color:#111; }
+.rc-hero { background:linear-gradient(135deg,#240046,#5a189a); color:white; text-align:center; padding:80px 20px; }
+.rc-hero h1{ font-size:2.5rem; margin-bottom:10px; }
+.rc-hero p{ font-size:1.1rem; opacity:0.9; max-width:700px; margin:0 auto; }
+
+.rc-stepper { max-width:600px; margin:40px auto; background:white; padding:30px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+.step { display:none; }
+.step.active { display:block; }
+.step h2{ color:#240046; margin-bottom:15px; }
+.step label{ display:block; margin:15px 0 5px; font-weight:500; }
+.step input, .step select{ width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; }
+
+.btn-next, .btn-prev, #submitBtn { margin:10px 5px 0; padding:10px 25px; border:none; border-radius:50px; background:linear-gradient(135deg,#5a189a,#7b2cbf); color:white; cursor:pointer; font-weight:600; transition:0.3s; }
+.btn-next:hover, .btn-prev:hover, #submitBtn:hover { background:linear-gradient(135deg,#7b2cbf,#9d4edd); }
+
+.stepper-bar { width:100%; background:#eee; height:8px; border-radius:4px; margin-top:20px; }
+.progress { width:0%; height:100%; background:#7b2cbf; border-radius:4px; transition:0.3s; }
+
+.popup-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; }
+.popup-box { background:white; max-width:400px; margin:15% auto; padding:30px; border-radius:15px; text-align:center; }
