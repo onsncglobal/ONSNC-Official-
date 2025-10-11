@@ -1,0 +1,128 @@
+/* === Universal Nexus Section === */
+.nexus-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
+  padding: 80px 20px;
+}
+
+.nexus-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nexus-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.nexus-lead {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.05rem;
+}
+
+.nexus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.nexus-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.nexus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.nexus-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.nexus-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.nexus-card-desc {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.nexus-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nexus-link:hover {
+  text-decoration: underline;
+}
+
+.nexus-cta {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nexus-btn {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nexus-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.nexus-btn.alt {
+  background-color: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.nexus-btn.alt:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* Card entry fade */
+.nexus-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.nexus-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .nexus-header h2 {
+    font-size: 1.8rem;
+  }
+  .nexus-lead {
+    font-size: 0.95rem;
+  }
+}
