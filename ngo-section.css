@@ -1,0 +1,170 @@
+/* ================= NGO Section ================= */
+#ngo-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.ngo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ngo-section-badge {
+  display: inline-block;
+  background-color: #2563eb1a;
+  color: #2563eb;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.ngo-section-header h2 {
+  font-size: 2.2rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ngo-section-header p {
+  color: #555;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.ngo-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.ngo-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.ngo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.ngo-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.ngo-card h3 {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.ngo-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ngo-card p strong {
+  color: #111827;
+}
+
+.ngo-card-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ngo-card-link:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+
+.ngo-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.ngo-card.ngo-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stats Section */
+.ngo-stats-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.ngo-stat-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px 30px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.ngo-stat-item:hover {
+  transform: translateY(-3px);
+}
+
+.ngo-stat-number {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.ngo-stat-label {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Explore Button */
+.ngo-btn-container {
+  margin-top: 10px;
+}
+
+.ngo-btn-read {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.ngo-btn-read:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .ngo-section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .ngo-section-header p {
+    font-size: 0.95rem;
+  }
+}
+
