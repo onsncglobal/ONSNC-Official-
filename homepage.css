@@ -529,6 +529,14 @@
     line-height: 1.7;
 }
 
+.section-subtitle {
+    background: linear-gradient(120deg, #e0f0ff 0%, #ffffff 100%);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+
 /* Cards Grid */
 .overview-cards {
     display: grid;
