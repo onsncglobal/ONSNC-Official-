@@ -492,7 +492,8 @@
     background: #157347;
 }
 
-/* Civilization 2.0 Overview Section */
+
+/* Civilization 3.0 Overview Section */
 .civilization-overview {
     padding: 100px 0;
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
@@ -517,7 +518,7 @@
     font-size: 2.8rem;
     font-weight: 800;
     margin-bottom: 20px;
-    color: #003366;
+    color: #003366; /* Bold Blue */
     line-height: 1.2;
 }
 
@@ -527,15 +528,11 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.7;
-}
-
-.section-subtitle {
     background: linear-gradient(120deg, #e0f0ff 0%, #ffffff 100%);
     display: inline-block;
     padding: 6px 12px;
     border-radius: 8px;
 }
-
 
 /* Cards Grid */
 .overview-cards {
@@ -599,7 +596,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #003366;
+    color: #003366; /* Bold Blue */
     line-height: 1.3;
 }
 
@@ -653,6 +650,37 @@
 .card-link:hover i {
     transform: translateX(5px);
 }
+
+/* Floating elements (optional background design) */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.float-element {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 114, 206, 0.05);
+    border-radius: 50%;
+    animation: floatAnimation 10s infinite ease-in-out;
+}
+
+.float-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.float-element:nth-child(2) { top: 50%; left: 70%; animation-delay: 3s; }
+.float-element:nth-child(3) { top: 80%; left: 40%; animation-delay: 5s; }
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+
 
 /* Floating Elements */
 .floating-elements {
