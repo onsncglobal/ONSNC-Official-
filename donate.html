@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Now - ONSNC Foundation</title>
+  <meta name="description" content="Support ONSNC Foundation's Civilization 2.0 initiatives - Empowering communities through education, technology, and sustainable development">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="donate.css">
+</head>
+<body>
+
+  <!-- ================= Navigation Header ================= -->
+  <header id="header">
+    <div class="container">
+      <nav class="primary">
+        <div class="site-title">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="ONSNC Foundation Logo" class="logo-img">
+            <span class="logo-text">ONSNC Foundation</span>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="ngo.html">Our Work</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= Hero Section ================= -->
+  <section class="donate-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">🌍 Make an Impact</span>
+        <h1>Give Every Child a Chance to Learn and Dream</h1>
+        <p class="hero-description">Education is the foundation for a secure, dignified, and sustainable life. Through ONSNC Foundation's Civilization 2.0 initiatives, we empower children in rural, tribal, and underprivileged communities with knowledge, skills, and holistic growth opportunities.</p>
+        <a href="#donate-form" class="btn-hero">Donate Now →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Impact Stats ================= -->
+  <section class="impact-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <h3>Projects</h3>
+          <p class="stat-number">Launching</p>
+          <span class="stat-label">Community Initiatives</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌱</div>
+          <h3>Communities</h3>
+          <p class="stat-number">Targeted</p>
+          <span class="stat-label">Rural & Tribal Areas</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💡</div>
+          <h3>Innovation</h3>
+          <p class="stat-number">Driven</p>
+          <span class="stat-label">Technology & Research</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🤝</div>
+          <h3>Volunteers</h3>
+          <p class="stat-number">Growing</p>
+          <span class="stat-label">Network Building</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Donation Form Section ================= -->
+  <section id="donate-form" class="donation-form-section">
+    <div class="container">
+      <div class="form-layout">
+        
+        <!-- Form Column -->
+        <div class="form-wrapper">
+          <div class="form-header">
+            <h2>Support the Cause</h2>
+            <p>Make a difference in a child's life today. Select an amount or enter your custom donation.</p>
+          </div>
+
+          <form id="donateForm" class="donate-form">
+            <!-- Donation Amount Options -->
+            <div class="form-section">
+              <label class="form-label">Select Donation Amount</label>
+              <div class="donation-options">
+                <label class="amount-option">
+                  <input type="radio" name="amount" value="1500">
+                  <span class="amount-btn">₹1,500</span>
+                </label>
+                <label class="amount-option">
+                  <input type="radio" name="amount" value="3000">
+                  <span class="amount-btn">₹3,000</span>
+                </label>
+                <label class="amount-option">
+                  <input type="radio" name="amount" value="6000">
+                  <span class="amount-btn">₹6,000</span>
+                </label>
+                <label class="amount-option">
+                  <input type="radio" name="amount" value="12000">
+                  <span class="amount-btn">₹12,000</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Custom Amount -->
+            <div class="form-section">
+              <label class="form-label">Or Enter Custom Amount</label>
+              <input type="number" name="customAmount" class="form-input" placeholder="Enter amount in ₹">
+            </div>
+
+            <!-- Personal Details -->
+            <div class="form-section">
+              <label class="form-label">Personal Details</label>
+              <input type="text" name="name" class="form-input" placeholder="Full Name *" required>
+              <input type="email" name="email" class="form-input" placeholder="Email Address *" required>
+              <input type="tel" name="phone" class="form-input" placeholder="Mobile Number *" required pattern="[0-9]{10}">
+              <input type="text" name="location" class="form-input" placeholder="City / Village">
+            </div>
+
+            <!-- Message -->
+            <div class="form-section">
+              <label class="form-label">Message (Optional)</label>
+              <textarea name="message" class="form-textarea" placeholder="Share your thoughts or dedication..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">
+              <span>Proceed to Payment</span>
+              <span class="btn-icon">→</span>
+            </button>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message">
+              <div class="success-icon">✓</div>
+              <h3>Thank You for Your Support!</h3>
+              <p>Your information has been received. Please complete the payment using the UPI details shown.</p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Payment Info Column -->
+        <div class="payment-info">
+          <div class="payment-card">
+            <h3>Payment Methods</h3>
+            <p>After submitting the form, complete your donation via UPI</p>
+            
+            <div class="upi-section">
+              <h4>UPI Payment</h4>
+              <div class="upi-id">
+                <span class="upi-label">UPI ID:</span>
+                <span class="upi-value">onsnc@upi</span>
+                <button class="btn-copy" onclick="copyUPI()">Copy</button>
+              </div>
+              <div class="qr-code">
+                <img src="assets/images/qr-code.png" alt="UPI QR Code" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23f0f0f0%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22 fill=%22%23999%22%3EQR Code%3C/text%3E%3C/svg%3E'">
+                <p class="qr-text">Scan to pay via any UPI app</p>
+              </div>
+            </div>
+
+            <div class="tax-info">
+              <h4>Tax Benefits</h4>
+              <p>✓ Eligible for 80G deduction</p>
+              <p>✓ Receipt sent via email</p>
+              <p>✓ 100% transparent usage</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= What Your Donation Supports ================= -->
+  <section class="donation-support">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Will Your Donation Support?</h2>
+        <p>Your contribution directly funds these impactful programs</p>
+      </div>
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="support-icon">📚</div>
+          <h3>Primary Education</h3>
+          <p>Foundation-level learning for children in rural areas with quality curriculum</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">🏥</div>
+          <h3>Health & Nutrition</h3>
+          <p>Regular health check-ups, nutrition support, and wellness programs</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">👨‍🏫</div>
+          <h3>Teacher Training</h3>
+          <p>Capacity building and professional development for educators</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">🎨</div>
+          <h3>Holistic Development</h3>
+          <p>Music, sports, arts, and life skills for well-rounded growth</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">💻</div>
+          <h3>Digital Literacy</h3>
+          <p>Access to technology and digital learning resources</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">🔬</div>
+          <h3>STEM Programs</h3>
+          <p>Science, technology, engineering & mathematics education</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">🎓</div>
+          <h3>Scholarships</h3>
+          <p>Merit-based financial support for deserving students</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">🏗️</div>
+          <h3>Infrastructure</h3>
+          <p>Building and maintaining learning facilities and resources</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Stories in Motion ================= -->
+  <section class="stories-motion">
+    <div class="container">
+      <div class="section-header">
+        <h2>Stories In Motion</h2>
+        <p>Glimpses from our ongoing projects showing real impact in communities</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span class="gallery-icon">📷</span>
+            <p>Education Workshop</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span class="gallery-icon">📷</span>
+            <p>Community Development</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span class="gallery-icon">📷</span>
+            <p>Technology Training</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span class="gallery-icon">📷</span>
+            <p>Rural Outreach</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Testimonials ================= -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Community Impact</h2>
+        <p>Hear from those who've experienced our work firsthand</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-icon">"</div>
+          <p class="testimonial-text">Our village benefited greatly from the regenerative agriculture workshop organized by ONSNC Foundation. The practical knowledge has transformed our farming practices.</p>
+          <div class="testimonial-author">
+            <strong>Village Community Leader</strong>
+            <span>Rural Development Program</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-icon">"</div>
+          <p class="testimonial-text">The community tech education program helped our youth learn ethical AI and sustainability practices. It's opening new career paths for our children.</p>
+          <div class="testimonial-author">
+            <strong>Youth Group Coordinator</strong>
+            <span>Digital Literacy Initiative</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-icon">"</div>
+          <p class="testimonial-text">Thanks to ONSNC, our local community now has a model for clean water and renewable energy solutions. This is the future we've been waiting for.</p>
+          <div class="testimonial-author">
+            <strong>Community Member</strong>
+            <span>Sustainable Development Project</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ Section ================= -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about donating</p>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How will my donation be utilized?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Funds directly support ONSNC's Civilization 2.0 education and community initiatives including rural education, digital literacy, teacher training, infrastructure development, and holistic child development programs. We maintain complete transparency in fund utilization.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is my donation tax-deductible?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, donations to ONSNC Foundation are eligible for tax deductions under Section 80G. A receipt will be shared via email within 48 hours of payment confirmation for your tax filing purposes.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I donate via UPI/QR code?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! After submitting the form, you'll see our UPI ID and QR code. You can pay instantly using any UPI app like Google Pay, PhonePe, Paytm, or BHIM. Payment confirmation is automatic.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I donate in-kind or volunteer?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! We welcome donations of goods, services, or your time. Contact us at info@onsnc.org to discuss how your specific skills or resources can support our mission.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Will I receive updates on how my donation is used?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Donors receive quarterly impact reports showcasing project progress, success stories, and detailed fund utilization. You can also visit our projects and see the impact firsthand.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA Section ================= -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Make a Difference?</h2>
+        <p>Join us in building a sustainable, educated, and empowered future</p>
+        <div class="cta-buttons">
+          <a href="#donate-form" class="btn-cta-primary">Donate Now</a>
+          <a href="contact.html" class="btn-cta-secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>ONSNC Foundation</h3>
+          <p>Building sustainable communities through education, innovation, and collaborative action.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ngo.html">Our Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: info@onsnc.org</li>
+            <li>UPI: onsnc@upi</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ONSNC Foundation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="donate.js"></script>
+</body>
+</html>
