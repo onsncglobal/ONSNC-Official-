@@ -1,4 +1,3 @@
-
 // Mobile navigation toggle functionality
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');
@@ -42,7 +41,7 @@ if (toggle && menu) {
     }
   });
 
-  // Close menu when clicking on menu links (for smooth navigation)
+  // Close menu when clicking on menu links
   const menuLinks = menu.querySelectorAll('a');
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -60,7 +59,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
     
-    // Skip if href is just "#"
     if (href === '#') {
       e.preventDefault();
       return;
@@ -90,7 +88,7 @@ navLinks.forEach(link => {
   }
 });
 
-// Header scroll effect (optional - adds shadow on scroll)
+// Header scroll effect
 let lastScroll = 0;
 const header = document.getElementById('header');
 
