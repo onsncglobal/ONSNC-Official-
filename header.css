@@ -59,12 +59,11 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 12px 0;
   gap: 20px;
   max-width: 1500px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 12px 20px;  /* 👈 single line me fix kar diya */
+  position: relative;  /* 👈 add this line for mobile menu fix */
 }
 
 /* Logo Section */
