@@ -59,9 +59,9 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 12px 0;
+  padding: 16px 0;
   gap: 20px;
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -111,7 +111,7 @@
 .header-slogan p {
   margin: 0;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   color: #1e40af;
   letter-spacing: 0.3px;
 }
@@ -119,7 +119,7 @@
 /* Buttons Below Slogan */
 .nav-buttons {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
 }
 
@@ -129,7 +129,7 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 13px;
+  font-size: 12px;
   white-space: nowrap;
   display: inline-block;
 }
