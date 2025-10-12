@@ -26,9 +26,8 @@
   color: white;
   padding: 10px 0;
   font-size: 12px;
-  position: sticky;
-  top: 0;
-  z-index: 1001;
+  position: relative;
+  z-index: 999;
 }
 
 .header-top-content {
@@ -61,8 +60,9 @@
    Main Header - UN.org Style
    ========================= */
 .main-header {
-  background: #ffffff;
-  position: relative;
+  background-color: #ffffff !important;
+  position: sticky;
+  top: 0;
   z-index: 1000;
   border-bottom: 2px solid rgba(0,0,0,.08);
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
