@@ -26,7 +26,6 @@
 <body>
     
   <!-- Top Header Bar -->
-   <!-- Top Header Bar -->
   <header class="header-top">
     <div class="container">
       <div class="header-top-content">
@@ -45,13 +44,13 @@
   </header>
 
   <!-- Main Header -->
-  <header id="header">
+  <header id="header" class="main-header">
     <div class="container">
-      <nav class="primary" role="navigation" aria-label="Primary Navigation">
-        <!-- Logo Section -->
+      <!-- Logo and Title Section -->
+      <div class="header-top-section">
         <div class="site-title">
           <a href="index.html">
-            <img src="onsnc-logo.png" alt="ONSNC 3.0 Logo" class="logo-img">
+            <div class="logo-img">ON</div>
             <div class="logo-text-wrapper">
               <span class="logo-text">ONSNC</span>
               <span class="logo-subtitle">Civilization 3.0</span>
@@ -66,7 +65,14 @@
           </div>
         </div>
 
-        <!-- Menu Links -->
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Toggle navigation">
+          ☰
+        </button>
+      </div>
+
+      <!-- Menu Section (Below Logo on Desktop) -->
+      <nav class="primary" role="navigation" aria-label="Primary Navigation">
         <div id="menu" class="menu">
           <a href="index.html">Home</a>
           <a href="#about">About Us</a>
@@ -77,11 +83,6 @@
           <a href="#resources">Resource Center</a>
           <a href="contact.html">Contact Us</a>
         </div>
-
-        <!-- Mobile Toggle -->
-        <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Toggle navigation">
-          ☰
-        </button>
       </nav>
 
       <!-- Buttons Row -->
@@ -92,8 +93,8 @@
     </div>
   </header>
 
-    
-    <!-- Hero Section -->
+  <!-- Main Content -->
+      <!-- Hero Section -->
 <section class="hero" role="banner" aria-label="Welcome to the Future of Civilization 3.0">
     <div class="hero-content">
         <div class="hero-badge">
