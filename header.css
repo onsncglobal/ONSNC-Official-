@@ -82,26 +82,55 @@ body {
   padding: 12px 0;
 }
 
-/* Logo */
-.logo {
+/* =========================
+   Header Logo Fix
+   ========================= */
+
+.logo-image {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.logo-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo-text h1 {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
-  color: #1e293b;
+  color: #fff;
   margin: 0;
+  line-height: 1;
 }
 
 .logo-text p {
-  font-size: 11px;
-  color: #4f46e5;
+  font-size: 10px;
+  color: #fff;
+  opacity: 0.8;
   text-transform: uppercase;
   margin: 0;
+  letter-spacing: 1.5px;
 }
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .logo-image {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-text h1 {
+    font-size: 20px;
+  }
+}
+
 
 /* Navigation Menu */
 .nav-menu {
