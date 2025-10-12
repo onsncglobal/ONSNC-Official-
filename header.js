@@ -1,10 +1,6 @@
-// ===============================
-// HEADER JAVASCRIPT ONLY
-// Mobile Navigation Toggle
-// ===============================
-
+// Mobile navigation toggle functionality
 const toggle = document.querySelector('.nav-toggle');
-const menu = document.querySelector('.nav-menu');
+const menu = document.getElementById('menu');
 
 if (toggle && menu) {
   // Toggle menu function
@@ -58,54 +54,28 @@ if (toggle && menu) {
   });
 }
 
-// Header scroll effect
-let lastScroll = 0;
-const header = document.getElementById('main-header');
-
-if (header) {
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
     
-    if (currentScroll > 10) {
-      header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-    } else {
-      header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
-    }
-    
-    lastScroll = currentScroll;
-  });
-} (currentScroll > 10) {
-    header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-  } else {
-    header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
-  }
-  
-  lastScroll = currentScroll;
-});
-
-// Mobile navigation toggle functionality
-const toggle = document.querySelector('.nav-toggle');
-const menu = document.getElementById('menu');
-
-if (toggle && menu) {
-  // Toggle menu function
-  const toggleMenu = () => {
-    const isOpen = menu.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-    toggle.textContent = isOpen ? '✕' : '☰';
-  };
-
-  // Click event on toggle button
-  toggle.addEventListener('click', toggleMenu);
-
-  // Keyboard support (Enter/Space keys)
-  toggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    // Skip if href is just "#"
+    if (href === '#') {
       e.preventDefault();
-      toggleMenu();
+      return;
+    }
+
+    const target = document.querySelector(href);
+    
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   });
-
+});
 
 // Add active state to current page link
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -134,4 +104,3 @@ window.addEventListener('scroll', () => {
   
   lastScroll = currentScroll;
 });
-
