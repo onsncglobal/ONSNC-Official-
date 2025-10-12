@@ -3,7 +3,6 @@ const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');
 const centerSection = document.querySelector('.center-section');
 const primaryNav = document.querySelector('.primary');
-const mainHeader = document.querySelector('.main-header');
 
 if (toggle && menu) {
   // Toggle menu function
@@ -12,8 +11,8 @@ if (toggle && menu) {
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.textContent = isOpen ? '✕' : '☰';
     
-    // Show/hide slogan on mobile
-    if (centerSection) {
+    // Show/hide slogan and menu on mobile
+    if (centerSection && primaryNav) {
       if (isOpen) {
         centerSection.classList.add('mobile-show');
         primaryNav.classList.add('mobile-show');
@@ -25,7 +24,10 @@ if (toggle && menu) {
   };
 
   // Click event on toggle button
-  toggle.addEventListener('click', toggleMenu);
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
 
   // Keyboard support (Enter/Space keys)
   toggle.addEventListener('keydown', (e) => {
@@ -37,21 +39,20 @@ if (toggle && menu) {
 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (menu.classList.contains('open') && 
-        !menu.contains(e.target) && 
-        !toggle.contains(e.target) &&
-        !centerSection.contains(e.target)) {
-      menu.classList.remove('open');
-      centerSection.classList.remove('mobile-show');
-      primaryNav.classList.remove('mobile-show');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
+    if (menu && menu.classList.contains('open')) {
+      if (!menu.contains(e.target) && !toggle.contains(e.target) && !centerSection.contains(e.target)) {
+        menu.classList.remove('open');
+        centerSection.classList.remove('mobile-show');
+        primaryNav.classList.remove('mobile-show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      }
     }
   });
 
   // Close menu with Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menu.classList.contains('open')) {
+    if (e.key === 'Escape' && menu && menu.classList.contains('open')) {
       menu.classList.remove('open');
       centerSection.classList.remove('mobile-show');
       primaryNav.classList.remove('mobile-show');
