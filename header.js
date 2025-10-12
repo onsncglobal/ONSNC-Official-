@@ -122,18 +122,22 @@ navLinks.forEach(link => {
   }
 });
 
-// Header scroll effect - Only add shadow, don't change background
+// Header scroll effect - Only shadow, NO background change
 let lastScroll = 0;
 const header = document.querySelector('.main-header');
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   
+  // Only modify shadow for depth effect, NEVER change background
   if (currentScroll > 10) {
     header.style.boxShadow = '0 6px 16px rgba(0,0,0,0.12)';
   } else {
     header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
   }
+  
+  // NEVER CHANGE BACKGROUND COLOR
+  header.style.backgroundColor = '#ffffff';
   
   lastScroll = currentScroll;
 });
