@@ -1,0 +1,144 @@
+/* CTA Section – Civilization 3.0 */
+.cta-section {
+    background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-container {
+    max-width: 900px;
+    text-align: center;
+    border: 2px solid #0072CE;
+    border-radius: 16px;
+    padding: 50px 30px;
+    box-shadow: 0 15px 35px rgba(0,114,206,0.15);
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.cta-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,114,206,0.2);
+}
+
+.cta-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    font-size: 1.1rem;
+    color: #495057;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    background: #e0f0ff;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0072CE;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056a3;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .cta-title {
+        font-size: 1.8rem;
+    }
+    .cta-description {
+        font-size: 0.95rem;
+    }
+}/* CTA Section – Civilization 3.0 */
+.cta-section {
+    background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-container {
+    max-width: 900px;
+    text-align: center;
+    border: 2px solid #0072CE;
+    border-radius: 16px;
+    padding: 50px 30px;
+    box-shadow: 0 15px 35px rgba(0,114,206,0.15);
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.cta-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,114,206,0.2);
+}
+
+.cta-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    font-size: 1.1rem;
+    color: #495057;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    background: #e0f0ff;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0072CE;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056a3;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .cta-title {
+        font-size: 1.8rem;
+    }
+    .cta-description {
+        font-size: 0.95rem;
+    }
+}
+
