@@ -180,7 +180,11 @@
   color: #4f46e5;
 }
 
-/* Mobile Toggle */
+
+
+/* =========================
+   Mobile Toggle
+   ========================= */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -190,13 +194,13 @@
   cursor: pointer;
   font-size: 20px;
   transition: all 0.3s ease;
-  grid-column: 3;
 }
 
 .nav-toggle:hover {
   background: rgba(0,0,0,.05);
-  border-color: #4f46e5;
+  border-color: var(--accent);
 }
+
 
 /* =========================
    Responsive Design
