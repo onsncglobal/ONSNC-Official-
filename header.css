@@ -156,30 +156,35 @@
   color: white;
 }
 
-/* Right Menu */
-.nav-menu {
-  grid-column: 3;
+
+/* =========================
+   Navigation Menu
+   ========================= */
+.menu {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  flex: 1;
   justify-content: flex-end;
+  margin-left: auto;
 }
 
-.nav-menu a {
-  color: #1a1a1a;
+.menu a {
+  color: var(--ink);
   text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 6px;
-  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
-  white-space: nowrap;
 }
 
-.nav-menu a:hover {
+.menu a:hover {
   background: rgba(0,0,0,.06);
-  color: #4f46e5;
+  color: var(--accent);
 }
+
+
 
 /* Mobile Toggle */
 .nav-toggle {
