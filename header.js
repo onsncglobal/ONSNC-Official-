@@ -1,476 +1,152 @@
-/* =========================
-   CSS Variables
-   ========================= */
-:root {
-  --bg: #ffffff;
-  --ink: #1a1a1a;
-  --shadow: 0 4px 12px rgba(0,0,0,0.08);
-  --dark-blue: #003366;
-  --accent: #4f46e5;
+// Mobile navigation toggle functionality
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.getElementById('menu');
+const centerSection = document.querySelector('.center-section');
+const primaryNav = document.querySelector('.primary');
+const mainHeader = document.querySelector('.main-header');
+
+if (toggle && menu) {
+  // Toggle menu function
+  const toggleMenu = () => {
+    const isOpen = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.textContent = isOpen ? '✕' : '☰';
+    
+    // Show/hide slogan on mobile
+    if (centerSection) {
+      if (isOpen) {
+        centerSection.classList.add('mobile-show');
+        primaryNav.classList.add('mobile-show');
+      } else {
+        centerSection.classList.remove('mobile-show');
+        primaryNav.classList.remove('mobile-show');
+      }
+    }
+  };
+
+  // Click event on toggle button
+  toggle.addEventListener('click', toggleMenu);
+
+  // Keyboard support (Enter/Space keys)
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleMenu();
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (menu.classList.contains('open') && 
+        !menu.contains(e.target) && 
+        !toggle.contains(e.target) &&
+        !centerSection.contains(e.target)) {
+      menu.classList.remove('open');
+      centerSection.classList.remove('mobile-show');
+      primaryNav.classList.remove('mobile-show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+
+  // Close menu with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      centerSection.classList.remove('mobile-show');
+      primaryNav.classList.remove('mobile-show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+
+  // Close menu when clicking on menu links
+  const menuLinks = menu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        menu.classList.remove('open');
+        centerSection.classList.remove('mobile-show');
+        primaryNav.classList.remove('mobile-show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      }
+    });
+  });
 }
 
-/* =========================
-   Global Container
-   ========================= */
-.container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    
+    if (href === '#') {
+      e.preventDefault();
+      return;
+    }
 
-/* =========================
-   Top Header
-   ========================= */
-.header-top {
-  background: var(--dark-blue);
-  color: white;
-  padding: 10px 0;
-  font-size: 12px;
-  position: sticky;
-  top: 0;
-  z-index: 1001;
-}
+    const target = document.querySelector(href);
+    
+    if (target) {
+      e.preventDefault();
+      
+      // Close menu if open before scrolling
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        if (centerSection) centerSection.classList.remove('mobile-show');
+        if (primaryNav) primaryNav.classList.remove('mobile-show');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.textContent = '☰';
+        }
+      }
+      
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
 
-.header-top-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
+// Add active state to current page link
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('.menu a');
 
-.header-links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.header-links a {
-  color: rgba(255,255,255,0.95);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.header-links a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-/* =========================
-   Main Header - UN.org Style
-   ========================= */
-.main-header {
-  background: var(--bg);
-  position: relative;
-  z-index: 1000;
-  border-bottom: 2px solid rgba(0,0,0,.08);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.main-header .container {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-/* Header Top Section - Logo & Slogan */
-.header-top-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 25px 0;
-  gap: 30px;
-  border-bottom: 1px solid rgba(0,0,0,.05);
-}
-
-.site-title {
-  flex: 0 0 auto;
-}
-
-.site-title a {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.logo-img {
-  height: 70px;
-  width: 70px;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 800;
-  font-size: 32px;
-  flex-shrink: 0;
-}
-
-.logo-text-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.logo-text {
-  font-weight: 800;
-  font-size: 28px;
-  line-height: 1;
-}
-
-.logo-subtitle {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-/* Center Section - Slogan */
-.center-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  min-width: 0;
-  text-align: center;
-}
-
-.header-slogan {
-  text-align: center;
-}
-
-.header-slogan p {
-  margin: 0;
-  font-weight: 600;
-  font-size: 18px;
-  color: var(--accent);
-  letter-spacing: 0.4px;
-  line-height: 1.5;
-}
-
-/* =========================
-   Navigation Menu - Desktop Below Logo
-   ========================= */
-.primary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 0;
-  border-top: 1px solid rgba(0,0,0,.05);
-  border-bottom: 1px solid rgba(0,0,0,.05);
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.menu a {
-  color: var(--ink);
-  text-decoration: none;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.menu a:hover {
-  background: rgba(79, 70, 229, 0.08);
-  color: var(--accent);
-}
-
-/* =========================
-   Buttons Row
-   ========================= */
-.nav-buttons-row {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  padding: 15px 0;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 11px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  white-space: nowrap;
-  display: inline-block;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  color: white;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79,70,229,0.3);
-}
-
-.btn-secondary {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  background: transparent;
-}
-
-.btn-secondary:hover {
-  background: var(--accent);
-  color: white;
-}
-
-/* =========================
-   Mobile Toggle
-   ========================= */
-.nav-toggle {
-  display: none;
-  background: transparent;
-  border: 2px solid rgba(0,0,0,.15);
-  padding: 10px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.nav-toggle:hover {
-  background: rgba(0,0,0,.05);
-  border-color: var(--accent);
-}
-
-/* =========================
-   Responsive Design
-   ========================= */
-
-/* Tablets */
-@media (max-width: 1024px) {
-  .header-top-section {
-    padding: 20px 0;
-    gap: 20px;
+navLinks.forEach(link => {
+  const linkPage = link.getAttribute('href').split('/').pop();
+  if (linkPage === currentPage) {
+    link.style.background = 'rgba(79, 70, 229, 0.1)';
+    link.style.color = '#4f46e5';
   }
+});
 
-  .logo-img {
-    height: 60px;
-    width: 60px;
-    font-size: 28px;
-  }
+// Header scroll effect - Only add shadow, don't change background
+let lastScroll = 0;
+const header = document.querySelector('.main-header');
 
-  .logo-text {
-    font-size: 24px;
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll > 10) {
+    header.style.boxShadow = '0 6px 16px rgba(0,0,0,0.12)';
+  } else {
+    header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
   }
+  
+  lastScroll = currentScroll;
+});
 
-  .logo-subtitle {
-    font-size: 11px;
+// Handle responsive behavior
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    // Reset mobile menu on desktop resize
+    if (menu) menu.classList.remove('open');
+    if (centerSection) centerSection.classList.remove('mobile-show');
+    if (primaryNav) primaryNav.classList.remove('mobile-show');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
   }
-
-  .header-slogan p {
-    font-size: 15px;
-  }
-
-  .menu a {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .btn {
-    padding: 9px 20px;
-    font-size: 13px;
-  }
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
-  .header-top {
-    font-size: 11px;
-    padding: 8px 0;
-  }
-
-  .header-links {
-    gap: 12px;
-    font-size: 10px;
-  }
-
-  .header-top-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .main-header .container {
-    gap: 0;
-  }
-
-  .header-top-section {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0,0,0,.05);
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .site-title {
-    order: 1;
-    flex: 0 0 auto;
-  }
-
-  .site-title a {
-    gap: 10px;
-  }
-
-  .logo-img {
-    height: 50px;
-    width: 50px;
-    font-size: 22px;
-  }
-
-  .logo-text {
-    font-size: 16px;
-  }
-
-  .logo-subtitle {
-    font-size: 8px;
-  }
-
-  .logo-text-wrapper {
-    gap: 2px;
-  }
-
-  .center-section {
-    display: none;
-    order: 3;
-  }
-
-  .center-section.mobile-show {
-    display: flex;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 70px;
-    width: 100%;
-    padding: 12px 20px;
-    gap: 12px;
-    background: var(--bg);
-    border-bottom: 1px solid rgba(0,0,0,.05);
-    z-index: 999;
-  }
-
-  .header-slogan p {
-    font-size: 11px;
-    line-height: 1.3;
-  }
-
-  .nav-toggle {
-    display: inline-block;
-    order: 2;
-  }
-
-  .primary {
-    padding: 0;
-    border: none;
-    display: none;
-  }
-
-  .primary.mobile-show {
-    display: flex;
-    padding: 12px 0;
-    border-top: 1px solid rgba(0,0,0,.05);
-    border-bottom: 1px solid rgba(0,0,0,.05);
-  }
-
-  .nav-buttons-row {
-    padding: 12px 0;
-    gap: 10px;
-    border-top: 1px solid rgba(0,0,0,.05);
-  }
-
-  .btn {
-    padding: 8px 16px;
-    font-size: 12px;
-    flex: 1;
-    min-width: 120px;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0;
-    gap: 0;
-    width: 100%;
-  }
-
-  .menu.open {
-    display: flex;
-    max-height: 500px;
-    opacity: 1;
-  }
-
-  .menu a {
-    padding: 14px 16px;
-    font-size: 14px;
-    text-align: left;
-    border-radius: 0;
-    width: 100%;
-    border-bottom: 1px solid rgba(0,0,0,.05);
-  }
-
-  .menu a:last-child {
-    border-bottom: none;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .header-links a {
-    font-size: 9px;
-  }
-
-  .header-top-section {
-    padding: 12px 0;
-  }
-
-  .logo-img {
-    height: 45px;
-    width: 45px;
-    font-size: 20px;
-  }
-
-  .logo-text {
-    font-size: 14px;
-  }
-
-  .logo-subtitle {
-    font-size: 7px;
-  }
-
-  .btn {
-    padding: 7px 12px;
-    font-size: 11px;
-  }
-
-  .header-slogan p {
-    font-size: 10px;
-  }
-}
+});
