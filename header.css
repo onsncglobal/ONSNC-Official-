@@ -61,11 +61,12 @@
    Main Header - UN.org Style
    ========================= */
 .main-header {
-  background: var(--bg);
+  background: #ffffff;
   position: relative;
   z-index: 1000;
   border-bottom: 2px solid rgba(0,0,0,.08);
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
 }
 
 .main-header .container {
@@ -364,8 +365,9 @@
     left: 0;
     right: 0;
     top: 70px;
-    width: 100%;
-    padding: 12px 20px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 15px 20px;
     gap: 12px;
     background: var(--bg);
     border-bottom: 1px solid rgba(0,0,0,.05);
