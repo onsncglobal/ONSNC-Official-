@@ -1,4 +1,4 @@
-
+<script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
       const mobileToggle = document.getElementById('mobileToggle');
@@ -70,6 +70,6 @@
         });
       });
     });
-
+  </script>
 
 ```
