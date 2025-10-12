@@ -20,7 +20,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  max-width: 1800px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -59,13 +59,10 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 16px 0;
+  padding: 12px 20px;
   gap: 20px;
-  max-width: 1800px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  position: relative;
 }
 
 /* Logo Section */
@@ -91,6 +88,7 @@
 
 .logo-text {
   font-size: 20px;
+  white-space: nowrap;
 }
 
 /* Center Section */
@@ -101,6 +99,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  min-width: 0;
 }
 
 /* Slogan in Center */
@@ -111,7 +110,7 @@
 .header-slogan p {
   margin: 0;
   font-weight: 700;
-  font-size: 8px;
+  font-size: 14px;
   color: #1e40af;
   letter-spacing: 0.3px;
 }
@@ -119,8 +118,9 @@
 /* Buttons Below Slogan */
 .nav-buttons {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -129,7 +129,7 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 12px;
+  font-size: 13px;
   white-space: nowrap;
   display: inline-block;
 }
@@ -181,11 +181,7 @@
   color: #4f46e5;
 }
 
-
-
-/* =========================
-   Mobile Toggle
-   ========================= */
+/* Mobile Toggle */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -195,27 +191,40 @@
   cursor: pointer;
   font-size: 20px;
   transition: all 0.3s ease;
+  grid-column: 3;
 }
 
 .nav-toggle:hover {
   background: rgba(0,0,0,.05);
-  border-color: var(--accent);
+  border-color: #4f46e5;
 }
-
 
 /* =========================
    Responsive Design
    ========================= */
 
-/* Tablets */
-@media (max-width: 1024px) {
+/* Large Tablets */
+@media (max-width: 1200px) {
   .main-nav {
     gap: 15px;
+    padding: 12px 15px;
   }
 
   .nav-menu a {
     padding: 7px 8px;
     font-size: 12px;
+  }
+
+  .header-slogan p {
+    font-size: 13px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .nav-menu a {
+    padding: 6px 7px;
+    font-size: 11px;
   }
 
   .logo-img {
@@ -233,7 +242,77 @@
   }
 
   .header-slogan p {
-    font-size: 13px;
+    font-size: 12px;
+  }
+}
+
+/* Small Tablets */
+@media (max-width: 900px) {
+  .main-nav {
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  .site-logo {
+    grid-column: 1;
+  }
+
+  .center-section {
+    grid-column: 2;
+    gap: 8px;
+  }
+
+  .nav-toggle {
+    grid-column: 3;
+    display: inline-block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-menu.open {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav-menu.open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.open a {
+    position: relative;
+    z-index: 10000;
+    width: 280px;
+    padding: 15px 20px;
+    font-size: 15px;
+    text-align: left;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: transparent;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
   }
 }
 
@@ -245,19 +324,21 @@
   }
 
   .header-links {
-    gap: 10px;
+    gap: 8px;
     font-size: 10px;
   }
 
   .header-top-content {
     flex-direction: column;
     text-align: center;
-    gap: 8px;
+    gap: 6px;
+    padding: 0 15px;
   }
 
   .main-nav {
     grid-template-columns: auto 1fr auto;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    gap: 10px;
   }
 
   .site-logo {
@@ -275,14 +356,16 @@
 
   .center-section {
     grid-column: 2;
+    gap: 6px;
   }
 
   .header-slogan p {
-    font-size: 11px;
+    font-size: 10px;
+    line-height: 1.3;
   }
 
   .nav-buttons {
-    gap: 8px;
+    gap: 6px;
   }
 
   .btn {
@@ -291,49 +374,30 @@
   }
 
   .nav-toggle {
-    display: inline-block;
     grid-column: 3;
-  }
-
-  .nav-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0;
-    gap: 0;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
-    z-index: 999;
-  }
-
-  .nav-menu.open {
-    display: flex;
-    max-height: 500px;
-    opacity: 1;
-    padding: 12px;
-  }
-
-  .nav-menu a {
-    padding: 12px 16px;
-    font-size: 14px;
-    text-align: left;
-    border-radius: 6px;
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 18px;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
+  .header-top-content {
+    padding: 0 10px;
+  }
+
+  .header-links {
+    gap: 6px;
+  }
+
   .header-links a {
-    font-size: 10px;
+    font-size: 9px;
+  }
+
+  .main-nav {
+    padding: 8px 10px;
+    gap: 8px;
   }
 
   .logo-img {
@@ -346,83 +410,42 @@
   }
 
   .header-slogan p {
-    font-size: 10px;
-    line-height: 1.3;
-  }
-
-  .btn {
-    padding: 6px 10px;
-    font-size: 10px;
-  }
-
-  .nav-buttons {
-    gap: 6px;
-  }
-}
-
-
-/* ======== FINAL MOBILE FIX PATCH ======== */
-
-/* Mobile: Adjust layout and spacing */
-@media (max-width: 768px) {
-
-  /* Header overall spacing fix */
-  #main-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #fff;
-  }
-
-  /* Prevent nav menu from overlapping header */
-  .main-nav {
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 16px;
-  }
-
-  /* Reduce slogan & button size */
-  .header-slogan p {
-    font-size: 10.5px;
+    font-size: 9px;
     line-height: 1.2;
-    margin-bottom: 4px;
   }
 
   .btn {
     padding: 5px 10px;
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .nav-buttons {
-    gap: 6px;
+    gap: 5px;
   }
 
-  /* Nav menu open below header cleanly */
-  .nav-menu {
-    position: absolute;
-    top: calc(100% + 4px); /* adds small space below header */
-    left: 0;
-    right: 0;
-    z-index: 999;
-    border-top: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-  }
-
-  /* Logo smaller */
-  .logo-img {
-    height: 35px;
-    width: 35px;
-  }
-
-  .logo-text {
-    font-size: 14px;
-  }
-
-  /* Better button layout under slogan */
-  .center-section {
-    gap: 8px;
+  .nav-toggle {
+    padding: 5px 8px;
+    font-size: 16px;
   }
 }
 
+/* Extra Small Mobile */
+@media (max-width: 380px) {
+  .logo-img {
+    height: 32px;
+    width: 32px;
+  }
 
+  .logo-text {
+    font-size: 13px;
+  }
+
+  .header-slogan p {
+    font-size: 8px;
+  }
+
+  .btn {
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+}
