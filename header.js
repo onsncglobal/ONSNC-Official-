@@ -1,6 +1,9 @@
 // Mobile navigation toggle functionality
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');
+const centerSection = document.querySelector('.center-section');
+const primaryNav = document.querySelector('.primary');
+const mainHeader = document.querySelector('.main-header');
 
 if (toggle && menu) {
   // Toggle menu function
@@ -8,6 +11,17 @@ if (toggle && menu) {
     const isOpen = menu.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.textContent = isOpen ? '✕' : '☰';
+    
+    // Show/hide slogan on mobile
+    if (centerSection) {
+      if (isOpen) {
+        centerSection.classList.add('mobile-show');
+        primaryNav.classList.add('mobile-show');
+      } else {
+        centerSection.classList.remove('mobile-show');
+        primaryNav.classList.remove('mobile-show');
+      }
+    }
   };
 
   // Click event on toggle button
@@ -25,8 +39,11 @@ if (toggle && menu) {
   document.addEventListener('click', (e) => {
     if (menu.classList.contains('open') && 
         !menu.contains(e.target) && 
-        !toggle.contains(e.target)) {
+        !toggle.contains(e.target) &&
+        !centerSection.contains(e.target)) {
       menu.classList.remove('open');
+      centerSection.classList.remove('mobile-show');
+      primaryNav.classList.remove('mobile-show');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.textContent = '☰';
     }
@@ -36,6 +53,8 @@ if (toggle && menu) {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menu.classList.contains('open')) {
       menu.classList.remove('open');
+      centerSection.classList.remove('mobile-show');
+      primaryNav.classList.remove('mobile-show');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.textContent = '☰';
     }
@@ -47,6 +66,8 @@ if (toggle && menu) {
     link.addEventListener('click', () => {
       if (window.innerWidth <= 768) {
         menu.classList.remove('open');
+        centerSection.classList.remove('mobile-show');
+        primaryNav.classList.remove('mobile-show');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.textContent = '☰';
       }
@@ -68,6 +89,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     
     if (target) {
       e.preventDefault();
+      
+      // Close menu if open before scrolling
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        if (centerSection) centerSection.classList.remove('mobile-show');
+        if (primaryNav) primaryNav.classList.remove('mobile-show');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.textContent = '☰';
+        }
+      }
+      
       target.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -90,7 +123,8 @@ navLinks.forEach(link => {
 
 // Header scroll effect
 let lastScroll = 0;
-const header = document.getElementById('header');
+const headerTop = document.querySelector('.header-top');
+const header = document.querySelector('.main-header');
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
@@ -102,4 +136,18 @@ window.addEventListener('scroll', () => {
   }
   
   lastScroll = currentScroll;
+});
+
+// Handle responsive behavior
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    // Reset mobile menu on desktop resize
+    if (menu) menu.classList.remove('open');
+    if (centerSection) centerSection.classList.remove('mobile-show');
+    if (primaryNav) primaryNav.classList.remove('mobile-show');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  }
 });
