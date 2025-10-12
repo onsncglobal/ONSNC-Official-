@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="footer.css"> 
 <!-- homepage.css को बाद में लिंक करें -->
 <link rel="stylesheet" href="homepage.css"> 
+<link rel="stylesheet" href="philosophy.css"> 
 <link rel="stylesheet" href="ngo-section.css"> 
 <link rel="stylesheet" href="project-section.css"> 
 <link rel="stylesheet" href="civilization3-overview.css"> 
@@ -23,6 +24,7 @@
 <body>
     
   <!-- Top Header Bar -->
+   <!-- Top Header Bar -->
   <header class="header-top">
     <div class="container">
       <div class="header-top-content">
@@ -41,41 +43,37 @@
   </header>
 
   <!-- Main Header -->
-  <header id="main-header">
+  <header id="header">
     <div class="container">
-      <nav class="main-nav" role="navigation" aria-label="Primary Navigation">
-        <!-- Logo -->
-        <div class="site-logo">
+      <nav class="primary" role="navigation" aria-label="Primary Navigation">
+        <!-- Logo Section -->
+        <div class="site-title">
           <a href="index.html">
             <img src="onsnc-logo.png" alt="ONSNC 3.0 Logo" class="logo-img">
-            <span class="logo-text">ONSNC 3.0</span>
+            <div class="logo-text-wrapper">
+              <span class="logo-text">ONSNC</span>
+              <span class="logo-subtitle">Civilization 3.0</span>
+            </div>
           </a>
         </div>
 
-        <!-- Center Section: Slogan + Buttons -->
+        <!-- Center Section: Slogan -->
         <div class="center-section">
-          <!-- Slogan -->
           <div class="header-slogan">
-            <p>🌍 Building an Inclusive, Sustainable & Technological Civilization</p>
-          </div>
-          
-          <!-- Buttons -->
-          <div class="nav-buttons">
-            <a href="#join" class="btn btn-secondary">Join Movement</a>
-            <a href="#support" class="btn btn-primary">Support ONSNC</a>
+            <p>Building an Inclusive, Sustainable & Technological Civilization</p>
           </div>
         </div>
 
-        <!-- Right Side: Menu -->
-        <div id="menu" class="nav-menu">
+        <!-- Menu Links -->
+        <div id="menu" class="menu">
           <a href="index.html">Home</a>
           <a href="#about">About Us</a>
           <a href="#our-work">Our Work</a>
           <a href="#campaigns">Campaigns</a>
           <a href="#get-involved">Get Involved</a>
-          <a href="#media">Media</a>
-          <a href="#resources">Resources</a>
-          <a href="contact.html">Contact</a>
+          <a href="#media">Media Centre</a>
+          <a href="#resources">Resource Center</a>
+          <a href="contact.html">Contact Us</a>
         </div>
 
         <!-- Mobile Toggle -->
@@ -83,10 +81,19 @@
           ☰
         </button>
       </nav>
+
+      <!-- Buttons Row -->
+      <div class="nav-buttons-row">
+        <a href="#join" class="btn btn-secondary">Join Movement</a>
+        <a href="#support" class="btn btn-primary">Support ONSNC</a>
+      </div>
     </div>
   </header>
 
-  
+  <script src="script.js"></script>
+</body>
+</html>
+    
     <!-- Hero Section -->
 <section class="hero" role="banner" aria-label="Welcome to the Future of Civilization 3.0">
     <div class="hero-content">
@@ -119,6 +126,68 @@
                 Explore Our 3.0 Manifesto
             </a>
         </div>
+</section>
+
+<!-- ONSNC 3.0 Philosophical Section -->
+<section class="philosophy-section" id="onsnc-philosophy" aria-labelledby="philosophy-title">
+  <div class="philosophy-container">
+    <header class="philosophy-header">
+      <h2 id="philosophy-title">The Meaning of ONSNC</h2>
+      <p class="philosophy-subtitle">
+        Omniversal Evolution of Humanity and Conscious Civilization 3.0
+      </p>
+    </header>
+
+    <div class="philosophy-grid">
+      <article class="philosophy-card">
+        <h3>Philosophical Identity</h3>
+        <p>
+          <strong>ONSNC</strong> stands for 
+          <em>Omniversal NovumSapiens & SentienceNeo for Nexus Civilization 3.0</em>.  
+          It represents the dawn of a new evolutionary phase where humanity merges
+          scientific knowledge, technological intelligence, and conscious ethics 
+          to build an enlightened civilization beyond borders and divisions.
+        </p>
+      </article>
+
+      <article class="philosophy-card">
+        <h3>Concept & Core Essence</h3>
+        <p>
+          Civilization 3.0 is a conscious ecosystem uniting sustainability, natural harmony,
+          and digital intelligence.  
+          ONSNC envisions humanity evolving as <em>Novum Sapiens</em>—beings of wisdom,
+          compassion, and innovation—guided by scientific truth and ethical purpose.
+        </p>
+      </article>
+
+      <article class="philosophy-card">
+        <h3>Vision & Features</h3>
+        <ul>
+          <li>🌍 Ethical AI & Conscious Technology</li>
+          <li>⚡ Regenerative Economy & Energy Transformation</li>
+          <li>🏛️ Hybrid Governance with Transparency & Justice</li>
+          <li>🎓 Scientific Education & Holistic Development</li>
+          <li>🌱 Ecological Balance & Sustainability</li>
+        </ul>
+      </article>
+
+      <article class="philosophy-card">
+        <h3>Why This Public Branding Name</h3>
+        <p>
+          The public name <strong>Open Network for Sustainable, Natural & Conscious Civilization 3.0</strong>
+          was chosen to communicate the mission clearly to everyone.
+          It bridges scientific innovation with human consciousness—creating an open,
+          inclusive movement accessible to all generations, cultures, and nations.
+        </p>
+      </article>
+    </div>
+
+    <div class="philosophy-cta">
+      <a href="philosophy.html" class="btn-explore">
+        Explore the ONSNC Philosophy →
+      </a>
+    </div>
+  </div>
 </section>
 
     
@@ -769,6 +838,7 @@
 <script src="footer.js"></script> 
 <!-- Homepage JS बाद में -->
 <script src="homepage.js"></script> 
+<script src="philosophy.js"></script> 
 <script src="ngo-section.js"></script>
 <script src="project-section.js"></script>
 <script src="civilization3-overview.js"></script> 
