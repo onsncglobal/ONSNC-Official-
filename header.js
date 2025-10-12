@@ -1,3 +1,4 @@
+
 // Mobile navigation toggle functionality
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');
