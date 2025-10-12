@@ -358,3 +358,70 @@
     gap: 6px;
   }
 }
+
+
+/* ======== FINAL MOBILE FIX PATCH ======== */
+
+/* Mobile: Adjust layout and spacing */
+@media (max-width: 768px) {
+
+  /* Header overall spacing fix */
+  #main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+  }
+
+  /* Prevent nav menu from overlapping header */
+  .main-nav {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 16px;
+  }
+
+  /* Reduce slogan & button size */
+  .header-slogan p {
+    font-size: 10.5px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .nav-buttons {
+    gap: 6px;
+  }
+
+  /* Nav menu open below header cleanly */
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 4px); /* adds small space below header */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  }
+
+  /* Logo smaller */
+  .logo-img {
+    height: 35px;
+    width: 35px;
+  }
+
+  .logo-text {
+    font-size: 14px;
+  }
+
+  /* Better button layout under slogan */
+  .center-section {
+    gap: 8px;
+  }
+}
+
+
