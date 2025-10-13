@@ -1,7 +1,59 @@
-/* ONSNC 30 Goals Section Styles */
+/* ONSNC Civilization 3.0 - 50 Goals Section Styles */
+
+/* Root Variables */
+:root {
+  /* Base Colors */
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Category Colors */
+  --social-primary: #e74c3c;
+  --social-light: #fadbd8;
+  
+  --economic-primary: #a855f7;
+  --economic-light: #e9d5ff;
+  
+  --environmental-primary: #10b981;
+  --environmental-light: #d1fae5;
+  
+  --governance-primary: #f59e0b;
+  --governance-light: #fef3c7;
+  
+  --science-primary: #06b6d4;
+  --science-light: #cffafe;
+  
+  --culture-primary: #ec4899;
+  --culture-light: #fce7f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--white);
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
 /* Main Section Container */
-.onsnc-goals-section {
+.onsnc-civ3-goals-section {
   padding: 80px 0;
   background: linear-gradient(135deg, #f7f9fc 0%, #e8eef5 50%, #f0f4f8 100%);
   position: relative;
@@ -9,7 +61,7 @@
 }
 
 /* Background Decorative Elements */
-.goals-bg-decoration {
+.civ3-bg-decoration {
   position: absolute;
   width: 300px;
   height: 300px;
@@ -17,22 +69,22 @@
   mix-blend-mode: multiply;
   filter: blur(60px);
   opacity: 0.15;
-  animation: goalsPulse 4s ease-in-out infinite;
+  animation: civ3Pulse 4s ease-in-out infinite;
 }
 
-.goals-decoration-left {
+.civ3-decoration-left {
   top: 0;
   left: 0;
-  background-color: #93c5fd;
+  background-color: #a855f7;
 }
 
-.goals-decoration-right {
+.civ3-decoration-right {
   bottom: 0;
   right: 0;
-  background-color: #a7f3d0;
+  background-color: #06b6d4;
 }
 
-@keyframes goalsPulse {
+@keyframes civ3Pulse {
   0%, 100% {
     transform: scale(1);
     opacity: 0.15;
@@ -44,22 +96,22 @@
 }
 
 /* Content Wrapper */
-.goals-content-wrapper {
+.civ3-content-wrapper {
   position: relative;
   z-index: 10;
 }
 
 /* Section Header */
-.goals-header {
+.civ3-header {
   text-align: center;
   margin-bottom: 64px;
 }
 
-.goals-badge {
+.civ3-badge {
   display: inline-block;
   padding: 6px 16px;
-  background-color: #dbeafe;
-  color: #1e40af;
+  background-color: var(--economic-light);
+  color: var(--economic-primary);
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 600;
@@ -67,28 +119,28 @@
   letter-spacing: 0.5px;
 }
 
-.goals-main-title {
+.civ3-main-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--gray-900);
   margin-bottom: 24px;
   line-height: 1.2;
 }
 
-.goals-description {
+.civ3-description {
   font-size: 1.25rem;
-  color: #4b5563;
+  color: var(--gray-600);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
 /* Navigation & Categories */
-.goals-navigation {
+.civ3-navigation {
   margin-bottom: 48px;
 }
 
-.goals-category-buttons {
+.civ3-category-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -96,63 +148,63 @@
   margin-bottom: 32px;
 }
 
-.onsnc-category-btn {
+.civ3-category-btn {
   padding: 10px 20px;
   border-radius: 50px;
-  background-color: #ffffff;
-  color: #374151;
+  background-color: var(--white);
+  color: var(--gray-700);
   font-weight: 500;
   font-size: 0.9rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--gray-200);
   cursor: pointer;
   transition: all 0.3s ease;
   outline: none;
 }
 
-.onsnc-category-btn:hover {
-  background-color: #f3f4f6;
+.civ3-category-btn:hover {
+  background-color: var(--gray-100);
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.onsnc-category-btn.active {
-  background-color: #2563eb;
-  color: #ffffff;
-  border-color: #2563eb;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+.civ3-category-btn.active {
+  background: linear-gradient(135deg, var(--economic-primary), var(--science-primary));
+  color: var(--white);
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
 }
 
 /* Progress Bar */
-.goals-progress-wrapper {
+.civ3-progress-wrapper {
   max-width: 700px;
   margin: 0 auto;
 }
 
-.goals-progress-bar {
-  background-color: #ffffff;
+.civ3-progress-bar {
+  background-color: var(--white);
   border-radius: 50px;
   height: 12px;
   overflow: hidden;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-.goals-progress-fill {
+.civ3-progress-fill {
   height: 100%;
   width: 75%;
-  background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+  background: linear-gradient(90deg, var(--economic-primary) 0%, var(--science-primary) 100%);
   border-radius: 50px;
   transition: width 0.5s ease;
 }
 
-.goals-progress-text {
+.civ3-progress-text {
   text-align: center;
-  color: #6b7280;
+  color: var(--gray-600);
   margin-top: 8px;
   font-size: 0.9rem;
 }
 
 /* Goals Grid */
-.onsnc-goals-grid {
+.civ3-goals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 32px;
@@ -160,16 +212,16 @@
 }
 
 /* Goal Card */
-.onsnc-goal-card {
-  background-color: #ffffff;
+.civ3-goal-card {
+  background-color: var(--white);
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--gray-200);
   transition: all 0.4s ease;
 }
 
-.onsnc-goal-card:hover {
+.civ3-goal-card:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   transform: translateY(-8px);
 }
@@ -178,28 +230,29 @@
   height: 8px;
 }
 
-.goal-accent-red {
-  background: linear-gradient(90deg, #ef4444 0%, #ec4899 100%);
+/* Accent Color Variants */
+.goal-accent-social {
+  background: linear-gradient(90deg, var(--social-primary) 0%, #e67e22 100%);
 }
 
-.goal-accent-blue {
-  background: linear-gradient(90deg, #3b82f6 0%, #14b8a6 100%);
+.goal-accent-economic {
+  background: linear-gradient(90deg, var(--economic-primary) 0%, #7c3aed 100%);
 }
 
-.goal-accent-green {
-  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+.goal-accent-environmental {
+  background: linear-gradient(90deg, var(--environmental-primary) 0%, #34d399 100%);
 }
 
-.goal-accent-purple {
-  background: linear-gradient(90deg, #a855f7 0%, #6366f1 100%);
+.goal-accent-governance {
+  background: linear-gradient(90deg, var(--governance-primary) 0%, #fbbf24 100%);
 }
 
-.goal-accent-amber {
-  background: linear-gradient(90deg, #f59e0b 0%, #fb923c 100%);
+.goal-accent-science {
+  background: linear-gradient(90deg, var(--science-primary) 0%, #22d3ee 100%);
 }
 
-.goal-accent-cyan {
-  background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+.goal-accent-culture {
+  background: linear-gradient(90deg, var(--culture-primary) 0%, #f472b6 100%);
 }
 
 .goal-card-content {
@@ -225,45 +278,46 @@
   flex-shrink: 0;
 }
 
-.goal-badge-red {
-  background-color: #fee2e2;
-  color: #dc2626;
+/* Badge Color Variants */
+.goal-badge-social {
+  background-color: var(--social-light);
+  color: var(--social-primary);
 }
 
-.goal-badge-blue {
-  background-color: #dbeafe;
-  color: #2563eb;
+.goal-badge-economic {
+  background-color: var(--economic-light);
+  color: var(--economic-primary);
 }
 
-.goal-badge-green {
-  background-color: #d1fae5;
-  color: #059669;
+.goal-badge-environmental {
+  background-color: var(--environmental-light);
+  color: var(--environmental-primary);
 }
 
-.goal-badge-purple {
-  background-color: #e9d5ff;
-  color: #9333ea;
+.goal-badge-governance {
+  background-color: var(--governance-light);
+  color: var(--governance-primary);
 }
 
-.goal-badge-amber {
-  background-color: #fef3c7;
-  color: #d97706;
+.goal-badge-science {
+  background-color: var(--science-light);
+  color: var(--science-primary);
 }
 
-.goal-badge-cyan {
-  background-color: #cffafe;
-  color: #0891b2;
+.goal-badge-culture {
+  background-color: var(--culture-light);
+  color: var(--culture-primary);
 }
 
 .goal-card-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--gray-900);
   line-height: 1.3;
 }
 
 .goal-card-text {
-  color: #4b5563;
+  color: var(--gray-600);
   margin-bottom: 16px;
   line-height: 1.6;
   font-size: 0.95rem;
@@ -282,65 +336,89 @@
   font-weight: 500;
 }
 
-.goal-tag-red {
-  background-color: #fee2e2;
-  color: #991b1b;
+/* Tag Color Variants */
+.goal-tag-social {
+  background-color: var(--social-light);
+  color: var(--social-primary);
 }
 
-.goal-tag-blue {
-  background-color: #dbeafe;
-  color: #1e40af;
+.goal-tag-economic {
+  background-color: var(--economic-light);
+  color: var(--economic-primary);
 }
 
-.goal-tag-green {
-  background-color: #d1fae5;
-  color: #065f46;
+.goal-tag-environmental {
+  background-color: var(--environmental-light);
+  color: var(--environmental-primary);
 }
 
-.goal-tag-purple {
-  background-color: #e9d5ff;
-  color: #6b21a8;
+.goal-tag-governance {
+  background-color: var(--governance-light);
+  color: var(--governance-primary);
 }
 
-.goal-tag-amber {
-  background-color: #fef3c7;
-  color: #92400e;
+.goal-tag-science {
+  background-color: var(--science-light);
+  color: var(--science-primary);
 }
 
-.goal-tag-cyan {
-  background-color: #cffafe;
-  color: #155e75;
+.goal-tag-culture {
+  background-color: var(--culture-light);
+  color: var(--culture-primary);
 }
 
 .goal-priority-text {
-  color: #6b7280;
+  color: var(--gray-600);
+}
+
+/* View All Button */
+.civ3-view-all {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.civ3-view-all-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--economic-primary), var(--science-primary));
+  color: var(--white);
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+.civ3-view-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(168, 85, 247, 0.4);
 }
 
 /* Call to Action Section */
-.goals-cta-section {
+.civ3-cta-section {
   text-align: center;
   margin-top: 64px;
 }
 
-.goals-cta-box {
-  background-color: #ffffff;
+.civ3-cta-box {
+  background-color: var(--white);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 48px 32px;
   max-width: 900px;
   margin: 0 auto;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--gray-200);
 }
 
-.goals-cta-title {
+.civ3-cta-title {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--gray-900);
   margin-bottom: 16px;
 }
 
-.goals-cta-text {
-  color: #4b5563;
+.civ3-cta-text {
+  color: var(--gray-600);
   margin-bottom: 32px;
   max-width: 700px;
   margin-left: auto;
@@ -349,7 +427,7 @@
   font-size: 1rem;
 }
 
-.goals-cta-buttons {
+.civ3-cta-buttons {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -357,7 +435,110 @@
   align-items: center;
 }
 
-.goals-btn {
+.civ3-btn-secondary {
+  background: linear-gradient(135deg, var(--culture-primary), var(--economic-primary));
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.4);
+}
+
+.civ3-btn-secondary:hover {
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+  transform: translateY(-2px);
+}
+
+.civ3-btn-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .civ3-cta-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .civ3-main-title {
+    font-size: 3rem;
+  }
+  
+  .civ3-goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .civ3-goals-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .civ3-main-title {
+    font-size: 2rem;
+  }
+  
+  .civ3-description {
+    font-size: 1rem;
+  }
+  
+  .civ3-category-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .civ3-category-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .civ3-main-title {
+    font-size: 1.875rem;
+  }
+  
+  .civ3-description {
+    font-size: 0.95rem;
+  }
+  
+  .civ3-goals-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .civ3-cta-box {
+    padding: 32px 24px;
+  }
+  
+  .civ3-btn {
+    min-width: 200px;
+    font-size: 0.9rem;
+    padding: 12px 24px;
+  }
+  
+  .civ3-category-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.civ3-goal-card {
+  animation: fadeInUp 0.6s ease-out;
+} {
   padding: 14px 32px;
   border-radius: 50px;
   font-weight: 600;
@@ -371,80 +552,15 @@
   min-width: 240px;
 }
 
-.goals-btn-primary {
-  background-color: #2563eb;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+.civ3-btn-primary {
+  background: linear-gradient(135deg, var(--economic-primary), var(--science-primary));
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.4);
 }
 
-.goals-btn-primary:hover {
-  background-color: #1d4ed8;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+.civ3-btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
   transform: translateY(-2px);
 }
 
-.goals-btn-secondary {
-  background-color: #7c3aed;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
-}
-
-.goals-btn-secondary:hover {
-  background-color: #6d28d9;
-  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
-  transform: translateY(-2px);
-}
-
-.goals-btn-icon {
-  width: 20px;
-  height: 20px;
-  margin-left: 8px;
-}
-
-/* Responsive Design */
-@media (min-width: 640px) {
-  .goals-cta-buttons {
-    flex-direction: row;
-  }
-}
-
-@media (min-width: 768px) {
-  .goals-main-title {
-    font-size: 3rem;
-  }
-  
-  .onsnc-goals-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .onsnc-goals-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .goals-main-title {
-    font-size: 1.875rem;
-  }
-  
-  .goals-description {
-    font-size: 1rem;
-  }
-  
-  .onsnc-goals-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .goals-cta-box {
-    padding: 32px 24px;
-  }
-  
-  .goals-btn {
-    min-width: 200px;
-    font-size: 0.9rem;
-    padding: 12px 24px;
-  }
-}
-
+.civ3-btn
