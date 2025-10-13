@@ -157,6 +157,22 @@
   line-height: 1.5;
 }
 
+/* Slogan styling */
+.slogan {
+  font-size: 16px;       /* default size */
+  font-weight: 600;      /* bold */
+  color: var(--ink);
+  margin-left: 8px;
+}
+
+/* Desktop view – bigger slogan */
+@media (min-width: 901px) {
+  .slogan {
+    font-size: 20px;     /* bigger on desktop */
+    font-weight: 700;    /* extra bold */
+  }
+}
+
 /* =========================
    Navigation Menu - Desktop Below Logo
    ========================= */
