@@ -496,22 +496,33 @@
 @media (max-width: 900px) {
   .header-top-section {
     display: grid;
-    grid-template-columns: auto 1fr auto; /* left | center | right */
+    grid-template-columns: auto 1fr auto; /* logo | slogan | toggle */
     align-items: center;
     gap: 10px;
+    position: relative;
   }
 
   .center-section {
-    display: block;       /* always visible */
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;  /* force center in grid */
+    z-index: 1;
   }
 
   .header-slogan p {
     font-size: 14px;
     font-weight: 600;
     margin: 0;
+    text-align: center;
+    white-space: nowrap;   /* prevent wrapping */
   }
 
-  /* Hide logo-subtitle slogan on mobile if duplicate */
   .site-title .slogan { display: none; }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 2; /* toggle always clickable */
+  }
 }
+
