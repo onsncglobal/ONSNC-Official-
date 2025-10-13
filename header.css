@@ -492,3 +492,26 @@
     font-size: 10px;
   }
 }
+
+@media (max-width: 900px) {
+  .header-top-section {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* left | center | right */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .center-section {
+    display: block;       /* always visible */
+    text-align: center;
+  }
+
+  .header-slogan p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Hide logo-subtitle slogan on mobile if duplicate */
+  .site-title .slogan { display: none; }
+}
