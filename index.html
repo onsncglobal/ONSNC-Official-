@@ -23,6 +23,8 @@
 <link rel="stylesheet" href="vision.css"> 
 <link rel="stylesheet" href="features.css"> 
 <link rel="stylesheet" href="news-section.css"> 
+<link rel="stylesheet" href="video-media-section.css">
+<link rel="stylesheet" href="events-section.css"> 
 </head>
 <body>
     
@@ -862,7 +864,7 @@
         <div class="news-content">
           <h3>Building Sustainable Civilizations</h3>
           <p>Discover how ONSNC initiatives are transforming communities through education, sustainability, and technology.</p>
-          <a href="news.html" class="read-more">Read More →</a>
+          <a href="news-home.html" class="read-more">Read More →</a>
         </div>
       </article>
 
@@ -871,17 +873,74 @@
         <div class="news-content">
           <h3>Empowering Youth through Knowledge</h3>
           <p>Our education and digital literacy pilots are preparing the next generation for a knowledge-driven civilization.</p>
-          <a href="news.html" class="read-more">Read More →</a>
+          <a href="news-home.html" class="read-more">Read More →</a>
         </div>
       </article>
     </div>
 
     <div class="view-all">
-      <a href="news.html" class="btn-primary">View All Articles</a>
+      <a href="news-home.html" class="btn-primary">View All Articles</a>
     </div>
   </div>
 </section>
+
+
+    <section id="video-media-center" class="media-section">
+  <div class="container">
+    <h2 class="section-title">Video & Media Center</h2>
+    <p class="section-subtitle">Explore our latest videos, interviews, and media highlights</p>
     
+    <div id="media-grid" class="media-grid">
+      <!-- Dynamic video/media cards will be inserted here by JS -->
+    </div>
+    
+    <div class="media-load-more">
+      <button id="load-more-btn">Load More</button>
+    </div>
+  </div>
+
+  <!-- Modal for video playback -->
+  <div id="video-modal" class="video-modal">
+    <div class="video-modal-content">
+      <span class="close-btn">&times;</span>
+      <iframe id="modal-video" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+ 
+<section id="events-section" class="events-section">
+  <div class="container">
+    <!-- Hero Upcoming Events Carousel -->
+    <div class="hero-carousel">
+      <div id="hero-events" class="hero-events">
+        <!-- Hero slides dynamically inserted via JS -->
+      </div>
+
+      <!-- Carousel navigation -->
+      <button class="carousel-btn prev-btn">&#10094;</button>
+      <button class="carousel-btn next-btn">&#10095;</button>
+
+      <!-- Slide indicators -->
+      <div class="carousel-dots" id="carousel-dots"></div>
+
+      <!-- Thumbnail Previews -->
+      <div class="carousel-thumbnails" id="carousel-thumbnails"></div>
+    </div>
+
+    <!-- Explore More Events -->
+    <div class="explore-events">
+      <h3 class="section-title">Explore More Events</h3>
+      <div id="events-grid" class="events-grid">
+        <!-- Event cards dynamically inserted via JS -->
+      </div>
+      <div class="events-load-more">
+        <button id="load-more-events-btn">Load More Events</button>
+      </div>
+    </div>
+  </div>
+</section>
+
     
     <!-- Call to Action Section -->
     <section class="cta-section">
@@ -1002,6 +1061,8 @@
 <!-- JavaScript -->
 <script src="nexus-section.js"></script>
 <script src="news-section.js"></script>
+<script src="video-media-section.js"></script> 
+<script src="events-section.js"></script>
 </body>
 </html>
 
