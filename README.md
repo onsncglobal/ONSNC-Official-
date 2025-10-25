@@ -81,8 +81,9 @@ Contribute to humanity’s next evolution through:
 ---
 
 ## 📜 License
-This project is part of the **ONSNC Global Framework**.  
-All materials are licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)** unless otherwise stated.
+This repository's code is licensed under the **Apache License 2.0** — see the [LICENSE](./LICENSE) file for details.
+Website content and media: licensed under **CC BY 4.0** (or CC BY-NC 4.0 if you choose non-commercial).
+
 
 ---
 
