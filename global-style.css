@@ -1,0 +1,782 @@
+/* =========================
+   CSS Variables
+   ========================= */
+:root {
+  --bg: #ffffff;
+  --ink: #1a1a1a;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+  --dark-blue: #003366;
+  --accent: #4f46e5;
+}
+
+/* =========================
+   Global Container
+   ========================= */
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   Top Header
+   ========================= */
+.header-top {
+  background: var(--dark-blue);
+  color: white;
+  padding: 10px 0;
+  font-size: 12px;
+  position: relative;
+  z-index: 999;
+}
+
+.header-top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header-links a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.header-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* =========================
+   Main Header - UN.org Style
+   ========================= */
+.main-header {
+  background-color: #ffffff !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(0,0,0,.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.main-header .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Header Top Section - Logo & Slogan */
+.header-top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+  gap: 40px;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  min-height: 120px;
+}
+
+.site-title {
+  flex: 0 0 auto;
+}
+
+.site-title a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 70px;
+  width: 70px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.logo-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Center Section - Slogan */
+.center-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-width: 0;
+  text-align: center;
+  max-width: 600px;
+}
+
+.header-slogan {
+  text-align: center;
+}
+
+.header-slogan p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.4px;
+  line-height: 1.6;
+  word-break: break-word;
+  word-spacing: 0.2em;
+}
+
+/* =========================
+   Navigation Menu - Desktop Below Logo
+   ========================= */
+.primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  border-top: 1px solid rgba(0,0,0,.05);
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--accent);
+}
+
+/* =========================
+   Buttons Row
+   ========================= */
+.nav-buttons-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 15px 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 11px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79,70,229,0.3);
+}
+
+.btn-secondary {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* =========================
+   Mobile Toggle
+   ========================= */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid rgba(0,0,0,.15);
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.nav-toggle:hover {
+  background: rgba(0,0,0,.05);
+  border-color: var(--accent);
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .header-top-section {
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .logo-img {
+    height: 60px;
+    width: 60px;
+    font-size: 28px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .logo-subtitle {
+    font-size: 11px;
+  }
+
+  .header-slogan p {
+    font-size: 15px;
+  }
+
+  .menu a {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 9px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .header-top {
+    font-size: 11px;
+    padding: 8px 0;
+  }
+
+  .header-links {
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .header-top-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .main-header .container {
+    gap: 0;
+  }
+
+  .header-top-section {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    justify-content: space-between;
+    gap: 12px;
+    min-height: auto;
+  }
+
+  .site-title {
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  .site-title a {
+    gap: 10px;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: 50px;
+    font-size: 22px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .logo-subtitle {
+    font-size: 8px;
+  }
+
+  .logo-text-wrapper {
+    gap: 2px;
+  }
+
+  .center-section {
+    display: none;
+    order: 3;
+    max-width: 100%;
+  }
+
+  .center-section.mobile-show {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 15px 20px;
+    gap: 12px;
+    background: var(--bg);
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    z-index: 999;
+  }
+
+  .header-slogan p {
+    font-size: 11px;
+    line-height: 1.3;
+    word-spacing: 0.15em;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+    order: 2;
+  }
+
+  .primary {
+    padding: 0;
+    border: none;
+    display: none;
+  }
+
+  .primary.mobile-show {
+    display: flex;
+    padding: 12px 0;
+    border-top: 1px solid rgba(0,0,0,.05);
+    border-bottom: 1px solid rgba(0,0,0,.05);
+  }
+
+  .nav-buttons-row {
+    padding: 12px 0;
+    gap: 10px;
+    border-top: 1px solid rgba(0,0,0,.05);
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+    width: 100%;
+  }
+
+  .menu.open {
+    display: flex;
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .menu a {
+    padding: 14px 16px;
+    font-size: 14px;
+    text-align: left;
+    border-radius: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+  }
+
+  .menu a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .header-links a {
+    font-size: 9px;
+  }
+
+  .header-top-section {
+    padding: 12px 0;
+  }
+
+  .logo-img {
+    height: 45px;
+    width: 45px;
+    font-size: 20px;
+  }
+
+  .logo-text {
+    font-size: 14px;
+  }
+
+  .logo-subtitle {
+    font-size: 7px;
+  }
+
+  .btn {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .header-slogan p {
+    font-size: 10px;
+  }
+}
+
+/* =============================
+   ONSNC Civilization 3.0 Footer
+============================= */
+
+.footer {
+  background: linear-gradient(180deg, #001f3f 0%, #001a33 100%);
+  color: #fff;
+  padding: 70px 20px 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #4da6ff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #4da6ff;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #4da6ff;
+}
+
+/* Newsletter */
+.newsletter-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.newsletter-section h4 {
+  color: #4da6ff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.newsletter-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+#newsletterForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#newsletterForm input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  width: 220px;
+  font-size: 0.95rem;
+}
+
+.btn-subscribe {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-subscribe:hover {
+  background: #005fcc;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+
+.footer-bottom p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-legal a {
+  color: #4da6ff;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-column h3 {
+    font-size: 1rem;
+  }
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+  #newsletterForm input {
+    width: 100%;
+  }
+}/* =============================
+   ONSNC Civilization 3.0 Footer
+============================= */
+
+.footer {
+  background: linear-gradient(180deg, #001f3f 0%, #001a33 100%);
+  color: #fff;
+  padding: 70px 20px 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #4da6ff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #4da6ff;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #4da6ff;
+}
+
+/* Newsletter */
+.newsletter-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.newsletter-section h4 {
+  color: #4da6ff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.newsletter-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+#newsletterForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#newsletterForm input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  width: 220px;
+  font-size: 0.95rem;
+}
+
+.btn-subscribe {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-subscribe:hover {
+  background: #005fcc;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+
+.footer-bottom p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-legal a {
+  color: #4da6ff;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-column h3 {
+    font-size: 1rem;
+  }
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+  #newsletterForm input {
+    width: 100%;
+  }
+}
+
