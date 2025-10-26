@@ -919,3 +919,51 @@ body {
   /* ... other existing small mobile styles ... */
 }
 
+/* Container for the top section */
+.header-top-section {
+  display: flex;
+  align-items: center;       /* vertical centering */
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo block (left) */
+.site-title {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;            /* don’t shrink logo */
+}
+
+/* Center title */
+.center-section {
+  flex: 1;                   /* take available space */
+  text-align: center;
+}
+
+.center-section h1 {
+  font-size: 1.2rem;         /* smaller on mobile */
+  margin: 0;
+  white-space: nowrap;       /* prevent wrapping */
+}
+
+/* Hamburger (right) */
+.nav-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-top-section {
+    padding: 0 10px;
+  }
+  .logo-text-wrapper {
+    display: none;           /* hide subtitle text if too cramped */
+  }
+  .center-section h1 {
+    font-size: 1rem;
+  }
+}
