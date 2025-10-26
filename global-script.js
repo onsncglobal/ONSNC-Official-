@@ -1,25 +1,23 @@
+// ========================================
+// ONSNC Header Navigation - Complete JS
+// ========================================
+
 // Mobile navigation toggle functionality
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');
-const centerSection = document.querySelector('.center-section');
 const primaryNav = document.querySelector('.primary');
+const buttonRow = document.querySelector('.nav-buttons-row');
 
 if (toggle && menu) {
   // Toggle menu function
   const toggleMenu = () => {
-    const isOpen = menu.classList.toggle('open');
+    const isOpen = primaryNav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.textContent = isOpen ? '✕' : '☰';
     
-    // Show/hide slogan and menu on mobile
-    if (centerSection && primaryNav) {
-      if (isOpen) {
-        centerSection.classList.add('mobile-show');
-        primaryNav.classList.add('mobile-show');
-      } else {
-        centerSection.classList.remove('mobile-show');
-        primaryNav.classList.remove('mobile-show');
-      }
+    // Show/hide buttons and menu
+    if (buttonRow) {
+      buttonRow.classList.toggle('show', isOpen);
     }
   };
 
@@ -39,11 +37,11 @@ if (toggle && menu) {
 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (menu && menu.classList.contains('open')) {
-      if (!menu.contains(e.target) && !toggle.contains(e.target) && !centerSection.contains(e.target)) {
-        menu.classList.remove('open');
-        centerSection.classList.remove('mobile-show');
-        primaryNav.classList.remove('mobile-show');
+    if (primaryNav && primaryNav.classList.contains('open')) {
+      if (!menu.contains(e.target) && !toggle.contains(e.target) && 
+          (!buttonRow || !buttonRow.contains(e.target))) {
+        primaryNav.classList.remove('open');
+        if (buttonRow) buttonRow.classList.remove('show');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.textContent = '☰';
       }
@@ -52,10 +50,9 @@ if (toggle && menu) {
 
   // Close menu with Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menu && menu.classList.contains('open')) {
-      menu.classList.remove('open');
-      centerSection.classList.remove('mobile-show');
-      primaryNav.classList.remove('mobile-show');
+    if (e.key === 'Escape' && primaryNav && primaryNav.classList.contains('open')) {
+      primaryNav.classList.remove('open');
+      if (buttonRow) buttonRow.classList.remove('show');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.textContent = '☰';
     }
@@ -65,22 +62,22 @@ if (toggle && menu) {
   const menuLinks = menu.querySelectorAll('a');
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        menu.classList.remove('open');
-        centerSection.classList.remove('mobile-show');
-        primaryNav.classList.remove('mobile-show');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '☰';
-      }
+      primaryNav.classList.remove('open');
+      if (buttonRow) buttonRow.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
     });
   });
 }
 
-// Smooth scroll for anchor links
+// ========================================
+// Smooth Scroll for Anchor Links
+// ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
     
+    // Skip empty anchors
     if (href === '#') {
       e.preventDefault();
       return;
@@ -92,16 +89,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       e.preventDefault();
       
       // Close menu if open before scrolling
-      if (menu && menu.classList.contains('open')) {
-        menu.classList.remove('open');
-        if (centerSection) centerSection.classList.remove('mobile-show');
-        if (primaryNav) primaryNav.classList.remove('mobile-show');
+      if (primaryNav && primaryNav.classList.contains('open')) {
+        primaryNav.classList.remove('open');
+        if (buttonRow) buttonRow.classList.remove('show');
         if (toggle) {
           toggle.setAttribute('aria-expanded', 'false');
           toggle.textContent = '☰';
         }
       }
       
+      // Smooth scroll to target
       target.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -110,7 +107,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Add active state to current page link
+// ========================================
+// Active Page Link Highlighting
+// ========================================
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 const navLinks = document.querySelectorAll('.menu a');
 
@@ -119,36 +118,42 @@ navLinks.forEach(link => {
   if (linkPage === currentPage) {
     link.style.background = 'rgba(79, 70, 229, 0.1)';
     link.style.color = '#4f46e5';
+    link.style.fontWeight = '600';
   }
 });
 
-// Header scroll effect - Only shadow, NO background change
+// ========================================
+// Header Scroll Effect
+// ========================================
 let lastScroll = 0;
 const header = document.querySelector('.main-header');
 
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-  
-  // Only modify shadow for depth effect, NEVER change background
-  if (currentScroll > 10) {
-    header.style.boxShadow = '0 6px 16px rgba(0,0,0,0.12)';
-  } else {
-    header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
-  }
-  
-  // NEVER CHANGE BACKGROUND COLOR
-  header.style.backgroundColor = '#ffffff';
-  
-  lastScroll = currentScroll;
-});
+if (header) {
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    // Only modify shadow for depth effect
+    if (currentScroll > 10) {
+      header.style.boxShadow = '0 6px 16px rgba(0,0,0,0.12)';
+    } else {
+      header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+    }
+    
+    // Keep background white always
+    header.style.backgroundColor = '#ffffff';
+    
+    lastScroll = currentScroll;
+  });
+}
 
-// Handle responsive behavior
+// ========================================
+// Responsive Behavior Handler
+// ========================================
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768) {
     // Reset mobile menu on desktop resize
-    if (menu) menu.classList.remove('open');
-    if (centerSection) centerSection.classList.remove('mobile-show');
-    if (primaryNav) primaryNav.classList.remove('mobile-show');
+    if (primaryNav) primaryNav.classList.remove('open');
+    if (buttonRow) buttonRow.classList.remove('show');
     if (toggle) {
       toggle.setAttribute('aria-expanded', 'false');
       toggle.textContent = '☰';
@@ -156,24 +161,83 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Footer Interactive JS (Newsletter Form)
+// ========================================
+// Footer Newsletter Form Handler
+// ========================================
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("newsletterForm");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
 
-    if (!name || !email) {
-      alert("Please enter your name and email.");
-      return;
-    }
+      // Validation
+      if (!name || !email) {
+        alert("Please enter your name and email.");
+        return;
+      }
 
-    // Simulated success message
-    alert(`Thank you, ${name}! You are now subscribed to Civilization 3.0 updates.`);
-    form.reset();
-  });
+      // Email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      // Success message
+      alert(`Thank you, ${name}! You are now subscribed to Civilization 3.0 updates.`);
+      
+      // Reset form
+      form.reset();
+    });
+  }
 });
 
+// ========================================
+// Accessibility Enhancements
+// ========================================
 
+// Focus trap for mobile menu
+if (primaryNav && toggle) {
+  const focusableElements = primaryNav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+  const firstFocusable = focusableElements[0];
+  const lastFocusable = focusableElements[focusableElements.length - 1];
+
+  primaryNav.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab' && primaryNav.classList.contains('open')) {
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    }
+  });
+}
+
+// ========================================
+// Performance: Debounced Resize Handler
+// ========================================
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    // Add any resize-specific optimizations here
+    console.log('Window resized - layout updated');
+  }, 250);
+});
+
+// ========================================
+// Console Info
+// ========================================
+console.log('%c🌐 ONSNC Civilization 3.0', 'color: #4f46e5; font-size: 16px; font-weight: bold;');
+console.log('%cBuilding the Future Together', 'color: #7c3aed; font-size: 12px;');
+console.log('Navigation system loaded successfully ✓');
