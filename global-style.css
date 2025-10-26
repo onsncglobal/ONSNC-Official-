@@ -23,6 +23,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background: var(--bg);
   color: var(--ink);
+  padding-top: 140px; /* To account for fixed headers */
 }
 
 .container {
@@ -37,8 +38,11 @@ body {
 .header-top {
   background: var(--dark-blue);
   color: white;
-  padding: 14px 0;
-  position: relative;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 999;
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -54,7 +58,7 @@ body {
 .brand {
   color: white;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
@@ -62,11 +66,14 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand::before {
   content: "🌐";
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .brand:hover {
@@ -97,9 +104,9 @@ body {
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -129,9 +136,8 @@ body {
    ========================= */
 .main-header {
   background-color: #ffffff;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 48px; /* Height of top header */
   left: 0;
   right: 0;
   z-index: 1000;
@@ -151,8 +157,8 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
-  gap: 10px;
+  padding: 10px 0;
+  gap: 8px;
   flex-wrap: nowrap;
   width: 100%;
 }
@@ -172,9 +178,9 @@ body {
 }
 
 .logo-img {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
   border-radius: 8px;
   display: flex;
@@ -182,7 +188,7 @@ body {
   justify-content: center;
   color: white;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 16px;
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
 }
@@ -194,7 +200,7 @@ body {
 
 .logo-text {
   font-weight: 800;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1;
   color: var(--ink);
   white-space: nowrap;
@@ -211,13 +217,14 @@ body {
   align-items: center;
   justify-content: center;
   min-width: 0;
+  padding: 0 5px;
 }
 
 .civilization-title {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 800;
   color: var(--accent);
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
   -webkit-background-clip: text;
@@ -225,6 +232,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
 }
 
 /* RIGHT: Hamburger */
@@ -237,51 +245,15 @@ body {
   padding: 8px 10px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   flex-shrink: 0;
-  min-width: 40px;
+  min-width: 36px;
   box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
 }
 
 .nav-toggle:active {
   transform: scale(0.95);
-}
-
-@keyframes gradientShift {
-  0%, 100% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(10deg); }
-}
-
-/* Hamburger Menu Button (Right Side) */
-.nav-toggle {
-  display: inline-flex;
-  background: linear-gradient(135deg, var(--accent), var(--purple));
-  border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 24px;
-  color: white;
-  transition: all 0.3s ease;
-  flex-shrink: 0 !important;
-  min-width: 48px;
-  line-height: 1;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-}
-
-.nav-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
-}
-
-.nav-toggle:active {
-  transform: translateY(0);
-}
-
-.nav-toggle:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 
 /* =========================
@@ -527,63 +499,125 @@ body {
 }
 
 /* =========================
-   Responsive Design - ALL DEVICES SIMILAR
+   Responsive Design - MOBILE FIRST APPROACH
    ========================= */
 
-/* Large Desktop */
-@media (min-width: 1441px) {
+/* Mobile - Base Styles (already defined above) */
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .header-top {
+    padding: 8px 0;
+  }
+  
+  .brand {
+    font-size: 12px;
+  }
+  
+  #lang-select {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+  
+  .header-top-section {
+    padding: 8px 0;
+    gap: 5px;
+  }
+  
   .logo-img {
-    height: 55px;
-    width: 55px;
-    min-width: 55px;
-    font-size: 26px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 14px;
   }
-
+  
   .logo-text {
-    font-size: 22px;
+    font-size: 12px;
   }
-
+  
   .civilization-title {
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
   }
-
+  
   .nav-toggle {
-    font-size: 24px;
-    padding: 10px 14px;
+    font-size: 16px;
+    padding: 7px 9px;
+    min-width: 34px;
   }
 }
 
-/* Desktop */
-@media (min-width: 1025px) and (max-width: 1440px) {
+/* Very Small Mobile */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .header-top-section {
+    gap: 4px;
+  }
+  
   .logo-img {
-    height: 50px;
-    width: 50px;
-    min-width: 50px;
-    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 13px;
+  }
+  
+  .logo-text {
+    font-size: 11px;
+  }
+  
+  .civilization-title {
+    font-size: 9px;
+    letter-spacing: 0.3px;
+  }
+  
+  .nav-toggle {
+    font-size: 15px;
+    padding: 6px 8px;
+    min-width: 32px;
+  }
+  
+  .brand {
+    font-size: 11px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo-img {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 18px;
   }
 
   .logo-text {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .civilization-title {
-    font-size: 22px;
-    letter-spacing: 1.8px;
+    font-size: 16px;
+    letter-spacing: 1.2px;
   }
 
   .nav-toggle {
-    font-size: 22px;
+    font-size: 20px;
     padding: 9px 12px;
   }
 }
 
-/* Laptop */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Desktop */
+@media (min-width: 1025px) {
   .logo-img {
-    height: 45px;
-    width: 45px;
-    min-width: 45px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
     font-size: 20px;
   }
 
@@ -597,126 +631,48 @@ body {
   }
 
   .nav-toggle {
+    font-size: 22px;
+    padding: 10px 14px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1441px) {
+  .logo-img {
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    font-size: 22px;
+  }
+
+  .logo-text {
     font-size: 20px;
   }
-}
-
-/* Tablet & Mobile - ALL SAME HORIZONTAL LINE */
-@media (max-width: 768px) {
-  .header-top {
-    padding: 8px 0;
-  }
-
-  .brand {
-    font-size: 10px;
-  }
-
-  #lang-select {
-    font-size: 9px;
-    padding: 4px 6px;
-  }
-
-  .header-top-section {
-    padding: 8px 0;
-    gap: 6px;
-  }
-
-  .logo-img {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    font-size: 14px;
-  }
-
-  .logo-text {
-    font-size: 13px;
-  }
 
   .civilization-title {
-    font-size: 11px;
-    letter-spacing: 0.5px;
+    font-size: 20px;
+    letter-spacing: 1.8px;
   }
 
   .nav-toggle {
-    font-size: 18px;
-    padding: 7px 9px;
-    min-width: 36px;
-  }
-
-  .menu a {
-    padding: 14px 20px;
-    font-size: 15px;
-  }
-
-  .btn {
-    padding: 18px 24px;
-    font-size: 17px;
-    font-weight: 700;
+    font-size: 24px;
+    padding: 10px 14px;
   }
 }
 
-/* Small Mobile */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 8px;
-  }
-
-  .header-top-section {
-    gap: 5px;
-  }
-
-  .logo-img {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    font-size: 12px;
-  }
-
-  .logo-text {
-    font-size: 11px;
-  }
-
-  .civilization-title {
-    font-size: 9px;
-    letter-spacing: 0.3px;
-  }
-
-  .nav-toggle {
-    font-size: 16px;
-    padding: 6px 8px;
-    min-width: 32px;
-  }
+/* Demo Content */
+.content-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Very Small Mobile */
-@media (max-width: 360px) {
-  .container {
-    padding: 0 6px;
-  }
+.content-section h2 {
+  margin-bottom: 20px;
+  color: var(--dark-blue);
+}
 
-  .header-top-section {
-    gap: 4px;
-  }
-
-  .logo-img {
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-    font-size: 11px;
-  }
-
-  .logo-text {
-    font-size: 10px;
-  }
-
-  .civilization-title {
-    font-size: 8px;
-    letter-spacing: 0.2px;
-  }
-
-  .nav-toggle {
-    font-size: 14px;
-    padding: 5px 7px;
-    min-width: 28px;
-  }
+.content-section p {
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
