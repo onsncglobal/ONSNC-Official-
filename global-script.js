@@ -355,3 +355,56 @@ console.log('%cBuilding the Future Together', 'color: #7c3aed; font-size: 14px; 
 console.log('%c✓ Navigation system loaded', 'color: #10b981; font-size: 12px;');
 console.log('%c✓ Multi-language support active', 'color: #10b981; font-size: 12px;');
 console.log('%c✓ Responsive design ready', 'color: #10b981; font-size: 12px;');
+
+
+// 🌙 Detect System Theme + Load Saved Theme
+function getPreferredTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) return savedTheme;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+// Apply theme
+function applyTheme(theme) {
+  document.body.dataset.theme = theme;
+  localStorage.setItem('theme', theme);
+  document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️' : '🌓';
+}
+
+// Initialize Theme
+applyTheme(getPreferredTheme());
+
+// Toggle Theme Button
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  const current = document.body.dataset.theme;
+  const next = current === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+});
+
+// 📱 Nav Toggle
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('primary-nav');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// 🌐 Language Switcher
+const langSelect = document.getElementById('lang-select');
+const translations = {
+  en: 'Welcome to ONSNC Civilization 3.0',
+  hi: 'ONSNC सभ्यता 3.0 में आपका स्वागत है',
+  as: 'ONSNC সভ্যতা 3.0লৈ স্বাগতম'
+};
+langSelect.addEventListener('change', e => {
+  alert(translations[e.target.value]);
+});
+
+// 🧠 Shrink Header on Scroll
+const header = document.getElementById('onsnc-header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    header.classList.add('shrink');
+  } else {
+    header.classList.remove('shrink');
+  }
+});
+
