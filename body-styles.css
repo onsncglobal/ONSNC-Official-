@@ -1578,3 +1578,13 @@ html {
     color: black !important;
   }
 }
+
+/* Optimize images for LCP */
+.news-card img,
+.hero-image,
+.video-thumbnail {
+    loading: lazy;
+    fetchpriority: high;
+    width: 100%;
+    height: auto;
+}
