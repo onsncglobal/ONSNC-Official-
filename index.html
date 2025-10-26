@@ -45,42 +45,79 @@
 </head>
 <body>
   
-  <!-- ✅ ONSNC Sticky Header -->
-  <header id="onsnc-header">
-    <!-- 🌍 Top Bar -->
-    <div class="header-top">
-      <div class="header-info">
-        <span>🌐 Civilization 3.0</span>
-        <span>| Empowering Future Generations</span>
-      </div>
-      <div class="header-actions">
-        <select id="lang-select" title="Select Language">
+
+  <!-- ========================================
+       TOP HEADER - Dark Blue with Welcome Message
+       ======================================== -->
+  <div class="header-top">
+    <div class="container">
+      <a href="/" class="brand" id="onsnc-brand">Welcome to ONSNC Civilization 3.0</a>
+      <div class="lang-switch">
+        <label for="lang-select" class="visually-hidden">Select Language</label>
+        <select id="lang-select" aria-label="Language Selection">
           <option value="en" selected>English</option>
           <option value="hi">हिन्दी</option>
           <option value="as">অসমীয়া</option>
         </select>
-        <button id="theme-toggle" title="Toggle Theme">🌓</button>
       </div>
     </div>
+  </div>
 
-    <!-- 🧭 Main Navigation -->
-    <div class="header-main">
-      <div class="brand">
-        <img src="https://onsnc.org/assets/logo.png" alt="ONSNC Logo">
-        <span>ONSNC</span>
+  <!-- ========================================
+       MAIN HEADER - Sticky Navigation
+       ======================================== -->
+  <header class="main-header">
+    <div class="container">
+      
+      <!-- Single Horizontal Line: Logo + Civilization + Hamburger -->
+      <div class="header-top-section">
+        
+        <!-- Logo + ONSNC Text (Left) -->
+        <div class="site-title">
+          <a href="/">
+            <div class="logo-img">ON</div>
+            <div class="logo-text-wrapper">
+              <span class="logo-text">ONSNC</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Civilization 3.0 (Center) -->
+        <div class="center-section">
+          <h1 class="civilization-title">Civilization 3.0</h1>
+        </div>
+
+        <!-- Hamburger Menu Button (Right) -->
+        <button class="nav-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+          ☰
+        </button>
+        
       </div>
-      <nav class="nav-links" id="primary-nav">
-        <a href="https://onsnc.org/">Home</a>
-        <a href="https://foundation.onsnc.org/">Foundation</a>
-        <a href="https://education.onsnc.org/">Education</a>
-        <a href="https://research.onsnc.org/">Research</a>
-        <a href="https://innovation.onsnc.org/">Innovation</a>
-        <a href="https://council.onsnc.org/">Council</a>
+
+      <!-- Navigation Menu (Dropdown) -->
+      <nav class="primary" aria-label="Primary Navigation">
+        <div class="menu">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/foundation">Foundation</a>
+          <a href="/education">Education</a>
+          <a href="/research">Research</a>
+          <a href="/innovation">Innovation</a>
+          <a href="/council">Council</a>
+          <a href="/contact">Contact</a>
+        </div>
+
+        <!-- Action Buttons Inside Menu -->
+        <div class="nav-buttons-row">
+          <a href="/join" class="btn btn-primary">Join Movement</a>
+          <a href="/donate" class="btn btn-secondary">Support Us</a>
+        </div>
       </nav>
-      <button id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+
     </div>
   </header>
 
+  
   <!-- Main Content -->
       <!-- Hero Section -->
 <section class="hero" role="banner" aria-label="Welcome to the Future of Civilization 3.0">
