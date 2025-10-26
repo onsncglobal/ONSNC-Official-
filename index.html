@@ -48,12 +48,16 @@
   <!-- ========================================
        TOP HEADER - Dark Blue with Welcome Message
        ======================================== -->
-  <div class="header-top">
-    <div class="container">
-      <a href="/" class="brand" id="onsnc-brand">Welcome to ONSNC Civilization 3.0</a>
-      <div class="lang-switch">
+  <!-- TOP HEADER -->
+  <div class="top-header" role="region" aria-label="Top header">
+    <div class="wrap">
+      <div class="top-left">
+        <a class="welcome" href="/" id="onsnc-welcome">Welcome to ONSNC Civilization 3.0</a>
+      </div>
+
+      <div class="top-right">
         <label for="lang-select" class="visually-hidden">Select Language</label>
-        <select id="lang-select" aria-label="Language Selection">
+        <select id="lang-select" aria-label="Language selection">
           <option value="en" selected>English</option>
           <option value="hi">हिन्दी</option>
           <option value="as">অসমীয়া</option>
@@ -62,61 +66,49 @@
     </div>
   </div>
 
-  <!-- ========================================
-       MAIN HEADER - Sticky Navigation
-       ======================================== -->
-  <header class="main-header">
-    <div class="container">
-      
-      <!-- Single Horizontal Line: Logo + Civilization + Hamburger -->
-      <div class="header-top-section">
-        
-        <!-- Logo + ONSNC Text (Left) -->
-        <div class="site-title">
-          <a href="/">
-            <div class="logo-img">ON</div>
-            <div class="logo-text-wrapper">
-              <span class="logo-text">ONSNC</span>
-            </div>
-          </a>
+  <!-- MAIN HEADER -->
+  <header class="main-header" role="banner">
+    <div class="wrap header-line">
+      <!-- Logo + text (left) -->
+      <a class="brand" href="/" aria-label="ONSNC homepage">
+        <div class="logo">
+          <span class="logo-mark">ON</span>
+          <span class="logo-text">ONSNC</span>
         </div>
+      </a>
 
-        <!-- Civilization 3.0 (Center) -->
-        <div class="center-section">
-          <h1 class="civilization-title">Civilization 3.0</h1>
-        </div>
-
-        <!-- Hamburger Menu Button (Right) -->
-        <button class="nav-toggle" aria-label="Toggle Navigation" aria-expanded="false">
-          ☰
-        </button>
-        
+      <!-- Center title -->
+      <div class="center-title" aria-hidden="false">
+        <h1 class="site-title">Civilization 3.0</h1>
       </div>
 
-      <!-- Navigation Menu (Dropdown) -->
-      <nav class="primary" aria-label="Primary Navigation">
-        <div class="menu">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/foundation">Foundation</a>
-          <a href="/education">Education</a>
-          <a href="/research">Research</a>
-          <a href="/innovation">Innovation</a>
-          <a href="/council">Council</a>
-          <a href="/contact">Contact</a>
-        </div>
-
-        <!-- Action Buttons Inside Menu -->
-        <div class="nav-buttons-row">
-          <a href="/join" class="btn btn-primary">Join Movement</a>
-          <a href="/donate" class="btn btn-secondary">Support Us</a>
-        </div>
-      </nav>
-
+      <!-- Hamburger (right) -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger">☰</span>
+      </button>
     </div>
+
+    <!-- Primary navigation (collapsible on small screens) -->
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/foundation">Foundation</a>
+        <a href="/education">Education</a>
+        <a href="/research">Research</a>
+        <a href="/innovation">Innovation</a>
+        <a href="/council">Council</a>
+        <a href="/contact">Contact</a>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="/join">Join Movement</a>
+          <a class="btn btn-secondary" href="/donate">Support Us</a>
+        </div>
+      </div>
+    </nav>
   </header>
 
-
+  
   <!-- Main Content -->
       <!-- Hero Section -->
 <section class="hero" role="banner" aria-label="Welcome to the Future of Civilization 3.0">
