@@ -5,30 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONSNC | Building Civilization 3.0</title>
     <meta name="description" content="Global movement for conscious innovation, ethical governance, and unified human progress">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+     <!-- CRITICAL CSS - INLINE -->
+    <style>
+    /* Critical above-the-fold styles here */
+    .hero { background: linear-gradient(135deg, #003366 0%, #004d99 100%); }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    /* Add other critical styles */
+    </style>
+
+    <!-- EXISTING FILES -->
+    <link rel="stylesheet" href="global-style.css">
+    <link rel="stylesheet" href="body-styles.css">
+
+    <!-- Add this AFTER your existing CSS files -->
+    <link rel="stylesheet" href="mobile-fix.css">
+    
+    <!-- NEW OPTIMIZED FILES - ADD HERE -->
+    <link rel="stylesheet" href="optimized-styles.css" defer>
+    
+    <!-- Font Awesome Replacement -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Note: Font Awesome ko defer kar diya -->
+
+    <!-- Google Fonts with preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style"> 
-
-     <!-- Non-critical CSS loaded deferred -->
-    <link rel="preload" href="optimized-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="optimized-styles.css"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z65W9Q3H5Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z65W9Q3H5Y');
-</script>
-    <!-- global.css को पहले लिंक करें -->
-<link rel="stylesheet" href="global-style.css">
-<!-- body-styles.css को बाद में लिंक करें -->
-<link rel="stylesheet" href="body-styles.css"> 
-
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z65W9Q3H5Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Z65W9Q3H5Y');
+    </script>
+    
 </head>
 <body>
     
@@ -1040,6 +1053,9 @@
     <!-- Common JS पहले -->
 <script src="global-script.js"></script> 
 <!-- Body scripts JS बाद में -->
-<script src="body-scripts.js"></script>  
+<!-- Add this BEFORE closing body tag -->
+<script src="mobile-scripts.js"></script>
+<script src="optimized-scripts.js" defer></script>
+    
 </body>
 </html>
