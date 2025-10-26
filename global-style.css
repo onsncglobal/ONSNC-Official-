@@ -130,12 +130,14 @@ body {
    ========================= */
 .main-header {
   background-color: #ffffff;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 3px solid var(--accent);
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .main-header.scrolled {
@@ -146,32 +148,37 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0;
+  width: 100%;
 }
 
-/* Header Top Section - EVERYTHING IN ONE LINE */
+/* Header Top Section - FORCE HORIZONTAL - NO WRAPPING */
 .header-top-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
   padding: 16px 0;
   gap: 15px;
   flex-wrap: nowrap !important;
+  width: 100%;
 }
 
 /* Logo + ONSNC Text (Left Side) */
 .site-title {
   flex: 0 0 auto;
   min-width: 0;
+  display: flex;
 }
 
 .site-title a {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
   gap: 10px;
   color: var(--ink);
   text-decoration: none;
   transition: transform 0.3s ease;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap !important;
 }
 
 .site-title a:hover {
@@ -181,6 +188,7 @@ body {
 .logo-img {
   height: 55px;
   width: 55px;
+  min-width: 55px;
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
   border-radius: 10px;
   display: flex;
@@ -189,7 +197,7 @@ body {
   color: white;
   font-weight: 800;
   font-size: 26px;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
   transition: all 0.3s ease;
 }
@@ -205,6 +213,7 @@ body {
   gap: 2px;
   min-width: 0;
   flex-shrink: 1;
+  overflow: hidden;
 }
 
 .logo-text {
@@ -272,7 +281,8 @@ body {
   font-size: 24px;
   color: white;
   transition: all 0.3s ease;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
+  min-width: 48px;
   line-height: 1;
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
@@ -620,54 +630,65 @@ body {
   }
 
   .header-top-section {
-    padding: 10px 0;
-    gap: 6px;
+    padding: 10px 0 !important;
+    gap: 8px !important;
     flex-wrap: nowrap !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .site-title {
+    flex: 0 0 auto !important;
   }
 
   .site-title a {
-    gap: 6px;
+    gap: 6px !important;
+    display: flex !important;
+    flex-direction: row !important;
   }
 
   .logo-img {
-    height: 40px;
-    width: 40px;
-    font-size: 18px;
-    flex-shrink: 0;
+    height: 38px !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    font-size: 17px;
+    flex-shrink: 0 !important;
   }
 
   .logo-text {
-    font-size: 14px;
+    font-size: 13px !important;
   }
 
   .logo-subtitle {
-    font-size: 7px;
+    font-size: 6px !important;
   }
 
   .center-section {
-    flex: 1 1 auto;
-    min-width: 0;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    display: flex !important;
   }
 
   .civilization-title {
-    font-size: 12px;
-    letter-spacing: 0.5px;
+    font-size: 11px !important;
+    letter-spacing: 0.5px !important;
   }
 
   .nav-toggle {
-    padding: 7px 9px;
-    font-size: 18px;
-    flex-shrink: 0;
+    padding: 7px 9px !important;
+    font-size: 18px !important;
+    flex-shrink: 0 !important;
+    min-width: 40px !important;
   }
 
   .menu a {
-    padding: 13px 18px;
+    padding: 14px 20px;
     font-size: 14px;
   }
 
   .btn {
-    padding: 16px 20px;
-    font-size: 15px;
+    padding: 18px 24px;
+    font-size: 16px;
     font-weight: 700;
   }
 }
@@ -683,11 +704,11 @@ body {
   }
 
   .brand {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .brand::before {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   #lang-select {
@@ -696,59 +717,70 @@ body {
   }
 
   .header-top-section {
-    padding: 8px 0;
-    gap: 5px;
+    padding: 8px 0 !important;
+    gap: 6px !important;
     flex-wrap: nowrap !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .site-title {
+    flex: 0 0 auto !important;
   }
 
   .site-title a {
-    gap: 5px;
+    gap: 5px !important;
+    display: flex !important;
+    flex-direction: row !important;
   }
 
   .logo-img {
-    height: 36px;
-    width: 36px;
-    font-size: 16px;
+    height: 34px !important;
+    width: 34px !important;
+    min-width: 34px !important;
+    font-size: 15px !important;
     border-radius: 7px;
-    flex-shrink: 0;
+    flex-shrink: 0 !important;
   }
 
   .logo-text {
-    font-size: 13px;
+    font-size: 12px !important;
   }
 
   .logo-subtitle {
-    font-size: 6px;
+    font-size: 5px !important;
   }
 
   .center-section {
-    flex: 1 1 auto;
-    min-width: 0;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    display: flex !important;
   }
 
   .civilization-title {
-    font-size: 10px;
-    letter-spacing: 0.3px;
+    font-size: 9px !important;
+    letter-spacing: 0.3px !important;
   }
 
   .nav-toggle {
-    padding: 6px 8px;
-    font-size: 17px;
-    flex-shrink: 0;
+    padding: 6px 8px !important;
+    font-size: 16px !important;
+    flex-shrink: 0 !important;
+    min-width: 36px !important;
   }
 
   .menu a {
-    padding: 14px 18px;
+    padding: 14px 20px;
     font-size: 14px;
   }
 
   .menu a:hover {
-    padding-left: 26px;
+    padding-left: 28px;
   }
 
   .btn {
-    padding: 16px 20px;
-    font-size: 15px;
+    padding: 18px 24px;
+    font-size: 16px;
     font-weight: 700;
   }
 
@@ -772,11 +804,11 @@ body {
   }
 
   .brand {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .brand::before {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   #lang-select {
@@ -785,240 +817,60 @@ body {
   }
 
   .header-top-section {
-    padding: 7px 0;
-    gap: 4px;
+    padding: 7px 0 !important;
+    gap: 4px !important;
     flex-wrap: nowrap !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .site-title {
+    flex: 0 0 auto !important;
   }
 
   .site-title a {
-    gap: 4px;
+    gap: 4px !important;
+    display: flex !important;
+    flex-direction: row !important;
   }
 
   .logo-img {
-    height: 32px;
-    width: 32px;
-    font-size: 14px;
+    height: 30px !important;
+    width: 30px !important;
+    min-width: 30px !important;
+    font-size: 13px !important;
     border-radius: 6px;
-    flex-shrink: 0;
+    flex-shrink: 0 !important;
   }
 
   .logo-text {
-    font-size: 11px;
+    font-size: 10px !important;
   }
 
   .logo-subtitle {
-    font-size: 5px;
+    font-size: 5px !important;
   }
 
   .center-section {
-    flex: 1 1 auto;
-    min-width: 0;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    display: flex !important;
   }
 
   .civilization-title {
-    font-size: 8px;
-    letter-spacing: 0.2px;
+    font-size: 8px !important;
+    letter-spacing: 0.2px !important;
   }
 
   .nav-toggle {
-    padding: 5px 7px;
-    font-size: 15px;
-    flex-shrink: 0;
+    padding: 5px 7px !important;
+    font-size: 14px !important;
+    flex-shrink: 0 !important;
+    min-width: 32px !important;
   }
 
   .btn {
-    padding: 14px 18px;
-    font-size: 14px;
-  }
-}
-
-/* =========================
-   Responsive Design - Fixes for Single-Line Header
-   ========================= */
-
-/ Tablet /
-@media (max-width: 768px) {
-  /* ... existing styles ... */
-
-  /* Ensure the main container respects the nowrap rule */
-  .header-top-section {
-    padding: 10px 0;
-    gap: 6px;
-    flex-wrap: nowrap !important; /* Already set, just a reminder */
-  }
-
-  /* 1. Logo/Site Title (Left) - MUST NOT SHRINK */
-  .site-title {
-    flex: 0 0 auto; /* No growth, no shrinking, size based on content */
-    min-width: 0; /* Important for flex to calculate space correctly */
-  }
-
-  /* 2. Civilization 3.0 (Center) - MUST TAKE ALL REMAINING SPACE, MUST TRUNCATE */
-  .center-section {
-    flex: 1 1 0%; /* Allow to grow and shrink, but start with 0 base for better fit */
-    min-width: 0; /* Prevents overflow and allows content to shrink */
-    overflow: hidden; /* Already set, but crucial for truncation */
-  }
-
-  .civilization-title {
-    /* These styles are already set, but confirm the truncation ones: */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* This ensures the text shows '...' if it can't fit */
-    font-size: 12px; /* Already set, keeps text small */
-    letter-spacing: 0.5px;
-  }
-
-  /* 3. Hamburger Button (Right) - MUST NOT SHRINK */
-  .nav-toggle {
-    flex-shrink: 0; /* Already set, ensures it maintains its size */
-  }
-}
-
-/ Mobile /
-@media (max-width: 480px) {
-  /* ... existing styles ... */
-  
-  /* Retain the same flex properties as the tablet for the core layout fix */
-  .site-title {
-    flex: 0 0 auto;
-    min-width: 0;
-  }
-  
-  .center-section {
-    flex: 1 1 0%;
-    min-width: 0;
-  }
-
-  .civilization-title {
-    font-size: 10px; /* Even smaller font */
-  }
-  
-  /* ... other existing mobile styles ... */
-}
-
-/ Small Mobile /
-@media (max-width: 360px) {
-  /* ... existing styles ... */
-  
-  /* Retain the same flex properties */
-  .site-title {
-    flex: 0 0 auto;
-    min-width: 0;
-  }
-  
-  .center-section {
-    flex: 1 1 0%;
-    min-width: 0;
-  }
-
-  .civilization-title {
-    font-size: 8px; /* Smallest font */
-  }
-  
-  /* ... other existing small mobile styles ... */
-}
-
-/* Container for the top section */
-.header-top-section {
-  display: flex;
-  align-items: center;       /* vertical centering */
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Logo block (left) */
-.site-title {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;            /* don’t shrink logo */
-}
-
-/* Center title */
-.center-section {
-  flex: 1;                   /* take available space */
-  text-align: center;
-}
-
-.center-section h1 {
-  font-size: 1.2rem;         /* smaller on mobile */
-  margin: 0;
-  white-space: nowrap;       /* prevent wrapping */
-}
-
-/* Hamburger (right) */
-.nav-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .header-top-section {
-    padding: 0 10px;
-  }
-  .logo-text-wrapper {
-    display: none;           /* hide subtitle text if too cramped */
-  }
-  .center-section h1 {
-    font-size: 1rem;
-  }
-}
-
-
-/* ============================
-   HEADER TOP SECTION
-   ============================ */
-.header-top-section {
-  display: flex;
-  flex-direction: row;       /* force horizontal */
-  align-items: center;       /* vertical center */
-  justify-content: space-between;
-  width: 100%;
-  gap: 10px;
-}
-
-/* Left: Logo */
-.site-title {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;            /* logo kabhi shrink na ho */
-}
-
-/* Center: Title */
-.center-section {
-  flex: 1;                   /* center ko balance space do */
-  text-align: center;
-}
-
-.center-section h1 {
-  margin: 0;
-  font-size: 1.2rem;
-  white-space: nowrap;       /* line break na ho */
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Right: Hamburger */
-.nav-toggle {
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  flex-shrink: 0;            /* shrink na ho */
-}
-
-/* ============================
-   RESPONSIVE FIX
-   ============================ */
-@media (max-width: 768px) {
-  .logo-text-wrapper .logo-subtitle {
-    display: none;           /* chhoti screen par subtitle hata do */
-  }
-  .center-section h1 {
-    font-size: 1rem;
+    padding: 16px 20px;
+    font-size: 15px;
   }
 }
