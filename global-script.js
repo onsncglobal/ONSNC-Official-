@@ -1,23 +1,23 @@
 // ========================================
-// ONSNC Header Navigation - Complete JS
+// ONSNC Navigation System - Complete
 // ========================================
 
-// Mobile navigation toggle functionality
+// Navigation Elements
 const toggle = document.querySelector('.nav-toggle');
-const menu = document.getElementById('menu');
 const primaryNav = document.querySelector('.primary');
-const buttonRow = document.querySelector('.nav-buttons-row');
 
-if (toggle && menu) {
+if (toggle && primaryNav) {
   // Toggle menu function
   const toggleMenu = () => {
     const isOpen = primaryNav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.textContent = isOpen ? '✕' : '☰';
     
-    // Show/hide buttons and menu
-    if (buttonRow) {
-      buttonRow.classList.toggle('show', isOpen);
+    // Prevent body scroll when menu is open
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
   };
 
@@ -37,37 +37,83 @@ if (toggle && menu) {
 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (primaryNav && primaryNav.classList.contains('open')) {
-      if (!menu.contains(e.target) && !toggle.contains(e.target) && 
-          (!buttonRow || !buttonRow.contains(e.target))) {
+    if (primaryNav.classList.contains('open')) {
+      if (!primaryNav.contains(e.target) && !toggle.contains(e.target)) {
         primaryNav.classList.remove('open');
-        if (buttonRow) buttonRow.classList.remove('show');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.textContent = '☰';
+        document.body.style.overflow = '';
       }
     }
   });
 
   // Close menu with Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && primaryNav && primaryNav.classList.contains('open')) {
+    if (e.key === 'Escape' && primaryNav.classList.contains('open')) {
       primaryNav.classList.remove('open');
-      if (buttonRow) buttonRow.classList.remove('show');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.textContent = '☰';
+      document.body.style.overflow = '';
+      toggle.focus();
     }
   });
 
-  // Close menu when clicking on menu links
-  const menuLinks = menu.querySelectorAll('a');
+  // Close menu when clicking on any menu link
+  const menuLinks = primaryNav.querySelectorAll('a');
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
       primaryNav.classList.remove('open');
-      if (buttonRow) buttonRow.classList.remove('show');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.textContent = '☰';
+      document.body.style.overflow = '';
     });
   });
+}
+
+// ========================================
+// Language Switcher Functionality
+// ========================================
+const langSelect = document.getElementById('lang-select');
+
+if (langSelect) {
+  // Load saved language preference
+  const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+  langSelect.value = savedLang;
+
+  // Language change handler
+  langSelect.addEventListener('change', (e) => {
+    const selectedLang = e.target.value;
+    localStorage.setItem('selectedLanguage', selectedLang);
+    
+    // Update page language attribute
+    document.documentElement.lang = selectedLang;
+    
+    // You can add translation logic here
+    console.log(`Language changed to: ${selectedLang}`);
+    
+    // Optional: Show confirmation
+    const langNames = {
+      'en': 'English',
+      'hi': 'हिन्दी',
+      'as': 'অসমীয়া'
+    };
+    
+    // Update brand text based on language
+    updateBrandText(selectedLang);
+  });
+}
+
+// Update brand text based on language
+function updateBrandText(lang) {
+  const brand = document.getElementById('onsnc-brand');
+  if (brand) {
+    const translations = {
+      'en': 'Welcome to ONSNC Foundation',
+      'hi': 'ONSNC फाउंडेशन में आपका स्वागत है',
+      'as': 'ONSNC ফাউণ্ডেশ্যনলৈ স্বাগতম'
+    };
+    brand.textContent = translations[lang] || translations['en'];
+  }
 }
 
 // ========================================
@@ -78,7 +124,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const href = this.getAttribute('href');
     
     // Skip empty anchors
-    if (href === '#') {
+    if (href === '#' || href === '#!') {
       e.preventDefault();
       return;
     }
@@ -88,20 +134,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) {
       e.preventDefault();
       
-      // Close menu if open before scrolling
+      // Close menu if open
       if (primaryNav && primaryNav.classList.contains('open')) {
         primaryNav.classList.remove('open');
-        if (buttonRow) buttonRow.classList.remove('show');
         if (toggle) {
           toggle.setAttribute('aria-expanded', 'false');
           toggle.textContent = '☰';
         }
+        document.body.style.overflow = '';
       }
       
-      // Smooth scroll to target
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      // Calculate offset for sticky header
+      const headerHeight = document.querySelector('.main-header').offsetHeight;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      
+      // Smooth scroll
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
       });
     }
   });
@@ -118,7 +168,9 @@ navLinks.forEach(link => {
   if (linkPage === currentPage) {
     link.style.background = 'rgba(79, 70, 229, 0.1)';
     link.style.color = '#4f46e5';
-    link.style.fontWeight = '600';
+    link.style.fontWeight = '700';
+    link.style.borderLeft = '4px solid #4f46e5';
+    link.style.paddingLeft = '24px';
   }
 });
 
@@ -132,15 +184,12 @@ if (header) {
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    // Only modify shadow for depth effect
+    // Enhanced shadow on scroll
     if (currentScroll > 10) {
-      header.style.boxShadow = '0 6px 16px rgba(0,0,0,0.12)';
+      header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
     } else {
-      header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+      header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.08)';
     }
-    
-    // Keep background white always
-    header.style.backgroundColor = '#ffffff';
     
     lastScroll = currentScroll;
   });
@@ -149,16 +198,20 @@ if (header) {
 // ========================================
 // Responsive Behavior Handler
 // ========================================
+let resizeTimer;
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
-    // Reset mobile menu on desktop resize
-    if (primaryNav) primaryNav.classList.remove('open');
-    if (buttonRow) buttonRow.classList.remove('show');
-    if (toggle) {
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    // Close menu on resize if open
+    if (primaryNav && primaryNav.classList.contains('open')) {
+      primaryNav.classList.remove('open');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      }
+      document.body.style.overflow = '';
     }
-  }
+  }, 250);
 });
 
 // ========================================
@@ -176,68 +229,129 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Validation
       if (!name || !email) {
-        alert("Please enter your name and email.");
+        showNotification("Please enter your name and email.", "error");
         return;
       }
 
       // Email validation
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
+        showNotification("Please enter a valid email address.", "error");
         return;
       }
 
       // Success message
-      alert(`Thank you, ${name}! You are now subscribed to Civilization 3.0 updates.`);
+      showNotification(`Thank you, ${name}! You are now subscribed to Civilization 3.0 updates.`, "success");
       
       // Reset form
       form.reset();
     });
   }
+
+  // Initialize language on page load
+  const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+  updateBrandText(savedLang);
 });
 
 // ========================================
-// Accessibility Enhancements
+// Notification System
 // ========================================
+function showNotification(message, type = 'info') {
+  // Remove existing notifications
+  const existing = document.querySelector('.notification');
+  if (existing) existing.remove();
 
-// Focus trap for mobile menu
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `notification notification-${type}`;
+  notification.textContent = message;
+  
+  // Style notification
+  Object.assign(notification.style, {
+    position: 'fixed',
+    top: '20px',
+    right: '20px',
+    padding: '15px 20px',
+    background: type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6',
+    color: 'white',
+    borderRadius: '8px',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+    zIndex: '9999',
+    fontWeight: '600',
+    fontSize: '14px',
+    maxWidth: '300px',
+    animation: 'slideIn 0.3s ease'
+  });
+
+  document.body.appendChild(notification);
+
+  // Remove after 4 seconds
+  setTimeout(() => {
+    notification.style.animation = 'slideOut 0.3s ease';
+    setTimeout(() => notification.remove(), 300);
+  }, 4000);
+}
+
+// Add animation styles
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// ========================================
+// Accessibility Focus Management
+// ========================================
 if (primaryNav && toggle) {
   const focusableElements = primaryNav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
-  const firstFocusable = focusableElements[0];
-  const lastFocusable = focusableElements[focusableElements.length - 1];
+  
+  if (focusableElements.length > 0) {
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
 
-  primaryNav.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab' && primaryNav.classList.contains('open')) {
-      if (e.shiftKey) {
-        if (document.activeElement === firstFocusable) {
-          e.preventDefault();
-          lastFocusable.focus();
-        }
-      } else {
-        if (document.activeElement === lastFocusable) {
-          e.preventDefault();
-          firstFocusable.focus();
+    primaryNav.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab' && primaryNav.classList.contains('open')) {
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusable) {
+            e.preventDefault();
+            lastFocusable.focus();
+          }
+        } else {
+          if (document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable.focus();
+          }
         }
       }
-    }
-  });
+    });
+  }
 }
 
 // ========================================
-// Performance: Debounced Resize Handler
+// Console Branding
 // ========================================
-let resizeTimer;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    // Add any resize-specific optimizations here
-    console.log('Window resized - layout updated');
-  }, 250);
-});
-
-// ========================================
-// Console Info
-// ========================================
-console.log('%c🌐 ONSNC Civilization 3.0', 'color: #4f46e5; font-size: 16px; font-weight: bold;');
-console.log('%cBuilding the Future Together', 'color: #7c3aed; font-size: 12px;');
-console.log('Navigation system loaded successfully ✓');
+console.log('%c🌐 ONSNC CIVILIZATION 3.0', 'color: #4f46e5; font-size: 20px; font-weight: bold; text-shadow: 2px 2px 4px rgba(79,70,229,0.3);');
+console.log('%cBuilding the Future Together', 'color: #7c3aed; font-size: 14px; font-weight: 600;');
+console.log('%c✓ Navigation system loaded', 'color: #10b981; font-size: 12px;');
+console.log('%c✓ Multi-language support active', 'color: #10b981; font-size: 12px;');
+console.log('%c✓ Responsive design ready', 'color: #10b981; font-size: 12px;');
