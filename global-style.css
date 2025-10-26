@@ -928,3 +928,98 @@ body {
     font-size: 1rem;
   }
 }
+
+/* ====== Header container: force single horizontal line ====== */
+.header-top-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+  flex-wrap: nowrap;               /* prevent wrapping vertically */
+  position: relative;              /* needed for absolute centering of center-section */
+  padding: 6px 12px;
+  box-sizing: border-box;
+}
+
+/* ====== Left (logo) ====== */
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;                  /* do not grow or shrink unexpectedly */
+  min-width: 0;
+}
+
+/* logo visual */
+.logo-img {
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* hide subtitle on narrow screens if needed */
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.logo-text-wrapper .logo-subtitle {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+/* ====== Right (hamburger) ====== */
+.nav-toggle {
+  flex: 0 0 auto;                  /* fixed size, never wrap */
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 30;                      /* above center absolute element */
+}
+
+/* ====== Center: absolute centered so left/right don't push it down ====== */
+.center-section {
+;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;            /* so hamburger clicks aren't blocked by center text */
+  white-space: nowrap;             /* prevent title wrap */
+  max-width: calc(100% - 160px);   /* leave room for left+right items; adjust 160px as needed */
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 20;
+}
+
+.center-section h1 {
+  margin: 0;
+  font-size: 1rem;
+  pointer-events: auto;            /* allow selection if needed */
+}
+
+/* ====== Ensure nav (dropdown) does not force a new line on mobile ====== */
+.primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* If primary nav is shown inline on desktop but becomes block on mobile, hide or collapse it */
+@media (max-width: 900px) {
+  .primary .menu { display: none; }        /* hide full menu on small screens */
+  .primary .nav-buttons-row { display: none; }
+  .logo-text-wrapper .logo-subtitle { display: none; }  /* save space */
+  .center-section h1 { font-size: 0.95rem; }
+  .center-section { max-width: calc(100% - 120px); }     /* tighter space allowance */
+}
+
+/* Optional: ensure no element forces height increase */
+.header-top-section, .site-title, .nav-toggle, .center-section {
+  min-height: 44px;
+}
