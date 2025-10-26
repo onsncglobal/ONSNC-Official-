@@ -19,6 +19,12 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Place this as early as possible inside <head> -->
+    <link rel="preload" href="global-style.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+    <link rel="stylesheet" href="global-style.css">
+    </noscript>
     
     <!-- Defer CSS -->
     <link rel="preload" href="optimized-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
