@@ -967,3 +967,58 @@ body {
     font-size: 1rem;
   }
 }
+
+
+/* ============================
+   HEADER TOP SECTION
+   ============================ */
+.header-top-section {
+  display: flex;
+  flex-direction: row;       /* force horizontal */
+  align-items: center;       /* vertical center */
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+/* Left: Logo */
+.site-title {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;            /* logo kabhi shrink na ho */
+}
+
+/* Center: Title */
+.center-section {
+  flex: 1;                   /* center ko balance space do */
+  text-align: center;
+}
+
+.center-section h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  white-space: nowrap;       /* line break na ho */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right: Hamburger */
+.nav-toggle {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  flex-shrink: 0;            /* shrink na ho */
+}
+
+/* ============================
+   RESPONSIVE FIX
+   ============================ */
+@media (max-width: 768px) {
+  .logo-text-wrapper .logo-subtitle {
+    display: none;           /* chhoti screen par subtitle hata do */
+  }
+  .center-section h1 {
+    font-size: 1rem;
+  }
+}
