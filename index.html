@@ -45,54 +45,49 @@
 </head>
 <body>
     
-  <!-- Top Header Bar -->
+  <!-- Top Header Bar - Welcome + Language -->
   <header class="header-top">
     <div class="container">
-      <div class="header-top-content">
-        <div class="header-links">
-          <a href="#global-network">🌐 Global Network</a>
-          <a href="#research">📊 Research Portal</a>
-          <a href="#academy">🎓 ONSNC Academy</a>
-        </div>
-        <div class="header-links">
-          <a href="contact.html">📧 Contact</a>
-          <a href="#news">📰 News Centre</a>
-          <a href="#languages">🌍 EN | ES | FR</a>
-        </div>
+      <a href="/" class="brand" id="onsnc-brand" aria-label="ONSNC civilization 3.0" data-i18n="hero_title">Welcome to ONSNC Civilization 3.0</a>
+
+      <div class="lang-switch" aria-label="Language selector">
+        <label for="lang-select" class="visually-hidden" id="lang-label" data-i18n="arialanglabel">Choose language</label>
+        <select id="lang-select" aria-labelledby="lang-label" aria-live="polite">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="as">অসমীয়া</option>
+        </select>
       </div>
     </div>
   </header>
 
-  <!-- Main Header -->
+  <!-- Main Header - Logo + Civilization + Hamburger -->
   <header id="header" class="main-header">
     <div class="container">
       <!-- Logo and Title Section -->
       <div class="header-top-section">
+        <!-- Logo + ONSNC Text -->
         <div class="site-title">
           <a href="index.html">
             <div class="logo-img">ON</div>
             <div class="logo-text-wrapper">
               <span class="logo-text">ONSNC</span>
-              <span class="logo-subtitle">Civilization 3.0</span>
-              <span class="slogan">Building the Future Together</span>
             </div>
           </a>
         </div>
 
-        <!-- Center Section: Slogan -->
+        <!-- Center Section: Civilization 3.0 -->
         <div class="center-section">
-          <div class="header-slogan">
-            <p>Building an Inclusive, Sustainable & Technological Civilization</p>
-          </div>
+          <h1 class="civilization-title">Civilization 3.0</h1>
         </div>
 
-        <!-- Mobile Toggle -->
+        <!-- Hamburger Menu Button -->
         <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Toggle navigation">
           ☰
         </button>
       </div>
 
-      <!-- Menu Section (Below Logo on Desktop) -->
+      <!-- Navigation Menu (Dropdown) -->
       <nav class="primary" role="navigation" aria-label="Primary Navigation">
         <div id="menu" class="menu">
           <a href="index.html">Home</a>
@@ -104,16 +99,17 @@
           <a href="#resources">Resource Center</a>
           <a href="contact.html">Contact Us</a>
         </div>
-      </nav>
 
-      <!-- Buttons Row -->
-      <div class="nav-buttons-row">
-        <a href="#join" class="btn btn-secondary">Join Movement</a>
-        <a href="#support" class="btn btn-primary">Support ONSNC</a>
-      </div>
+        <!-- Buttons Inside Menu -->
+        <div class="nav-buttons-row">
+          <a href="#join" class="btn btn-primary">Join Movement</a>
+          <a href="#support" class="btn btn-secondary">Support ONSNC</a>
+        </div>
+      </nav>
     </div>
   </header>
 
+  
   <!-- Main Content -->
       <!-- Hero Section -->
 <section class="hero" role="banner" aria-label="Welcome to the Future of Civilization 3.0">
