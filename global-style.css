@@ -831,3 +831,91 @@ body {
     font-size: 14px;
   }
 }
+
+/* =========================
+   Responsive Design - Fixes for Single-Line Header
+   ========================= */
+
+/ Tablet /
+@media (max-width: 768px) {
+  /* ... existing styles ... */
+
+  /* Ensure the main container respects the nowrap rule */
+  .header-top-section {
+    padding: 10px 0;
+    gap: 6px;
+    flex-wrap: nowrap !important; /* Already set, just a reminder */
+  }
+
+  /* 1. Logo/Site Title (Left) - MUST NOT SHRINK */
+  .site-title {
+    flex: 0 0 auto; /* No growth, no shrinking, size based on content */
+    min-width: 0; /* Important for flex to calculate space correctly */
+  }
+
+  /* 2. Civilization 3.0 (Center) - MUST TAKE ALL REMAINING SPACE, MUST TRUNCATE */
+  .center-section {
+    flex: 1 1 0%; /* Allow to grow and shrink, but start with 0 base for better fit */
+    min-width: 0; /* Prevents overflow and allows content to shrink */
+    overflow: hidden; /* Already set, but crucial for truncation */
+  }
+
+  .civilization-title {
+    /* These styles are already set, but confirm the truncation ones: */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* This ensures the text shows '...' if it can't fit */
+    font-size: 12px; /* Already set, keeps text small */
+    letter-spacing: 0.5px;
+  }
+
+  /* 3. Hamburger Button (Right) - MUST NOT SHRINK */
+  .nav-toggle {
+    flex-shrink: 0; /* Already set, ensures it maintains its size */
+  }
+}
+
+/ Mobile /
+@media (max-width: 480px) {
+  /* ... existing styles ... */
+  
+  /* Retain the same flex properties as the tablet for the core layout fix */
+  .site-title {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+  
+  .center-section {
+    flex: 1 1 0%;
+    min-width: 0;
+  }
+
+  .civilization-title {
+    font-size: 10px; /* Even smaller font */
+  }
+  
+  /* ... other existing mobile styles ... */
+}
+
+/ Small Mobile /
+@media (max-width: 360px) {
+  /* ... existing styles ... */
+  
+  /* Retain the same flex properties */
+  .site-title {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+  
+  .center-section {
+    flex: 1 1 0%;
+    min-width: 0;
+  }
+
+  .civilization-title {
+    font-size: 8px; /* Smallest font */
+  }
+  
+  /* ... other existing small mobile styles ... */
+}
+
