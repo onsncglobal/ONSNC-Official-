@@ -5,1036 +5,313 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONSNC | Building Civilization 3.0</title>
     <meta name="description" content="Global movement for conscious innovation, ethical governance, and unified human progress">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical Above-the-Fold Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+        
+        .hero {
+            background: #F9FAFB;
+            padding: 60px 20px;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #003366;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: #0072CE;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 114, 206, 0.2);
+        }
+        
+        .btn-primary:hover {
+            background: #0056a3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 114, 206, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+    </style>
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z65W9Q3H5Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z65W9Q3H5Y');
-</script>
-    <!-- global.css को पहले लिंक करें -->
-<link rel="stylesheet" href="global-style.css">
-<!-- body-styles.css को बाद में लिंक करें -->
-<link rel="stylesheet" href="body-styles.css"> 
-
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="optimized-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="optimized-styles.css"></noscript>
+    
+    <!-- Font Awesome - defer loading -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Google Analytics - Async -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z65W9Q3H5Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z65W9Q3H5Y');
+    </script>
 </head>
 <body>
     
-  <!-- Top Header Bar -->
-  <header class="header-top">
-    <div class="container">
-      <div class="header-top-content">
-        <div class="header-links">
-          <a href="#global-network">🌐 Global Network</a>
-          <a href="#research">📊 Research Portal</a>
-          <a href="#academy">🎓 ONSNC Academy</a>
-        </div>
-        <div class="header-links">
-          <a href="contact.html">📧 Contact</a>
-          <a href="#news">📰 News Centre</a>
-          <a href="#languages">🌍 EN | ES | FR</a>
-        </div>
-      </div>
-    </div>
-  </header>
+    <!-- Header will be loaded via global-script.js -->
+    <div id="header-placeholder"></div>
 
-  <!-- Main Header -->
-  <header id="header" class="main-header">
-    <div class="container">
-      <!-- Logo and Title Section -->
-      <div class="header-top-section">
-        <div class="site-title">
-          <a href="index.html">
-            <div class="logo-img">ON</div>
-            <div class="logo-text-wrapper">
-              <span class="logo-text">ONSNC</span>
-              <span class="logo-subtitle">Civilization 3.0</span>
-              <span class="slogan">Building the Future Together</span>
+    <!-- Hero Section -->
+    <section class="hero" role="banner">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-rocket"></i>
+                <span>Co-Creating Civilization 3.0</span>
             </div>
-          </a>
-        </div>
+            
+            <h1>Welcome to the Future of Civilization 3.0</h1>
+            
+            <p class="subtitle">A Global Platform for Neo-Sustainable Human Progress — Integrating Universal Nexus Knowledge, Advanced AI, Quantum Computing, Blockchain Technology, and Ethical Governance</p>
 
-        <!-- Center Section: Slogan -->
-        <div class="center-section">
-          <div class="header-slogan">
-            <p>Building an Inclusive, Sustainable & Technological Civilization</p>
-          </div>
-        </div>
-
-        <!-- Mobile Toggle -->
-        <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Toggle navigation">
-          ☰
-        </button>
-      </div>
-
-      <!-- Menu Section (Below Logo on Desktop) -->
-      <nav class="primary" role="navigation" aria-label="Primary Navigation">
-        <div id="menu" class="menu">
-          <a href="index.html">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#our-work">Our Work</a>
-          <a href="#campaigns">Campaigns</a>
-          <a href="#get-involved">Get Involved</a>
-          <a href="#media">Media Centre</a>
-          <a href="#resources">Resource Center</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-      </nav>
-
-      <!-- Buttons Row -->
-      <div class="nav-buttons-row">
-        <a href="#join" class="btn btn-secondary">Join Movement</a>
-        <a href="#support" class="btn btn-primary">Support ONSNC</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-      <!-- Hero Section -->
-<section class="hero" role="banner" aria-label="Welcome to the Future of Civilization 3.0">
-    <div class="hero-content">
-        <div class="hero-badge">
-            <i class="fas fa-rocket"></i>
-            <span>Co-Creating Civilization 3.0</span>
-        </div>
-        
-        <h1>Welcome to the Future of Civilization 3.0</h1>
-        <p class="subtitle">A Global Platform for Neo-Sustainable Human Progress — Integrating Universal Nexus Knowledge, Advanced AI, Humanoid, Quantum Computing, Blockchain Technology, Bio-Technology, Renewable Energy, Regenerative Hybrid Economy Model, Advanced Conscious Innovation, and Ethical Hybrid Governance Council & Direct Democracy</p>
-
-        <p>
-            Join us in building Universal Nexus Civilization 3.0 — a modular, neo-sustainable, and digital-first society where every individual is empowered, technology serves neo-humanity, and communities thrive in harmony with nature.
-        </p>
-        
-        <div class="stats">  
-            <div class="stat-item">
-                <span class="stat-number" id="projectCount">7</span>
-                <span class="stat-label">Ongoing 3.0 Pilots</span>
-            </div>
-        </div>
-
-        <div class="hero-buttons">
-            <a href="join-movement.html" class="btn btn-primary btn-large">
-                <i class="fas fa-arrow-right"></i>
-                Join Civilization 3.0
-            </a> 
-            <a href="manifesto.html" class="btn btn-secondary btn-large">
-                <i class="fas fa-book-open"></i>
-                Explore Our 3.0 Manifesto
-            </a>
-        </div>
-</section>
-
-<!-- ONSNC 3.0 Philosophical Section -->
-<section class="philosophy-section" id="onsnc-philosophy" aria-labelledby="philosophy-title">
-  <div class="philosophy-container">
-    <header class="philosophy-header">
-      <h2 id="philosophy-title">The Meaning of ONSNC</h2>
-      <p class="philosophy-subtitle">
-        Omniversal Evolution of Humanity and Conscious Civilization 3.0
-      </p>
-    </header>
-
-    <div class="philosophy-grid">
-      <article class="philosophy-card">
-        <h3>Philosophical Identity</h3>
-        <p>
-          <strong>ONSNC</strong> stands for 
-          <em>Omniversal NovumSapiens & SentienceNeo for Nexus Civilization 3.0</em>.  
-          It represents the dawn of a new evolutionary phase where humanity merges
-          scientific knowledge, technological intelligence, and conscious ethics 
-          to build an enlightened civilization beyond borders and divisions.
-        </p>
-      </article>
-
-      <article class="philosophy-card">
-        <h3>Concept & Core Essence</h3>
-        <p>
-          Civilization 3.0 is a conscious ecosystem uniting sustainability, natural harmony,
-          and digital intelligence.  
-          ONSNC envisions humanity evolving as <em>Novum Sapiens</em>—beings of wisdom,
-          compassion, and innovation—guided by scientific truth and ethical purpose.
-        </p>
-      </article>
-
-      <article class="philosophy-card">
-        <h3>Vision & Features</h3>
-        <ul>
-          <li>🌍 Ethical AI & Conscious Technology</li>
-          <li>⚡ Regenerative Economy & Energy Transformation</li>
-          <li>🏛️ Hybrid Governance with Transparency & Justice</li>
-          <li>🎓 Scientific Education & Holistic Development</li>
-          <li>🌱 Ecological Balance & Sustainability</li>
-        </ul>
-      </article>
-
-      <article class="philosophy-card">
-        <h3>Why This Public Branding Name</h3>
-        <p>
-          The public name <strong>Open Network for Sustainable, Natural & Conscious Civilization 3.0</strong>
-          was chosen to communicate the mission clearly to everyone.
-          It bridges scientific innovation with human consciousness—creating an open,
-          inclusive movement accessible to all generations, cultures, and nations.
-        </p>
-      </article>
-    </div>
-
-    <div class="philosophy-cta">
-      <a href="philosophy.html" class="btn-explore">
-        Explore the ONSNC Philosophy →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Civilization 3.0 Overview Section -->
-<section class="civilization-overview" id="civilization-overview">
-    <div class="floating-elements">
-        <div class="float-element"></div>
-        <div class="float-element"></div>
-        <div class="float-element"></div>
-    </div>
-    
-    <div class="civilization-container">
-        <div class="section-header">
-            <h2 class="section-title" style="color:#003366; font-weight:bold;">Building Civilization 3.0</h2>
-            <p class="section-subtitle">A comprehensive framework for humanity's next evolutionary phase — integrating digital platforms, sustainable living, modular mobility, and ethical innovation</p>
-        </div>
-        
-        <div class="overview-cards">
-            <!-- Card 1 -->
-            <div class="overview-card">
-                <div class="card-number">1</div>
-                <h3 class="card-title">Global Challenges in 3.0 Era</h3>
-                <div class="card-content">
-                    <p>Humanity faces unprecedented challenges that require a systemic, 3.0 approach:</p>
-                    <ul class="card-features">
-                        <li>Climate adaptation & environmental resilience</li>
-                        <li>Equitable resource distribution & circular economy</li>
-                        <li>Ethical AI, blockchain, and digital governance</li>
-                        <li>Social fragmentation & inclusive community building</li>
-                    </ul>
+            <div class="stats">  
+                <div class="stat-item">
+                    <span class="stat-number" data-count="7">0</span>
+                    <span class="stat-label">Ongoing 3.0 Pilots</span>
                 </div>
-                <a href="global-challenges.html" class="card-link">
-                    Explore Challenges
+            </div>
+
+            <div class="hero-buttons">
+                <a href="join-movement.html" class="btn btn-primary">
                     <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Card 2 -->
-            <div class="overview-card">
-                <div class="card-number">2</div>
-                <h3 class="card-title">The Civilization 3.0 Vision</h3>
-                <div class="card-content">
-                    <p>A future-ready civilization framework emphasizing innovation, neo-sustainability, and human empowerment:</p>
-                    <ul class="card-features">
-                        <li>Platform-based cooperative economy</li>
-                        <li>Conscious technology and AI integration</li>
-                        <li>Regenerative ecological settlements</li>
-                        <li>Transparent, data-driven governance</li>
-                    </ul>
-                </div>
-                <a href="onsnc-vision.html" class="card-link">
-                    Discover Our Vision
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Card 3 -->
-            <div class="overview-card">
-                <div class="card-number">3</div>
-                <h3 class="card-title">Practical & Tech Solutions</h3>
-                <div class="card-content">
-                    <p>Advanced frameworks and tools for real-world Civilization 3.0 implementation:</p>
-                    <ul class="card-features">
-                        <li>Decentralized digital platforms</li>
-                        <li>Renewable energy & water recycling</li>
-                        <li>Modular, mobile community designs</li>
-                        <li>Neuro-inclusive and human-centric interfaces</li>
-                    </ul>
-                </div>
-                <a href="scientific-solutions.html" class="card-link">
-                    Explore Solutions
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Card 4 -->
-            <div class="overview-card">
-                <div class="card-number">4</div>
-                <h3 class="card-title">Inclusive & Resilient Systems</h3>
-                <div class="card-content">
-                    <p>Designing frameworks accessible to all communities, fostering resilience and equity:</p>
-                    <ul class="card-features">
-                        <li>Universal access to education, healthcare & resources</li>
-                        <li>Cross-cultural, multilingual integration</li>
-                        <li>Accessibility-first digital tools</li>
-                        <li>Community-driven governance models</li>
-                    </ul>
-                </div>
-                <a href="inclusive-system.html" class="card-link">
-                    Learn About Inclusion
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Card 5 -->
-            <div class="overview-card">
-                <div class="card-number">5</div>
-                <h3 class="card-title">3.0 Implementation Pathways</h3>
-                <div class="card-content">
-                    <p>Stepwise approach to build Civilization 3.0 globally:</p>
-                    <ul class="card-features">
-                        <li>Pilot villages & living labs</li>
-                        <li>Open-source frameworks & digital blueprints</li>
-                        <li>Gradual societal transition models</li>
-                        <li>Global skill-building & capacity programs</li>
-                    </ul>
-                </div>
-                <a href="implementation-pathways.html" class="card-link">
-                    View Roadmap
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Card 6 -->
-            <div class="overview-card">
-                <div class="card-number">6</div>
-                <h3 class="card-title">Join Civilization 3.0</h3>
-                <div class="card-content">
-                    <p>Be a part of shaping humanity’s future:</p>
-                    <ul class="card-features">
-                        <li>Global volunteer & innovation network</li>
-                        <li>Research, pilots & community projects</li>
-                        <li>Skill-based contribution opportunities</li>
-                        <li>Local & global implementation chapters</li>
-                    </ul>
-                </div>
-                <a href="join-movement.html" class="card-link">
-                    Get Involved
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- ================= NGO Section (Conflict Free) ================= -->
-<section id="ngo-section">
-  <div class="ngo-container">
-    
-    <!-- Header -->
-    <div class="ngo-section-header">
-      <span class="ngo-section-badge">🌍 Making Impact Together</span>
-      <h2>Our NGO Initiatives</h2>
-      <p>
-        <strong>ONSNC Foundation</strong> is embarking on a journey to create transformative impact 
-        through neo-sustainable community projects and innovative social initiatives.
-      </p>
-    </div>
-
-    <!-- Cards Grid -->
-    <div class="ngo-cards-grid">
-      
-      <div class="ngo-card">
-        <div class="ngo-card-icon">🏘️</div>
-        <h3>Community Projects</h3>
-        <p><strong>Empowering grassroots programs</strong> focused on universal basics resources free education, healthcare, skill development, and livelihood enhancement in underserved communities.</p>
-        <a href="https://foundation.onsnc.org/" class="ngo-card-link">Learn More →</a>
-      </div>
-
-      <div class="ngo-card">
-        <div class="ngo-card-icon">🔬</div>
-        <h3>Research & Innovation</h3>
-        <p><strong>Supporting applied research</strong> in neo-sustainable farming, renewable energy, and innovative solutions for tomorrow’s challenges.</p>
-        <a href="https://foundation.onsnc.org/" class="ngo-card-link">Learn More →</a>
-      </div>
-
-      <div class="ngo-card">
-        <div class="ngo-card-icon">🤝</div>
-        <h3>Global Collaboration</h3>
-        <p><strong>Building partnerships</strong> with NGOs, leaders, and volunteers for impactful social change across communities.</p>
-        <a href="https://foundation.onsnc.org/" class="ngo-card-link">Learn More →</a>
-      </div>
-
-    </div>
-
-    <!-- Stats -->
-    <div class="ngo-stats-section">
-      <div class="ngo-stat-item">
-        <span class="ngo-stat-number">🚀</span>
-        <span class="ngo-stat-label">Our Project Initiatives</span>
-      </div>
-      <div class="ngo-stat-item">
-        <span class="ngo-stat-number">🌱</span>
-        <span class="ngo-stat-label">Building Foundation</span>
-      </div>
-      <div class="ngo-stat-item">
-        <span class="ngo-stat-number">💡</span>
-        <span class="ngo-stat-label">Innovative Approach</span>
-      </div>
-      <div class="ngo-stat-item">
-        <span class="ngo-stat-number">🤲</span>
-        <span class="ngo-stat-label">Community First</span>
-      </div>
-    </div>
-
-    <!-- Explore Button -->
-    <div class="ngo-btn-container">
-      <a href="https://foundation.onsnc.org/" class="ngo-btn-read">Explore Our NGO Work →</a>
-    </div>
-
-  </div>
-</section>
-
-  <!-- ========================================
-<!-- Universal Nexus – Civilization 3.0 Initiatives -->
-<section class="nexus-section" aria-labelledby="nexus-title">
-  <div class="nexus-container">
-    <header class="nexus-header">
-      <h2 id="nexus-title">Universal Nexus – Civilization 3.0</h2>
-      <p class="nexus-lead">
-        Universal Nexus connects <strong>Energy, Life, Hybrid Governance, and Identity</strong> through scientific innovation.<br>
-        Explore active initiatives driving neo-sustainable development and human evolution.
-      </p>
-    </header>
-
-    <!-- Initiatives grid -->
-    <div class="nexus-grid">
-      <!-- Education & Knowledge -->
-      <article class="nexus-card">
-        <div class="nexus-icon">🎓</div>
-        <h3>Education & Knowledge</h3>
-        <p>Human evolution through life long learning, digital literacy, coding, and holistic assessment.</p>
-        <a href="https://onsnc.org/education.html" class="nexus-link">Explore Projects →</a>
-      </article>
-
-      <!-- Hybrid Governance Council -->
-      <article class="nexus-card">
-        <div class="nexus-icon">🏛️</div>
-        <h3>Hybrid Governance Council</h3>
-        <p>Participatory, transparent decision-making with DAO-style mechanisms.</p>
-        <a href="/foundation" class="nexus-link">Explore Projects →</a>
-      </article>
-
-      <!-- Regenerative Economy -->
-      <article class="nexus-card">
-        <div class="nexus-icon">⚡</div>
-        <h3>Regenerative Economy</h3>
-        <p>Community farming, fish farming, and circular reinvestment for resilient local economy.</p>
-        <a href="/foundation/farming" class="nexus-link">Explore Projects →</a>
-      </article>
-
-      <!-- Health & Wellness -->
-      <article class="nexus-card">
-        <div class="nexus-icon">🧘</div>
-        <h3>Health & Wellness</h3>
-        <p>Yoga, meditation, self-defence, and holistic wellbeing for students and youth.</p>
-        <a href="/foundation/education" class="nexus-link">Explore Projects →</a>
-      </article>
-
-      <!-- Food & Agriculture -->
-      <article class="nexus-card">
-        <div class="nexus-icon">🌾</div>
-        <h3>Food & Agriculture</h3>
-        <p>Neo-Sustainable farming, seasonal crops, organic compost, and cooperative models.</p>
-        <a href="/foundation/farming" class="nexus-link">Explore Projects →</a>
-      </article>
-
-      <!-- Environment & Ecology -->
-      <article class="nexus-card">
-        <div class="nexus-icon">🌱</div>
-        <h3>Environment & Ecology</h3>
-        <p>Plantation, eco-restoration, biodiversity awareness, and climate action.</p>
-        <a href="/foundation/plantation" class="nexus-link">Explore Projects →</a>
-      </article>
-    </div>
-
-    <!-- CTA row -->
-    <div class="nexus-cta">
-      <a href="ngo.html" class="nexus-btn primary">View All Projects</a>
-      <a href="ngo-getinvolved.html" class="nexus-btn secondary">Join as Volunteer</a>
-    </div>
-  </div>
-</section>
-
- <!-- Vision Section -->
-<section class="vision-section" id="vision">
-    <div class="vision-container">
-        <div class="vision-header">
-            <div class="vision-subtitle">Our Vision for Civilization 3.0</div>
-            <h1 class="vision-main-title">Discover Our 3.0 Vision</h1>
-            <p class="vision-description">Guiding principles and aspirations driving a digital, neo-sustainable, and inclusive future</p>
-        </div>
-        
-        <div class="vision-statement">
-            <p class="vision-text">
-                To shape Civilization 3.0 — a modular, neo-sustainable, and advanced technology-empowered society where human potential flourishes, communities thrive, and innovation aligns with ethical governance.
-            </p>
-        </div>
-        
-        <div class="principles-grid">
-            <div class="principle-card">
-                <h3 class="principle-title">Digital Empowerment</h3>
-                <p class="principle-text">Harnessing platforms, AI, and blockchain to enable collaboration, opportunity, and transparency.</p>
-            </div>
-            
-            <div class="principle-card">
-                <h3 class="principle-title">Neo-Sustainable Living</h3>
-                <p class="principle-text">Embedding renewable energy, circular economy practices, and resilient systems in everyday life.</p>
-            </div>
-            
-            <div class="principle-card">
-                <h3 class="principle-title">Modular Neo-Mobility</h3>
-                <p class="principle-text">Flexible, mobile, and adaptive settlements designed for evolving societal and environmental needs.</p>
-            </div>
-        </div>
-        
-        <div class="pillars-section">
-            <h2 class="section-title">Foundation Pillars of 3.0</h2>
-            
-            <div class="pillars-grid" role="list" aria-label="Vision pillars">
-                <div class="pillar" role="listitem">
-                    <h3 class="pillar-title">Knowledge</h3>
-                    <p class="pillar-text">Open science, universal nexus education, and data-driven decision-making as universal resources.</p>
-                </div>
-                
-                <div class="pillar" role="listitem">
-                    <h3 class="pillar-title">Compassion</h3>
-                    <p class="pillar-text">Empathy and inclusion guiding policy, design, and advanced technological application.</p>
-                </div>
-                
-                <div class="pillar" role="listitem">
-                    <h3 class="pillar-title">Innovation</h3>
-                    <p class="pillar-text">Conscious, ethical technology enhancing human potential and environmental resilience.</p>
-                </div>
-                
-                <div class="pillar" role="listitem">
-                    <h3 class="pillar-title">Justice</h3>
-                    <p class="pillar-text">Equitable access, accountability, and fairness across communities and generations.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Features Section -->
-<section class="features-section" id="initiatives">
-    <div class="features-container">
-        <div class="features-header">
-            <h2 class="features-title">Our Core Initiatives for Civilization 3.0</h2>
-            <p class="features-subtitle">Transformative projects leveraging technology, neo-sustainability, and human potential</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3 class="feature-title">Global Governance Innovation</h3>
-                <p class="feature-description">Developing ethical, transparent, and data-driven governance models for global collaboration.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <h3 class="feature-title">Conscious Technology</h3>
-                <p class="feature-description">Advancing AI, blockchain, quantum computing and platform-based systems that enhance human potential and societal fairness.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3 class="feature-title">Energy Transformation</h3>
-                <p class="feature-description">Implementing renewable, modular, and decentralized energy solutions for resilient communities.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">💧</div>
-                <h3 class="feature-title">Water & Resource Management</h3>
-                <p class="feature-description">Smart water recycling, rainwater harvesting, and circular resource utilization for neo-sustainable living.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🏘️</div>
-                <h3 class="feature-title">Modular Urban & Rural Settlements</h3>
-                <p class="feature-description">Mobile, scalable, and adaptive settlement designs for changing environmental and societal needs.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🔬</div>
-                <h3 class="feature-title">Scientific & Health Innovation</h3>
-                <p class="feature-description">Integrating biotechnology, personalized healthcare, and AI-assisted wellness solutions for global impact.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ONSNC 50 Goals Section - Enhanced -->
-      <!-- ONSNC Civilization 3.0 - 50 Goals Section -->
-<section id="onsnc-civ3-goals" class="onsnc-civ3-goals-section">
-  <div class="civ3-bg-decoration civ3-decoration-left"></div>
-  <div class="civ3-bg-decoration civ3-decoration-right"></div>
-  
-  <div class="container civ3-content-wrapper">
-    
-    <!-- Section Header -->
-    <div class="civ3-header" data-aos="fade-up">
-      <span class="civ3-badge">Civilization 3.0 Framework</span>
-      <h2 class="civ3-main-title">ONSNC 50 Neo-Sustainable Civilizational Goals</h2>
-      <p class="civ3-description">
-        A universal blueprint uniting neo-sustainability, advanced technology, and consciousness to build a regenerative and inclusive planetary civilization 3.0.
-      </p>
-    </div>
-
-    <!-- Goals Navigation -->
-    <div class="civ3-navigation" data-aos="fade-up" data-aos-delay="100">
-      <div class="civ3-category-buttons">
-        <button class="civ3-category-btn active" data-category="all-goals">All Goals</button>
-        <button class="civ3-category-btn" data-category="social-equity">Social & Equity</button>
-        <button class="civ3-category-btn" data-category="economic">Hybrid Economic & Regenerative</button>
-        <button class="civ3-category-btn" data-category="environmental">Environmental & Planetary</button>
-        <button class="civ3-category-btn" data-category="governance">Hybrid Governance Council & Direct Democracy</button>
-        <button class="civ3-category-btn" data-category="science-tech">Science & Technology</button>
-        <button class="civ3-category-btn" data-category="culture-consciousness">Culture & Consciousness</button>
-      </div>
-
-      <div class="civ3-progress-wrapper">
-        <div class="civ3-progress-bar">
-          <div class="civ3-progress-fill"></div>
-        </div>
-        <p class="civ3-progress-text">Global progress toward achieving Civilization 3.0</p>
-      </div>
-    </div>
-
-    <!-- Goals Grid -->
-    <div class="civ3-goals-grid">
-      
-      <!-- Goal 1: Social & Equity -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-category="social-equity">
-        <div class="goal-card-accent goal-accent-social"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-social"><span>1</span></div>
-            <h3 class="goal-card-title">Universal Human Dignity</h3>
-          </div>
-          <p class="goal-card-text">Establish global systems ensuring equality, justice, and freedom as unalienable civilizational rights.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-social">Social & Equity</span>
-            <span class="goal-priority-text">Priority: Core</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 2: Hybrid Economic & Regenerative -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="50" data-category="economic">
-        <div class="goal-card-accent goal-accent-economic"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-economic"><span>2</span></div>
-            <h3 class="goal-card-title">Regenerative Economy</h3>
-          </div>
-          <p class="goal-card-text">Shift to an economy that restores nature, values contribution, and eliminates scarcity through innovation.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-economic">Economic</span>
-            <span class="goal-priority-text">Priority: High</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 3: Environmental & Planetary -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="100" data-category="environmental">
-        <div class="goal-card-accent goal-accent-environmental"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-environmental"><span>3</span></div>
-            <h3 class="goal-card-title">Planetary Restoration</h3>
-          </div>
-          <p class="goal-card-text">Rewild the Earth, regenerate soils, clean oceans, and revive biodiversity through unified planetary stewardship.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-environmental">Environmental</span>
-            <span class="goal-priority-text">Priority: Urgent</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 4: Hybrid Governance Council & Direct Democracy -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="150" data-category="governance">
-        <div class="goal-card-accent goal-accent-governance"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-governance"><span>4</span></div>
-            <h3 class="goal-card-title">Transparent Governance</h3>
-          </div>
-          <p class="goal-card-text">Build evidence-based hybrid governance systems powered by transparency, accountability, and civic participation.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-governance">Governance</span>
-            <span class="goal-priority-text">Priority: Core</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 5: Science & Technology -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="200" data-category="science-tech">
-        <div class="goal-card-accent goal-accent-science"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-science"><span>5</span></div>
-            <h3 class="goal-card-title">Ethical AI & Quantum Systems</h3>
-          </div>
-          <p class="goal-card-text">Harness AI and quantum computing for collective intelligence, universal peace, and neo-sustainable innovation.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-science">Science & Tech</span>
-            <span class="goal-priority-text">Priority: High</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 6: Culture & Consciousness -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="250" data-category="culture-consciousness">
-        <div class="goal-card-accent goal-accent-culture"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-culture"><span>6</span></div>
-            <h3 class="goal-card-title">Conscious Civilization 3.0</h3>
-          </div>
-          <p class="goal-card-text">Integrate meditation, universal nexus education, and culture to develop emotional intelligence and global harmony.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-culture">Culture & Consciousness</span>
-            <span class="goal-priority-text">Priority: Transformative</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 7: Social & Equity -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="300" data-category="social-equity">
-        <div class="goal-card-accent goal-accent-social"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-social"><span>7</span></div>
-            <h3 class="goal-card-title">Universal Education & Literacy</h3>
-          </div>
-          <p class="goal-card-text">Ensure every person has access to quality education fostering critical thinking and global citizenship.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-social">Social & Equity</span>
-            <span class="goal-priority-text">Priority: High</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 8: Environmental & Planetary -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="350" data-category="environmental">
-        <div class="goal-card-accent goal-accent-environmental"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-environmental"><span>8</span></div>
-            <h3 class="goal-card-title">Clean Energy Revolution</h3>
-          </div>
-          <p class="goal-card-text">Transition to 100% renewable energy through decentralized systems and advanced storage solutions.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-environmental">Environmental</span>
-            <span class="goal-priority-text">Priority: Urgent</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 9: Hybrid Economic & Regenerative -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="400" data-category="economic">
-        <div class="goal-card-accent goal-accent-economic"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-economic"><span>9</span></div>
-            <h3 class="goal-card-title">Universal Basic Income & Resources</h3>
-          </div>
-          <p class="goal-card-text">Guarantee basic income and resources for all, ensuring dignity and reducing systemic poverty worldwide.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-economic">Economic</span>
-            <span class="goal-priority-text">Priority: High</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 10: Hybrid Governance & Direct Democracy -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="450" data-category="governance">
-        <div class="goal-card-accent goal-accent-governance"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-governance"><span>10</span></div>
-            <h3 class="goal-card-title">Participatory Democracy</h3>
-          </div>
-          <p class="goal-card-text">Enable direct citizen participation in governance through digital platforms, ai and local decision-making structures.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-governance">Governance</span>
-            <span class="goal-priority-text">Priority: Core</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 11: Science & Technology -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="500" data-category="science-tech">
-        <div class="goal-card-accent goal-accent-science"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-science"><span>11</span></div>
-            <h3 class="goal-card-title">Biotechnology for Health</h3>
-          </div>
-          <p class="goal-card-text">Develop ethical biotechnology advancing medicine, lifespan, and disease elimination globally.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-science">Science & Tech</span>
-            <span class="goal-priority-text">Priority: High</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goal 12: Culture & Consciousness -->
-      <div class="civ3-goal-card" data-aos="fade-up" data-aos-delay="550" data-category="culture-consciousness">
-        <div class="goal-card-accent goal-accent-culture"></div>
-        <div class="goal-card-content">
-          <div class="goal-card-header">
-            <div class="goal-number-badge goal-badge-culture"><span>12</span></div>
-            <h3 class="goal-card-title">Global Cultural Heritage</h3>
-          </div>
-          <p class="goal-card-text">Preserve, celebrate, and integrate diverse cultures ensuring human heritage thrives for future generations.</p>
-          <div class="goal-card-footer">
-            <span class="goal-category-tag goal-tag-culture">Culture & Consciousness</span>
-            <span class="goal-priority-text">Priority: Medium</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- View All Button -->
-    <div class="civ3-view-all">
-      <a href="civ3-all-goals.html" class="civ3-view-all-btn">View All 50 Goals →</a>
-    </div>
-
-    <!-- Call to Action Section -->
-    <div class="civ3-cta-section" data-aos="fade-up" data-aos-delay="600">
-      <div class="civ3-cta-box">
-        <h3 class="civ3-cta-title">Join the Civilization 3.0 Transition</h3>
-        <p class="civ3-cta-text">
-          Explore the complete framework of 50 Sustainable Civilizational Goals shaping the next era of humanity — where advanced technology, nature, and consciousness coexist in harmony.
-        </p>
-        <div class="civ3-cta-buttons">
-          <a href="civ3-all-goals.html" class="civ3-btn civ3-btn-primary">
-            <span>Explore All 50 Goals</span>
-            <svg class="civ3-btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </a>
-          <a href="#" class="civ3-btn civ3-btn-secondary">
-            <span>Download Blueprint PDF</span>
-            <svg class="civ3-btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-      
-<!-- =========================
-     NEWS & ARTICLES SECTION
-     ========================= -->
-<section class="news-preview" id="news">
-  <div class="container">
-    <h2 class="section-title">📰 News & Articles</h2>
-    <p class="section-subtitle">
-      Explore our latest insights, updates, and development reports shaping the future of Civilization 3.0.
-    </p>
-
-    <div class="news-grid">
-      <article class="news-card">
-        <img src="images/article1.jpg" alt="Article 1">
-        <div class="news-content">
-          <h3>Building Neo-Sustainable Civilizations</h3>
-          <p>Discover how ONSNC initiatives are transforming communities through education, neo-sustainability, and ai-technology.</p>
-          <a href="news-home.html" class="read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="news-card">
-        <img src="images/article2.jpg" alt="Article 2">
-        <div class="news-content">
-          <h3>Empowering Youth through Knowledge</h3>
-          <p>Our universal education and digital literacy pilots are preparing the next generation for a knowledge-driven civilization.</p>
-          <a href="news-home.html" class="read-more">Read More →</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="view-all">
-      <a href="news-home.html" class="btn-primary">View All Articles</a>
-    </div>
-  </div>
-</section>
-
-
-    <section id="video-media-center" class="media-section">
-  <div class="container">
-    <h2 class="section-title">Video & Media Center</h2>
-    <p class="section-subtitle">Explore our latest videos, interviews, and media highlights</p>
-    
-    <div id="media-grid" class="media-grid">
-      <!-- Dynamic video/media cards will be inserted here by JS -->
-    </div>
-    
-    <div class="media-load-more">
-      <button id="load-more-btn">Load More</button>
-    </div>
-  </div>
-
-  <!-- Modal for video playback -->
-  <div id="video-modal" class="video-modal">
-    <div class="video-modal-content">
-      <span class="close-btn">&times;</span>
-      <iframe id="modal-video" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
-
- 
-<section id="events-section" class="events-section">
-  <div class="container">
-    <!-- Hero Upcoming Events Carousel -->
-    <div class="hero-carousel">
-      <div id="hero-events" class="hero-events">
-        <!-- Hero slides dynamically inserted via JS -->
-      </div>
-
-      <!-- Carousel navigation -->
-      <button class="carousel-btn prev-btn">&#10094;</button>
-      <button class="carousel-btn next-btn">&#10095;</button>
-
-      <!-- Slide indicators -->
-      <div class="carousel-dots" id="carousel-dots"></div>
-
-      <!-- Thumbnail Previews -->
-      <div class="carousel-thumbnails" id="carousel-thumbnails"></div>
-    </div>
-
-    <!-- Explore More Events -->
-    <div class="explore-events">
-      <h3 class="section-title">Explore More Events</h3>
-      <div id="events-grid" class="events-grid">
-        <!-- Event cards dynamically inserted via JS -->
-      </div>
-      <div class="events-load-more">
-        <button id="load-more-events-btn">Load More Events</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-    
-    <!-- Call to Action Section -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <div class="cta-content">
-                <h2 class="cta-title">Join the Global Transformation</h2>
-                <p class="cta-description">Become part of the movement building Civilization 3.0. Your skills, passion and vision are needed to co-create our collective future.</p>
-                <a href="get-involved.html" class="cta-button">
-                    <i class="fas fa-arrow-right"></i>
-                    Get Involved Today
+                    Join Civilization 3.0
+                </a> 
+                <a href="manifesto.html" class="btn btn-secondary">
+                    <i class="fas fa-book-open"></i>
+                    Explore Our Manifesto
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- =============================
-     ONSNC Civilization 3.0 Footer
-============================= -->
-<footer class="footer">
-  <div class="footer-container">
-    <!-- Footer Grid -->
-    <div class="footer-grid">
-      <!-- About -->
-      <div class="footer-column">
-        <h3>About ONSNC</h3>
-        <ul class="footer-links">
-          <li><a href="#mission">Vision & Mission</a></li>
-          <li><a href="founder.html">Founder & Leadership</a></li>
-          <li><a href="#council">Advisory Council</a></li>
-          <li><a href="#reports">Transparency Reports</a></li>
-        </ul>
-      </div>
+    <!-- Philosophy Section -->
+    <section class="philosophy-section" id="onsnc-philosophy">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-badge">Our Foundation</span>
+                <h2 class="section-title">The Meaning of ONSNC</h2>
+                <p class="section-subtitle">Omniversal Evolution of Humanity and Conscious Civilization 3.0</p>
+            </header>
 
-      <!-- Nexus Network -->
-      <div class="footer-column">
-        <h3>Global Nexus Network</h3>
-        <ul class="footer-links">
-          <li><a href="chapters.html">Regional Chapters</a></li>
-          <li><a href="partners.html">Global Partners</a></li>
-          <li><a href="ambassadors.html">Civilization Ambassadors</a></li>
-          <li><a href="events.html">Summits & Forums</a></li>
-        </ul>
-      </div>
+            <div class="cards-grid">
+                <article class="card">
+                    <div class="card-icon">🧬</div>
+                    <h3>Philosophical Identity</h3>
+                    <p><strong>ONSNC</strong> stands for <em>Omniversal NovumSapiens & SentienceNeo for Nexus Civilization 3.0</em>. It represents humanity's next evolutionary phase merging science, technology, and conscious ethics.</p>
+                </article>
 
-      <!-- Research & Innovation -->
-      <div class="footer-column">
-        <h3>Innovation & Research</h3>
-        <ul class="footer-links">
-          <li><a href="research.html">Scientific Research</a></li>
-          <li><a href="innovation-lab.html">Innovation Lab</a></li>
-          <li><a href="academy.html">ONSNC Academy</a></li>
-          <li><a href="civilization-lab.html">Civilization 3.0 Lab</a></li>
-        </ul>
-      </div>
+                <article class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Vision & Features</h3>
+                    <ul class="feature-list">
+                        <li>🤖 Ethical AI & Conscious Technology</li>
+                        <li>⚡ Regenerative Economy & Energy</li>
+                        <li>🏛️ Transparent Hybrid Governance</li>
+                        <li>🎓 Holistic Scientific Education</li>
+                    </ul>
+                </article>
 
-      <!-- Connect -->
-      <div class="footer-column">
-        <h3>Connect With Us</h3>
-        <ul class="footer-links">
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="media.html">Media Centre</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
-          <li><a href="#social">Follow Us</a></li>
-        </ul>
+                <article class="card">
+                    <div class="card-icon">🔬</div>
+                    <h3>Core Essence</h3>
+                    <p>A conscious ecosystem uniting sustainability, natural harmony, and digital intelligence—evolving humanity as <em>Novum Sapiens</em> guided by scientific truth and ethical purpose.</p>
+                </article>
+            </div>
 
-        <div class="social-links">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="cta-button-wrapper">
+                <a href="philosophy.html" class="btn btn-primary">Explore the Philosophy →</a>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <!-- Newsletter -->
-    <div class="newsletter-section">
-      <h4>Subscribe to Civilization 3.0 Updates</h4>
-      <p>Get the latest breakthroughs, community models, and innovations.</p>
-      <form id="newsletterForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <button type="submit" class="btn-subscribe">
-          <span>Subscribe</span>
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </form>
-    </div>
+    <!-- Civilization 3.0 Overview -->
+    <section class="civilization-overview" id="civilization-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Framework</span>
+                <h2 class="section-title">Building Civilization 3.0</h2>
+                <p class="section-subtitle">A comprehensive framework for humanity's next evolutionary phase</p>
+            </div>
+            
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-number">1</div>
+                    <h3 class="card-title">Global Challenges in 3.0 Era</h3>
+                    <p>Humanity faces unprecedented challenges requiring systemic 3.0 approaches: climate resilience, equitable resources, ethical AI, and inclusive communities.</p>
+                    <a href="global-challenges.html" class="card-link">Explore Challenges →</a>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-number">2</div>
+                    <h3 class="card-title">The Vision</h3>
+                    <p>A future-ready civilization emphasizing innovation, sustainability, and human empowerment through platform-based economies and conscious technology.</p>
+                    <a href="onsnc-vision.html" class="card-link">Discover Vision →</a>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-number">3</div>
+                    <h3 class="card-title">Tech Solutions</h3>
+                    <p>Advanced frameworks: decentralized platforms, renewable energy, modular communities, and human-centric interfaces.</p>
+                    <a href="scientific-solutions.html" class="card-link">Explore Solutions →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p><strong>Concept & Authorship:</strong> Shivanta Ronghang</p>
-      <p>Founder, <strong>ONSNC</strong> — Open Network for Neo-Sustainable, Natural & Conscious Civilization</p>
-      <p class="footer-tagline">Building Civilization 3.0 through ethical innovation, unified hybrid governance, and human evolution.</p>
+    <!-- Universal Nexus Initiatives -->
+    <section class="nexus-section">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-badge">Active Initiatives</span>
+                <h2 class="section-title">Universal Nexus – Civilization 3.0</h2>
+                <p class="section-subtitle">Connecting Energy, Life, Governance, and Identity through scientific innovation</p>
+            </header>
 
-      <p class="footer-legal">
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Use</a>
-      </p>
-      <p>© 2025 ONSNC — Open Network for Neo-Sustainable, Natural and Conscious Civilization 3.0</p>
-    </div>
-  </div>
-</footer>
+            <div class="nexus-grid">
+                <article class="nexus-card">
+                    <div class="nexus-icon">🎓</div>
+                    <h3>Education & Knowledge</h3>
+                    <p>Lifelong learning, digital literacy, coding, and holistic assessment for human evolution.</p>
+                    <a href="https://onsnc.org/education.html" class="card-link">Explore →</a>
+                </article>
 
-    <!-- Common JS पहले -->
-<script src="global-script.js"></script> 
-<!-- Body scripts JS बाद में -->
-<script src="body-scripts.js"></script>  
+                <article class="nexus-card">
+                    <div class="nexus-icon">🏛️</div>
+                    <h3>Hybrid Governance</h3>
+                    <p>Participatory, transparent decision-making with DAO-style mechanisms.</p>
+                    <a href="/foundation" class="card-link">Explore →</a>
+                </article>
+
+                <article class="nexus-card">
+                    <div class="nexus-icon">⚡</div>
+                    <h3>Regenerative Economy</h3>
+                    <p>Community farming, circular reinvestment for resilient local economies.</p>
+                    <a href="/foundation/farming" class="card-link">Explore →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Vision</span>
+                <h2 class="section-title">Guiding Principles for Civilization 3.0</h2>
+                <p class="section-subtitle">Digital, sustainable, and inclusive future</p>
+            </div>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">💻</div>
+                    <h3>Digital Empowerment</h3>
+                    <p>Harnessing AI, blockchain for collaboration, opportunity, and transparency.</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-icon">🌱</div>
+                    <h3>Neo-Sustainable Living</h3>
+                    <p>Renewable energy, circular economy, and resilient systems in everyday life.</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-icon">🏘️</div>
+                    <h3>Modular Mobility</h3>
+                    <p>Flexible, adaptive settlements for evolving societal needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Core Initiatives</span>
+                <h2 class="section-title">Transformative Projects for Civilization 3.0</h2>
+                <p class="section-subtitle">Leveraging technology, sustainability, and human potential</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Governance</h3>
+                    <p>Ethical, transparent, data-driven governance models for global collaboration.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Conscious Technology</h3>
+                    <p>AI and blockchain systems enhancing human potential and societal fairness.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Energy Transformation</h3>
+                    <p>Renewable, modular, decentralized energy solutions for resilient communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Join the Global Transformation</h2>
+                <p class="cta-description">Become part of the movement building Civilization 3.0. Your skills and vision are needed.</p>
+                <a href="get-involved.html" class="btn btn-primary btn-large">Get Involved Today →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be loaded via global-script.js -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Defer JavaScript Loading -->
+    <script defer src="optimized-script.js"></script>
 </body>
 </html>
