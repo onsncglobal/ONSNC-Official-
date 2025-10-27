@@ -4,13 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Involved - Civilization 2.0</title>
-    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="global-style.css">
     <link rel="stylesheet" href="get-involved.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header will be included from common components -->
     <div id="header-placeholder"></div>
+    
+  <!-- ========================================
+       TOP HEADER - Dark Blue with Welcome Message
+       ======================================== -->
+  <!-- TOP HEADER -->
+  <div class="top-header" role="region" aria-label="Top header">
+    <div class="wrap">
+      <div class="top-left">
+        <a class="welcome" href="/" id="onsnc-welcome">Welcome to ONSNC Civilization 3.0</a>
+      </div>
+
+      <div class="top-right">
+        <label for="lang-select" class="visually-hidden">Select Language</label>
+        <select id="lang-select" aria-label="Language selection">
+          <option value="en" selected>English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="as">অসমীয়া</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header" role="banner">
+    <div class="wrap header-line">
+      <!-- Logo + text (left) -->
+      <a class="brand" href="/" aria-label="ONSNC homepage">
+        <div class="logo">
+          <span class="logo-mark">ON</span>
+          <span class="logo-text">ONSNC</span>
+        </div>
+      </a>
+
+      <!-- Center title -->
+      <div class="center-title" aria-hidden="false">
+        <h1 class="site-title">Civilization 3.0</h1>
+      </div>
+
+      <!-- Hamburger (right) -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger">☰</span>
+      </button>
+    </div>
+
+    <!-- Primary navigation (collapsible on small screens) -->
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/foundation">Foundation</a>
+        <a href="/education">Education</a>
+        <a href="/research">Research</a>
+        <a href="/innovation">Innovation</a>
+        <a href="/council">Council</a>
+        <a href="/contact">Contact</a>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="/join">Join Movement</a>
+          <a class="btn btn-secondary" href="/donate">Support Us</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
     <!-- Main Get Involved Section -->
     <main class="get-involved-page">
