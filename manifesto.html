@@ -10,62 +10,71 @@
     <link rel="stylesheet" href="manifesto.css">
 </head>
 <body class="manifesto-page">
-    <!-- Header Top Bar -->
-    <header class="header-top">
-        <div class="container">
-            <div class="header-top-content">
-                <div class="header-links">
-                    <a href="#global-network"><i class="fas fa-globe"></i> Global Network</a>
-                    <a href="#research"><i class="fas fa-chart-bar"></i> Research Portal</a>
-                    <a href="#academy"><i class="fas fa-graduation-cap"></i> ONSNC Academy</a>
-                </div>
-                <div class="header-links">
-                    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-                    <a href="#news"><i class="fas fa-newspaper"></i> News Centre</a>
-                    <a href="#languages"><i class="fas fa-language"></i> EN | ES | FR</a>
-                </div>
-            </div>
+
+  <!-- ========================================
+       TOP HEADER - Dark Blue with Welcome Message
+       ======================================== -->
+  <!-- TOP HEADER -->
+  <div class="top-header" role="region" aria-label="Top header">
+    <div class="wrap">
+      <div class="top-left">
+        <a class="welcome" href="/" id="onsnc-welcome">Welcome to ONSNC Civilization 3.0</a>
+      </div>
+
+      <div class="top-right">
+        <label for="lang-select" class="visually-hidden">Select Language</label>
+        <select id="lang-select" aria-label="Language selection">
+          <option value="en" selected>English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="as">অসমীয়া</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header" role="banner">
+    <div class="wrap header-line">
+      <!-- Logo + text (left) -->
+      <a class="brand" href="/" aria-label="ONSNC homepage">
+        <div class="logo">
+          <span class="logo-mark">ON</span>
+          <span class="logo-text">ONSNC</span>
         </div>
-    </header>
+      </a>
 
-    <!-- Main Navigation -->
-    <header class="main-header">
-        <div class="container">
-            <nav class="nav-content">
-                <div class="logo">
-                    <div class="logo-symbol">
-                        <span>Ω</span>
-                    </div>
-                    <div class="logo-text">
-                        <h1>ONSNC</h1>
-                        <p>Civilization 2.0</p>
-                    </div>
-                </div>
+      <!-- Center title -->
+      <div class="center-title" aria-hidden="false">
+        <h1 class="site-title">Civilization 3.0</h1>
+      </div>
 
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#network">Network</a></li>
-                    <li><a href="#academy">Academy</a></li>
-                    <li><a href="founder.html" style="color: #FF8C42;">Founder</a></li>
-                </ul>
+      <!-- Hamburger (right) -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger">☰</span>
+      </button>
+    </div>
 
-                <div class="nav-buttons">
-                    <a href="#join" class="btn btn-secondary">Join Movement</a>
-                    <a href="#support" class="btn btn-primary">Support ONSNC</a>
-                </div>
+    <!-- Primary navigation (collapsible on small screens) -->
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/foundation">Foundation</a>
+        <a href="/education">Education</a>
+        <a href="/research">Research</a>
+        <a href="/innovation">Innovation</a>
+        <a href="/council">Council</a>
+        <a href="/contact">Contact</a>
 
-                <div class="mobile-menu-toggle" id="mobileToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+        <div class="actions">
+          <a class="btn btn-primary" href="/join">Join Movement</a>
+          <a class="btn btn-secondary" href="/donate">Support Us</a>
         </div>
-    </header>
+      </div>
+    </nav>
+  </header>
 
+  
     <main class="manifesto-container">
         <!-- Hero Section -->
         <section class="manifesto-hero">
