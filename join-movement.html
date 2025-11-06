@@ -3,66 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Implementation Pathways | ONSNC 2.0</title>
+  <title>Implementation Pathways | ONSNC</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="global-style.css">
   <link rel="stylesheet" href="join-movement.css">
 </head>
 <body>
-  <!-- Header Top Bar -->
-  <header class="header-top">
-    <div class="header-top-content">
-      <div class="header-links">
-        <a href="#global-network">🌐 Global Network</a>
-        <a href="#research">📊 Research Portal</a>
-        <a href="#academy">🎓 ONSNC Academy</a>
+    
+  <!-- ========================================
+       TOP HEADER - Dark Blue with Welcome Message
+       ======================================== -->
+  <!-- TOP HEADER -->
+  <div class="top-header" role="region" aria-label="Top header">
+    <div class="wrap">
+      <div class="top-left">
+        <a class="welcome" href="/" id="onsnc-welcome">Welcome to ONSNC Civilization 3.0</a>
       </div>
-      <div class="header-links">
-        <a href="contact.html">📧 Contact</a>
-        <a href="#news">📰 News Centre</a>
-        <a href="#languages">🌍 EN | ES | FR</a>
+
+      <div class="top-right">
+        <label for="lang-select" class="visually-hidden">Select Language</label>
+        <select id="lang-select" aria-label="Language selection">
+          <option value="en" selected>English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="as">অসমীয়া</option>
+        </select>
       </div>
     </div>
-  </header>
+  </div>
 
-  <!-- Main Navigation -->
-  <header class="main-header">
-    <div class="nav-content">
-      <div class="logo">
-        <div class="logo-symbol">
-          <span>Ω</span>
+  <!-- MAIN HEADER -->
+  <header class="main-header" role="banner">
+    <div class="wrap header-line">
+      <!-- Logo + text (left) -->
+      <a class="brand" href="/" aria-label="ONSNC homepage">
+        <div class="logo">
+          <span class="logo-mark">ON</span>
+          <span class="logo-text">ONSNC</span>
         </div>
-        <div class="logo-text">
-          <h1>ONSNC</h1>
-          <p>Civilization 2.0</p>
-        </div>
+      </a>
+
+      <!-- Center title -->
+      <div class="center-title" aria-hidden="false">
+        <h1 class="site-title">Civilization 3.0</h1>
       </div>
 
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="onsnc-vision.html">Vision</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="inclusive-system.html">Inclusion</a></li>
-        <li><a href="implementation-pathways.html" class="active">Roadmap</a></li>
-        <li><a href="#network">Network</a></li>
-        <li><a href="founder.html">Founder</a></li>
-      </ul>
-
-      <div class="nav-buttons">
-        <a href="#join" class="btn btn-secondary">Join Movement</a>
-        <a href="#support" class="btn btn-primary">Support ONSNC</a>
-      </div>
-
-      <div class="mobile-menu-toggle" id="mobileToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <!-- Hamburger (right) -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger">☰</span>
+      </button>
     </div>
+
+    <!-- Primary navigation (collapsible on small screens) -->
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="https://foundation.onsnc.org/">Foundation</a>
+        <a href="/education">Education</a>
+        <a href="/research">Research</a>
+        <a href="/innovation">Innovation</a>
+        <a href="/council">Council</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="get-involved.html">Join Movement</a>
+          <a class="btn btn-secondary" href="/donate">Support Us</a>
+        </div>
+      </div>
+    </nav>
   </header>
 
 <!-- Join the Movement Section -->
@@ -84,7 +96,7 @@
                 <h3 class="opportunity-title">Global Volunteer Network</h3>
                 <p class="opportunity-description">
                     Join our worldwide community of changemakers working together to implement 
-                    Civilization 2.0 solutions in local communities across the globe.
+                    Civilization 3.0 solutions in local communities across the globe.
                 </p>
                 <ul class="opportunity-features">
                     <li>Remote and in-person volunteering</li>
@@ -114,8 +126,8 @@
                 </div>
                 <h3 class="opportunity-title">Research & Development Teams</h3>
                 <p class="opportunity-description">
-                    Contribute to groundbreaking research in sustainable technologies, 
-                    social systems, and economic models for Civilization 2.0.
+                    Contribute to groundbreaking research in neo-sustainable technologies, 
+                    social systems, and economic models for Civilization 3.0.
                 </p>
                 <ul class="opportunity-features">
                     <li>Interdisciplinary research</li>
@@ -145,7 +157,7 @@
                 </div>
                 <h3 class="opportunity-title">Local Implementation Chapters</h3>
                 <p class="opportunity-description">
-                    Start or join a local chapter to implement Civilization 2.0 principles 
+                    Start or join a local chapter to implement Civilization 3.0 principles 
                     in your community through practical projects and initiatives.
                 </p>
                 <ul class="opportunity-features">
@@ -176,7 +188,7 @@
                 </div>
                 <h3 class="opportunity-title">Skill-Based Contribution Programs</h3>
                 <p class="opportunity-description">
-                    Offer your professional expertise to support Civilization 2.0 initiatives 
+                    Offer your professional expertise to support Civilization 3.0 initiatives 
                     through our skill-matching platform.
                 </p>
                 <ul class="opportunity-features">
@@ -207,7 +219,7 @@
                 <h3 class="cta-title">Ready to Make a Difference?</h3>
                 <p class="cta-description">
                     Join thousands of visionaries already working towards a better future. 
-                    Your skills, passion, and commitment can help shape Civilization 2.0.
+                    Your skills, passion, and commitment can help shape Civilization 3.0.
                 </p>
                 <div class="cta-buttons">
                     <button class="btn btn-large btn-primary" id="main-cta-button">
@@ -267,55 +279,97 @@
     </div>
 </section>
 
-      <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h3>About ONSNC</h3>
-          <ul class="footer-links">
-            <li><a href="#mission">Our Mission</a></li>
-            <li><a href="founder.html">Founder's Vision</a></li>
-            <li><a href="#team">Global Team</a></li>
-            <li><a href="#history">Our History</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Initiatives</h3>
-          <ul class="footer-links">
-            <li><a href="#civilization-2">Civilization 2.0</a></li>
-            <li><a href="#global-network">Global Network</a></li>
-            <li><a href="#research">Research Programs</a></li>
-            <li><a href="#academy">ONSNC Academy</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Resources</h3>
-          <ul class="footer-links">
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#research-papers">Research Papers</a></li>
-            <li><a href="#media">Media Center</a></li>
-            <li><a href="#blog">Insights Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Connect</h3>
-          <ul class="footer-links">
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#partnerships">Partnerships</a></li>
-            <li><a href="#volunteer">Volunteer</a></li>
-            <li><a href="#careers">Careers</a></li>
-          </ul>
-        </div>
+      
+    <!-- =============================
+     ONSNC Civilization 3.0 Footer
+============================= -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Footer Grid -->
+    <div class="footer-grid">
+      <!-- About -->
+      <div class="footer-column">
+        <h3>About ONSNC</h3>
+        <ul class="footer-links">
+          <li><a href="#mission">Vision & Mission</a></li>
+          <li><a href="founder.html">Founder & Leadership</a></li>
+          <li><a href="#council">Advisory Council</a></li>
+          <li><a href="#reports">Transparency Reports</a></li>
+        </ul>
       </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">© 2025 ONSNC - Civilization 2.0 Initiative. All rights reserved.</p>
-        <p class="footer-tagline">Building a sustainable, conscious, and prosperous future for humanity.</p>
+
+      <!-- Nexus Network -->
+      <div class="footer-column">
+        <h3>Global Nexus Network</h3>
+        <ul class="footer-links">
+          <li><a href="chapters.html">Regional Chapters</a></li>
+          <li><a href="partners.html">Global Partners</a></li>
+          <li><a href="ambassadors.html">Civilization Ambassadors</a></li>
+          <li><a href="events.html">Summits & Forums</a></li>
+        </ul>
+      </div>
+
+      <!-- Research & Innovation -->
+      <div class="footer-column">
+        <h3>Innovation & Research</h3>
+        <ul class="footer-links">
+          <li><a href="research.html">Scientific Research</a></li>
+          <li><a href="innovation-lab.html">Innovation Lab</a></li>
+          <li><a href="academy.html">ONSNC Academy</a></li>
+          <li><a href="civilization-lab.html">Civilization 3.0 Lab</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div class="footer-column">
+        <h3>Connect With Us</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="media.html">Media Centre</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="#social">Follow Us</a></li>
+        </ul>
+
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <script src="common.js"></script>
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+      <h4>Subscribe to Civilization 3.0 Updates</h4>
+      <p>Get the latest breakthroughs, community models, and innovations.</p>
+      <form id="newsletterForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit" class="btn-subscribe">
+          <span>Subscribe</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p><strong>Concept & Authorship:</strong> Shivanta Ronghang</p>
+      <p>Founder, <strong>ONSNC</strong> — Open Network for Neo-Sustainable, Natural & Conscious Civilization</p>
+      <p class="footer-tagline">Building Civilization 3.0 through ethical innovation, unified hybrid governance, and human evolution.</p>
+
+      <p class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a>
+      </p>
+      <p>© 2025 ONSNC — Open Network for Neo-Sustainable, Natural and Conscious Civilization 3.0</p>
+    </div>
+  </div>
+</footer>
+
+    <!-- Common JS पहले -->
+<script src="global-script.js"></script> 
 <script src="join-movement.js"></script>
 </body>
 </html>
