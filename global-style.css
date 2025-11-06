@@ -1,202 +1,286 @@
-:root{
+/* ==========================================
+   ONSNC Civilization 3.0 - Global Styles
+   ========================================== */
+
+:root {
   --dark-blue: #052e5b;
   --footer-blue: #042740;
   --white: #ffffff;
   --black: #111111;
   --muted: #555555;
-  --primary-btn: #6a4ef0; /* purple */
-  --secondary-btn: #2b7cff; /* blue */
+  --primary-btn: #6a4ef0;
+  --secondary-btn: #2b7cff;
   --max-width: 1200px;
   --gap: 16px;
   --height-top: 48px;
   --height-main: 64px;
 }
 
-/* Reset minimal */
-* {box-sizing: border-box; margin:0; padding:0}
-html,body {height:100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-a {color: inherit; text-decoration: none}
-.visually-hidden {position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden}
+/* ==========================================
+   Reset & Base Styles
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* Wrapper to constrain content */
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ==========================================
+   Layout Wrapper
+   ========================================== */
 .wrap {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 16px;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   gap: var(--gap);
-  width:100%;
+  width: 100%;
 }
 
-/* TOP HEADER */
+/* ==========================================
+   TOP HEADER
+   ========================================== */
 .top-header {
   background: linear-gradient(180deg, var(--dark-blue), #003a6b);
   color: var(--white);
   height: var(--height-top);
-  display:flex;
-  align-items:center;
-  font-size:14px;
-  position:relative;
-  z-index:60;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+  z-index: 60;
 }
 
-.top-header .wrap {justify-content: space-between;}
-.top-header .welcome {color:var(--white); font-weight:600; letter-spacing:0.2px;}
+.top-header .wrap {
+  justify-content: space-between;
+}
+
+.top-header .welcome {
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
 .top-header select {
   background: transparent;
-  color:var(--white);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding:6px 8px;
-  border-radius:6px;
-  font-size:14px;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* MAIN HEADER (sticky single horizontal line) */
+.top-header select:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   MAIN HEADER (Sticky)
+   ========================================== */
 .main-header {
   background: var(--white);
   color: var(--black);
   position: sticky;
   top: 0;
-  z-index:70;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  z-index: 70;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* The single horizontal line area containing the three items */
 .header-line {
   height: var(--height-main);
   align-items: center;
   justify-content: space-between;
 }
 
-/* Brand (left) */
-.brand {display:flex; align-items:center; gap:12px}
-.logo {display:flex; align-items:center; gap:10px}
-.logo-mark {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background: linear-gradient(135deg,#1f5bd8,#7a4ef0);
-  color: white;
-  border-radius:6px;
-  width:44px;
-  height:44px;
-  font-weight:700;
-  font-size:18px;
+/* ==========================================
+   Brand & Logo
+   ========================================== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.logo-text {font-weight:700; font-size:18px; color:var(--black); letter-spacing:0.6px;}
 
-/* Center title */
-.center-title {flex:1; display:flex; justify-content:center; align-items:center; text-align:center;}
-.site-title {font-size:20px; font-weight:700; color:var(--black); margin:0;}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-/* Hamburger button (right) */
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1f5bd8, #7a4ef0);
+  color: white;
+  border-radius: 6px;
+  width: 44px;
+  height: 44px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--black);
+  letter-spacing: 0.6px;
+}
+
+/* ==========================================
+   Center Title
+   ========================================== */
+.center-title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.site-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0;
+}
+
+/* ==========================================
+   Hamburger Button (Always Visible)
+   ========================================== */
 .nav-toggle {
   background: transparent;
-  border: none;
-  font-size:22px;
-  padding:8px 10px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  padding: 8px 10px;
   cursor: pointer;
-  border-radius:8px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
 }
 
-/* Navigation panel (collapsible) */
+.nav-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ==========================================
+   Primary Navigation Panel
+   ========================================== */
 .primary-nav {
-  background: rgba(255,255,255,0.98);
-  border-top: 1px solid rgba(0,0,0,0.04);
-  transition: height 220ms ease, transform 220ms ease;
+  background: rgba(255, 255, 255, 0.98);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  max-height: 0;
   overflow: hidden;
-  will-change: transform;
+  transition: max-height 0.3s ease;
 }
 
-/* Nav inner layout */
+.primary-nav.open {
+  max-height: 1000px;
+}
+
 .nav-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 12px 16px;
-  display:flex;
-  gap:12px;
-  align-items:center;
-  flex-wrap:wrap;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-/* Links */
-.nav-inner a {color:var(--black); padding:6px 10px; border-radius:6px; font-weight:600;}
-.nav-inner a:hover {background: rgba(0,0,0,0.03);}
-
-/* Action buttons */
-.actions {display:flex; gap:8px; align-items:center;}
-.btn {display:inline-flex; align-items:center; justify-content:center; padding:8px 14px; border-radius:8px; color:white; font-weight:700;}
-.btn-primary {background: var(--primary-btn);}
-.btn-secondary {background: var(--secondary-btn);}
-
-/* FOOTER */
-.site-footer {
-  background: linear-gradient(180deg,var(--footer-blue), #031e39);
-  color: var(--white);
-  padding: 28px 0 36px;
-}
-.footer-grid {
-  display:grid;
-  gap:20px;
-  grid-template-columns: repeat(4, 1fr);
-  align-items:start;
-  width:100%;
-}
-.site-footer h3 {color:var(--white); font-size:16px; margin-bottom:8px;}
-.site-footer ul {list-style:none; font-size:14px;}
-.site-footer a {color: rgba(255,255,255,0.92);}
-.footer-bottom {display:flex; justify-content:space-between; align-items:center; padding-top:18px; font-size:13px}
-
-/* Responsive behavior: ensure single-line header layout across sizes */
-/* Large screens: show nav inline */
-@media (min-width: 900px) {
-  .nav-toggle {display:none}
-  .primary-nav {height:auto; overflow:visible}
-  .nav-inner {flex-wrap:nowrap}
-  .nav-inner a {padding:8px 12px}
+.nav-inner a {
+  color: var(--black);
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-/* Medium & small screens: collapse primary nav, only hamburger visible; keep single horizontal line */
-@media (max-width: 899px) {
-  .center-title {padding:0 8px}
-  .primary-nav {
-    max-height: 0;
-    transform-origin: top;
-  }
-  .primary-nav.open {max-height: 1000px}
-  .nav-inner {flex-direction: column; align-items:stretch}
-  .nav-inner a {width:100%; padding:12px 10px; border-radius:6px}
-  .actions {flex-direction:row; justify-content:stretch}
-  .actions .btn {width:48%}
-  .footer-grid {grid-template-columns: repeat(1, 1fr)}
+.nav-inner a:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
-/* Accessibility focus */
-a:focus, button:focus, select:focus {outline: 3px solid rgba(106,78,240,0.28); outline-offset:2px}
+/* ==========================================
+   Action Buttons
+   ========================================== */
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
-/* Fast loading, simple visuals */
-img, svg {display:block; max-width:100%}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
 
-/* Main content demo styles */
-.main-content .container {max-width:var(--max-width); margin: 32px auto; padding:0 16px}
-.main-content h2 {font-size:28px; color:var(--black); margin-bottom:12px}
-.main-content p {color:var(--muted); line-height:1.7; max-width:820px}
+.btn-primary {
+  background: var(--primary-btn);
+}
 
+.btn-primary:hover {
+  background: #5940d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 78, 240, 0.3);
+}
 
+.btn-secondary {
+  background: var(--secondary-btn);
+}
 
-/* =========================
-   Footer Styles
-   ========================= */
+.btn-secondary:hover {
+  background: #1e6ae6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(43, 124, 255, 0.3);
+}
 
+/* ==========================================
+   FOOTER
+   ========================================== */
 .footer {
   background: linear-gradient(180deg, #001f3f 0%, #001a33 100%);
   color: #fff;
-  padding: 70px 20px 40px;
+  padding: 60px 20px 40px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
@@ -205,6 +289,9 @@ img, svg {display:block; max-width:100%}
   margin: 0 auto;
 }
 
+/* ==========================================
+   Footer Grid
+   ========================================== */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -244,6 +331,9 @@ img, svg {display:block; max-width:100%}
   transform: translateX(5px);
 }
 
+/* ==========================================
+   Social Links
+   ========================================== */
 .social-links {
   margin-top: 15px;
   display: flex;
@@ -262,6 +352,9 @@ img, svg {display:block; max-width:100%}
   transform: translateY(-3px);
 }
 
+/* ==========================================
+   Newsletter Section
+   ========================================== */
 .newsletter-section {
   text-align: center;
   margin-bottom: 50px;
@@ -342,48 +435,45 @@ img, svg {display:block; max-width:100%}
   transform: translateY(0);
 }
 
-/* Footer Bottom Section - Separated Lines */
+/* ==========================================
+   Footer Bottom - Horizontal Layout
+   ========================================== */
 .footer-bottom {
   text-align: center;
   border-top: 2px solid rgba(255, 255, 255, 0.2);
-  padding-top: 40px;
+  padding-top: 30px;
   margin-top: 30px;
 }
 
-.footer-authorship {
-  margin-bottom: 25px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-authorship p {
-  margin: 8px 0;
+.footer-bottom p {
+  margin: 12px 0;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-.footer-authorship p:first-child {
+.footer-bottom p:first-child {
   font-weight: 600;
   color: #4da6ff;
   font-size: 1rem;
 }
 
-.footer-authorship p:nth-child(2) {
-  font-weight: 700;
-  font-size: 1.05rem;
+.footer-bottom p strong {
   color: #fff;
-  margin: 5px 0;
+  font-weight: 700;
 }
 
-.footer-authorship p:nth-child(3) {
+.footer-tagline {
   font-style: italic;
   color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: 12px auto !important;
 }
 
 .footer-legal {
-  margin: 25px 0;
-  padding: 20px 0;
+  margin: 20px 0 !important;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -401,19 +491,54 @@ img, svg {display:block; max-width:100%}
   text-decoration: underline;
 }
 
-.footer-copyright {
-  margin-top: 25px;
-  padding-top: 20px;
-}
-
-.footer-copyright p {
-  margin: 0;
+.footer-bottom > p:last-child {
+  margin-top: 20px;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.75);
-  line-height: 1.6;
 }
 
-/* Footer Responsive Design */
+/* ==========================================
+   Accessibility & Focus States
+   ========================================== */
+a:focus,
+button:focus,
+select:focus,
+input:focus {
+  outline: 3px solid rgba(106, 78, 240, 0.28);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+/* Medium & Small Screens */
+@media (max-width: 899px) {
+  .center-title {
+    padding: 0 8px;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-inner a {
+    width: 100%;
+    padding: 12px 10px;
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: stretch;
+  }
+
+  .actions .btn {
+    width: 48%;
+  }
+}
+
+/* Tablet */
 @media (max-width: 768px) {
   .footer {
     padding: 50px 20px 30px;
@@ -459,7 +584,7 @@ img, svg {display:block; max-width:100%}
     padding-top: 30px;
   }
 
-  .footer-authorship p {
+  .footer-bottom p {
     font-size: 0.9rem;
   }
 
@@ -467,12 +592,9 @@ img, svg {display:block; max-width:100%}
     margin: 0 8px;
     font-size: 0.9rem;
   }
-
-  .footer-copyright p {
-    font-size: 0.85rem;
-  }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
   .footer {
     padding: 40px 15px 25px;
@@ -508,16 +630,12 @@ img, svg {display:block; max-width:100%}
     font-size: 0.9rem;
   }
 
-  .footer-authorship p {
+  .footer-bottom p {
     font-size: 0.85rem;
   }
 
-  .footer-authorship p:first-child {
+  .footer-bottom p:first-child {
     font-size: 0.9rem;
-  }
-
-  .footer-authorship p:nth-child(2) {
-    font-size: 0.95rem;
   }
 
   .footer-legal {
@@ -530,9 +648,54 @@ img, svg {display:block; max-width:100%}
     font-size: 0.85rem;
   }
 
-  .footer-copyright p {
+  .footer-bottom > p:last-child {
     font-size: 0.8rem;
   }
 }
 
-  .
+/* ==========================================
+   Main Content Demo Styles
+   ========================================== */
+.main-content {
+  min-height: 60vh;
+  padding: 40px 20px;
+}
+
+.main-content .container {
+  max-width: var(--max-width);
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.main-content h2 {
+  font-size: 28px;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+
+.main-content p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 820px;
+}
+
+/* ==========================================
+   Utility Classes
+   ========================================== */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
